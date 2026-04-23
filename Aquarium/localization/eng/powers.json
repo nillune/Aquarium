@@ -1,0 +1,21 @@
+{
+  "VIGOR_BLOCK.description": "Gain Vigor equal to your block at the start of your turn",
+  "VIGOR_BLOCK.smartDescription": "Gain Vigor equal to your block at the start of your turn",
+  "VIGOR_BLOCK.title": "Block into Vigor",
+
+  "RE_CYCLE_POWER.description": "Exhaust all cards played this turn",
+  "RE_CYCLE_POWER.smartDescription": "Exhaust all cards played this turn",
+  "RE_CYCLE_POWER.title": "Recycling",
+
+  "VIGOR_NEXT_TURN_POWER.description": "Gain Vigor Next Turn",
+  "VIGOR_NEXT_TURN_POWER.smartDescription": "Gain Vigor Next Turn",
+  "VIGOR_NEXT_TURN_POWER.title": "Vigor Next Turn",
+
+  "RIDE_OR_DIE_POWER.description": "Take double unblocked damage",
+  "RIDE_OR_DIE_POWER.smartDescription": "Take double unblocked damage",
+  "RIDE_OR_DIE_POWER.title": "Ride Or Die",
+
+  "ANCHOVY_POWER.description": "Gain Vigor Next Turn\"",
+  "ANCHOVY_POWER.smartDescription": "Gain Vigor Next Turn\"",
+  "ANCHOVY_POWER.title": "Vigor Next Turn"
+}

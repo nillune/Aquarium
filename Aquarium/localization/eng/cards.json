@@ -1,0 +1,96 @@
+{
+  "AQUARIUM-BLASTER.description": "Deal {Damage:diff()} damage {Repeat:diff()} times",
+  "AQUARIUM-BLASTER.title": "Blaster",
+  "AQUARIUM-BUBBLE.description": "Gain {Block:diff()} [gold]Block[/gold] \nGain {VigorPower:diff()} [gold]Vigor[/gold] ",
+  "AQUARIUM-BUBBLE.title": "Bubble",
+
+  "AQUARIUM-STRIKE_AQUARIUM.description": "Deal {Damage:diff()} Damage",
+  "AQUARIUM-STRIKE_AQUARIUM.title": "Strike",
+  
+  "AQUARIUM-DEFEND_AQUARIUM.description": "Gain {Block:diff()} [gold]Block[/gold]",
+  "AQUARIUM-DEFEND_AQUARIUM.title": "Defend",
+  
+  "AQUARIUM-GUN.description": "Deal 6 Damage",
+  "AQUARIUM-GUN.title": "Gun",
+  "AQUARIUM-GUN2.description": "Deal 6 Damage",
+  "AQUARIUM-GUN2.title": "Gun2",
+  
+  "AQUARIUM-AMMO_BAG.description": "Gain {Energy:energyIcons()}",
+  "AQUARIUM-AMMO_BAG.title": "Ammo Bag",
+  
+  "AQUARIUM-CONCEALED_WEAPON.description": "Draw {Cards:diff()}",
+  "AQUARIUM-CONCEALED_WEAPON.title": "Concealed Weapon",
+  
+  "AQUARIUM-NO_GET_HIT.description": "Gain {FrailPower:diff()} [gold]Frail[/gold] \nGain {DexterityPower:diff()} [gold]Dexterity[/gold] ",
+  "AQUARIUM-NO_GET_HIT.title": "Don't Get Hit",
+
+  "AQUARIUM-TAKE_FUTURE.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, gain {FrailPower:diff()} [gold]Frail[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]",
+  "AQUARIUM-TAKE_FUTURE.title": "Take From The Future",
+
+  "AQUARIUM-RELOAD.description": "[gold]Block[/gold] is not removed at the start of your {IfUpgraded:show:next 2 turns|next turn }. \nAt the start of your next turn, gain [gold]Vigor[/gold] equal to block",
+  "AQUARIUM-RELOAD.title": "Disassembly",
+  
+  "AQUARIUM-WHIRLPOOL.description": "Draw {Cards:diff()} cards \nGive a card in your hand [gold]Exhaust[/gold].",
+  "AQUARIUM-WHIRLPOOL.selectionScreenPrompt": "Choose a card to add [gold]Exhaust[/gold].",
+  "AQUARIUM-WHIRLPOOL.title": "Whirlpool",
+
+  "AQUARIUM-FORGETFUL.description": "Apply {WeakPower:diff()} [gold]Weak[/gold] \n Gain {FrailPower:diff()} [gold]Frail[/gold]",
+  "AQUARIUM-FORGETFUL.title": "Forgetful",
+
+  "AQUARIUM-LIGHT_UP.description": "Gain {Block:diff()} [gold]Block[/gold] \n Gain {FrailPower:diff()} [gold]Frail[/gold]",
+  "AQUARIUM-LIGHT_UP.title": "Light Up",
+
+  "AQUARIUM-RE_CYCLE.description": "Gain {Block:diff()} [gold]Block[/gold] for every card in your hand \n All cards played this turn [gold]Exhaust[/gold] after being played",
+  "AQUARIUM-RE_CYCLE.title": "ReCycle",
+
+  "AQUARIUM-STARTER_PISTOL.description": "Next turn, gain \n {VigorNextTurnPower:diff()} [gold]Vigor[/gold] and gain {Energy:energyIcons()}",
+  "AQUARIUM-STARTER_PISTOL.title": "Starter Pistol",
+
+  "AQUARIUM-RIDE_OR_DIE.description": "Gain {Block:diff()} [gold]Block[/gold] \n Unblocked damage you take this turn is doubled",
+  "AQUARIUM-RIDE_OR_DIE.title": "Ride Or Die",
+
+  "AQUARIUM-STORE_RAGE.description": "Gain {Block:diff()} [gold]Block[/gold] \n Gain {VigorPower:diff()} [gold]Vigor[/gold] ",
+  "AQUARIUM-STORE_RAGE.title": "Store Rage",
+
+  "AQUARIUM-ANCHOVY.description": "Lose all [gold]Vigor[/gold]. \n Gain it back next turn \n Draw a card ",
+  "AQUARIUM-ANCHOVY.title": "Anchovy",
+
+  "AQUARIUM-BEARING.description": "Deal {Damage:diff()} Damage {IfUpgraded:show:{Repeat:diff()} times |}\n This attack does not remove [gold]Vigor[/gold]",
+  "AQUARIUM-BEARING.title": "Bearing",
+
+  "AQUARIUM-TRASH_IT.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold].\\nAdd a [gold]Dazed[/gold] into your [gold]Draw Pile[/gold]. ",
+  "AQUARIUM-TRASH_IT.title": "Trash It",
+
+  "AQUARIUM-FRAGILE_HEAD.description": "Gain {Energy:energyIcons()} \n Gain {FrailPower:diff()} [gold]Frail[/gold] ",
+  "AQUARIUM-FRAGILE_HEAD.title": "Fragile Head",
+
+  "AQUARIUM-ASSAULT_BATTERY.description": "Deal {Damage:diff()} damage and apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "AQUARIUM-ASSAULT_BATTERY.title": "Assault Battery",
+
+  "AQUARIUM-SPECIAL_CUSTOMER.description": "Deal {Damage:diff()} to ALL enemies \n Gain [gold]Vigor[/gold] equal to damage dealt.",
+  "AQUARIUM-SPECIAL_CUSTOMER.title": "Special Customer",
+
+  "AQUARIUM-PREFIRE.description": "Deal {Damage:diff()} Damage \n Put a card from your [gold]Draw Pile[/gold] into your [gold]Discard Pile[/gold] ",
+  "AQUARIUM-PREFIRE.title": "Prefire",
+
+  "AQUARIUM-BANG_BANG.description": "Deal {Damage:diff()} Damage twice.",
+  "AQUARIUM-BANG_BANG.title": "Bang! Bang!",
+
+  "AQUARIUM-PIKE_STRIKE.description": "{IfUpgraded:show:Gain {VigorPower:diff()} [gold]Vigor[/gold]\n|}  Gain {Block:diff()} [gold]Block[/gold] equal to your [gold]Vigor[/gold] \n Deal {Damage:diff()} Damage",
+  "AQUARIUM-PIKE_STRIKE.title": "Pike Strike",
+
+  "AQUARIUM-BOTTLE_CANNON.description": "Can only be played if you have no potions \n Deal {Damage:diff()} Damage",
+  "AQUARIUM-BOTTLE_CANNON.title": "Bottle Cannon",
+
+  "AQUARIUM-MANTA_RAY.description": "Deal {Damage:diff()} Damage to ALL Enemies",
+  "AQUARIUM-MANTA_RAY.title": "Manta Ray",
+
+  "AQUARIUM-TAKE_FUTURE2.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, gain {FrailPower:diff()} [gold]Frail[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]\"",
+  "AQUARIUM-TAKE_FUTURE2.title": "Take From the Future ",
+  "AQUARIUM-TAKE_FUTURE3.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, gain {FrailPower:diff()} [gold]Frail[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]\"",
+  "AQUARIUM-TAKE_FUTURE3.title": "Take From the Future ",
+  "AQUARIUM-TAKE_FUTURE4.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, gain {FrailPower:diff()} [gold]Frail[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]\"",
+  "AQUARIUM-TAKE_FUTURE4.title": "Take From the Future ",
+  "AQUARIUM-TAKE_FUTURE5.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, gain {FrailPower:diff()} [gold]Frail[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]\"",
+  "AQUARIUM-TAKE_FUTURE5.title": "Take From the Future "
+}
