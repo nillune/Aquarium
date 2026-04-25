@@ -42,4 +42,6 @@ protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(2m);
     }
+
+
 }

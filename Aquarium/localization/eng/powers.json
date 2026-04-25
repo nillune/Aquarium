@@ -17,5 +17,9 @@
 
   "ANCHOVY_POWER.description": "Gain Vigor Next Turn\"",
   "ANCHOVY_POWER.smartDescription": "Gain Vigor Next Turn\"",
-  "ANCHOVY_POWER.title": "Vigor Next Turn"
+  "ANCHOVY_POWER.title": "Vigor Next Turn",
+
+  "BOOTSTRAP_POWER.description": "Vigor gets returned after attacking.",
+  "BOOTSTRAP_POWER.smartDescription": "Vigor gets returned after attacking.",
+  "BOOTSTRAP_POWER.title": "BootstrapPower"
 }

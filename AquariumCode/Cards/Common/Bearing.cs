@@ -12,11 +12,11 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Aquarium.AquariumCode.Cards.Common;
 
   
-public class Bearing() : AquariumCard(0,
+public class Bearing() : AquariumCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(0, ValueProp.Move), new RepeatVar(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(0, ValueProp.Move)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardCmdPatches.Weapon ];
    
     protected override async Task OnPlay(
@@ -40,10 +40,7 @@ public class Bearing() : AquariumCard(0,
 
     
 
-    protected override void OnUpgrade()
-    {
-        DynamicVars.Repeat.UpgradeValueBy(1m);
-    }
+    protected override void OnUpgrade() => this.EnergyCost.UpgradeBy(-1);
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
     
     //Smaller variants of card images for efficiency:

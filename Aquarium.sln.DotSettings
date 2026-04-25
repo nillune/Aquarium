@@ -82,4 +82,5 @@ public class $CLASS$() : Aquarium.AquariumCode.Relics.AquariumRelic {
     public override MegaCrit.Sts2.Core.Entities.Relics.RelicRarity Rarity =&gt; MegaCrit.Sts2.Core.Entities.Relics.RelicRarity.$RARITY$;
     
     $END$
-}</s:String></wpf:ResourceDictionary>
+}</s:String>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Wurms/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

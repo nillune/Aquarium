@@ -1,5 +1,14 @@
 {
   "AQUARIUM-CAN_OF_WURMS.description": "Whenever you gain {VigorPower:diff()} [gold]Vigor[/gold], increase the amount gained by 1",
   "AQUARIUM-CAN_OF_WURMS.flavor": "Wurmy...",
-  "AQUARIUM-CAN_OF_WURMS.title": "Can Of Wurms"
+  "AQUARIUM-CAN_OF_WURMS.title": "Can Of Wurms",
+
+  "AQUARIUM-DECRORATED_BOWL.description": "At the end of your turn, a random card gets retained.",
+  "AQUARIUM-DECRORATED_BOWL.flavor": "https://www.youtube.com/watch?v=5lerCtxHVu8",
+  "AQUARIUM-DECRORATED_BOWL.title": "Decrorated Bowl",
+
+  "AQUARIUM-LUXURY_BOWL.description": "At the end of your turn, choose up to 2 cards to get retained.",
+  "AQUARIUM-LUXURY_BOWL.flavor": "https://tenor.com/view/steve-smith-american-dad-bowl-bowl-steve-bow-bowl-bowl-gif-6240834832148063262",
+  "AQUARIUM-LUXURY_BOWL.title": "Luxury Bowl",
+  "AQUARIUM-LUXURY_BOWL.title.selectionScreenPrompt": "choose up to 2 cards to get retained."
 }

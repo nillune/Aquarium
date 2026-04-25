@@ -2,6 +2,7 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
 using Aquarium.AquariumCode.Extensions;
+using Aquarium.AquariumCode.Relics;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
@@ -38,7 +39,7 @@ public  class Aquarium : PlaceholderCharacterModel
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<MiniatureTent>()
+        ModelDb.Relic<DecroratedBowl>()
     ];
 
     public override CardPoolModel CardPool => ModelDb.CardPool<AquariumCardPool>();

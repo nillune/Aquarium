@@ -24,7 +24,7 @@ public class ReCycle() : AquariumCard(2,
     {
         
         ReCycle cardSource = this;
-        ReCyclePower vigorBlock = await PowerCmd.Apply<ReCyclePower>(cardSource.Owner.Creature, 1M,
+        ReCyclePower reCyclePower = await PowerCmd.Apply<ReCyclePower>(cardSource.Owner.Creature, 1M,
             cardSource.Owner.Creature, (CardModel)cardSource);
         foreach (CardModel card in PileType.Hand.GetPile(this.Owner).Cards)
         {

@@ -4,9 +4,10 @@ bin/
 .git/
 .idea/
 .vs/
-/project.godot
+publish/
 Properties/
 packages/
 .editorconfig
 *.user
 Directory.Build.props
+/project.godot

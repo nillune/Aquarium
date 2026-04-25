@@ -92,5 +92,12 @@
   "AQUARIUM-TAKE_FUTURE4.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, gain {FrailPower:diff()} [gold]Frail[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]\"",
   "AQUARIUM-TAKE_FUTURE4.title": "Take From the Future ",
   "AQUARIUM-TAKE_FUTURE5.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, gain {FrailPower:diff()} [gold]Frail[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]\"",
-  "AQUARIUM-TAKE_FUTURE5.title": "Take From the Future "
+  "AQUARIUM-TAKE_FUTURE5.title": "Take From the Future ",
+
+
+  "AQUARIUM-RAILGUN.description":  "Deal {Damage:diff()} damage {Repeat:diff()} times",
+  "AQUARIUM-RAILGUN.title": "Railgun",
+
+  "AQUARIUM-BOOTSTRAPPED.description": "[gold]Vigor[/gold] gets returned after attacking.",
+  "AQUARIUM-BOOTSTRAPPED.title": "Bootstrapped"
 }
