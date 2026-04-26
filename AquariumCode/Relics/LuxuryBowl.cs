@@ -21,7 +21,7 @@ namespace Aquarium.AquariumCode.Relics;
 public class LuxuryBowl() : AquariumRelic
 {
     public override RelicRarity Rarity =>
-        RelicRarity.Ancient;
+        RelicRarity.Starter;
     public override async Task BeforeFlushLate(PlayerChoiceContext choiceContext, Player player)
     {
         LuxuryBowl source = this;

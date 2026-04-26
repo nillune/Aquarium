@@ -40,6 +40,7 @@ public static class CardCmdPatches
     public static CardKeyword Weapon;
     
     static string _PreviousCard = "null";
+    
     public static void Postfix(PlayerChoiceContext choiceContext, CardModel card)
     {
         // Only autoplay if the card has the Weapon keyword
@@ -49,11 +50,13 @@ public static class CardCmdPatches
         if (_PreviousCard == card.Title)
             return;
         _PreviousCard = card.Title;
+        
+        // Don't set ExhaustOnNextPlay for Ethereal cards - let them follow their natural removal path
+      
+            card.ExhaustOnNextPlay = true;
+        
+        
         // Autoplay the exhausted card
         TaskHelper.RunSafely(CardCmd.AutoPlay(choiceContext, card, (Creature)null, AutoPlayType.Default));
     }
-   
-    
-    
-
 }

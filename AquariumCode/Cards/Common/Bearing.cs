@@ -28,7 +28,7 @@ public class Bearing() : AquariumCard(1,
      await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
          .FromCard(this)
          .Targeting(play.Target)
-         .WithHitCount(DynamicVars.Repeat.IntValue)
+        // .WithHitCount(DynamicVars.Repeat.IntValue)
          .WithHitFx("vfx/vfx_attack_slash")
          .Execute(choiceContext);
      await PowerCmd.Apply<VigorPower>(

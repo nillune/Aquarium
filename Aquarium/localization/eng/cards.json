@@ -55,7 +55,7 @@
   "AQUARIUM-ANCHOVY.description": "Lose all [gold]Vigor[/gold]. \n Gain it back next turn \n Draw a card ",
   "AQUARIUM-ANCHOVY.title": "Anchovy",
 
-  "AQUARIUM-BEARING.description": "Deal {Damage:diff()} Damage {IfUpgraded:show:{Repeat:diff()} times |}\n This attack does not remove [gold]Vigor[/gold]",
+  "AQUARIUM-BEARING.description": "Deal {Damage:diff()} Damage \n This attack does not remove [gold]Vigor[/gold]",
   "AQUARIUM-BEARING.title": "Bearing",
 
   "AQUARIUM-TRASH_IT.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold].\\nAdd a [gold]Dazed[/gold] into your [gold]Draw Pile[/gold]. ",
@@ -95,9 +95,15 @@
   "AQUARIUM-TAKE_FUTURE5.title": "Take From the Future ",
 
 
-  "AQUARIUM-RAILGUN.description":  "Deal {Damage:diff()} damage {Repeat:diff()} times",
+  "AQUARIUM-RAILGUN.description":  "Deal {Damage:diff()} damage to ALL enemies {Repeat:diff()} times ",
   "AQUARIUM-RAILGUN.title": "Railgun",
 
   "AQUARIUM-BOOTSTRAPPED.description": "[gold]Vigor[/gold] gets returned after attacking.",
-  "AQUARIUM-BOOTSTRAPPED.title": "Bootstrapped"
+  "AQUARIUM-BOOTSTRAPPED.title": "Bootstrapped",
+
+  "AQUARIUM-KNIFE_GUN.description": "Fill your hand with [gold]{IfUpgraded:show:Shivs+|Shivs}[/gold]",
+  "AQUARIUM-KNIFE_GUN.title": "Knife Gun",
+
+  "AQUARIUM-FEEL_PAIN.description": "Gain {Block:diff()} [gold]Block[/gold], if you have [gold]Frail[/gold], Gain {StrengthPower:diff()} [gold]Strength[/gold]",
+  "AQUARIUM-FEEL_PAIN.title": "Feel Pain"
 }
