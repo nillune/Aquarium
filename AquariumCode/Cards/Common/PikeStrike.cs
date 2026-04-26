@@ -13,7 +13,7 @@ namespace Aquarium.AquariumCode.Cards.Common;
   
 public class PikeStrike() : AquariumCard(0,
     CardType.Attack, CardRarity.Common,
-    TargetType.Self)
+    TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(1, ValueProp.Move), new PowerVar<VigorPower>(3), new BlockVar(0, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };

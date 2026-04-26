@@ -14,7 +14,7 @@ public class FeelPain() : AquariumCard(2,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new BlockVar(11, ValueProp.Move), new PowerVar<StrengthPower>(1M),];
-
+    protected override bool ShouldGlowGoldInternal => this.Owner.Creature.HasPower<FrailPower>();
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

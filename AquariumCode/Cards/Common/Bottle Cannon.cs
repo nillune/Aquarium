@@ -26,6 +26,7 @@ public class BottleCannon() : AquariumCard(1,
             return !Owner.Potions.Any<PotionModel>();
         }
     }
+    protected override bool ShouldGlowGoldInternal => !Owner.Potions.Any<PotionModel>();
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

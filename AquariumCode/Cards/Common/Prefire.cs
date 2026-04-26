@@ -15,7 +15,7 @@ namespace Aquarium.AquariumCode.Cards.Common;
   
 public class Prefire() : AquariumCard(1,
     CardType.Attack, CardRarity.Basic,
-    TargetType.Self)
+    TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(6, ValueProp.Move)];
 

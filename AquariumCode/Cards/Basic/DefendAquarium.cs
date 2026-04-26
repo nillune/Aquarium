@@ -15,13 +15,8 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 namespace Aquarium.AquariumCode.Cards.Basic;
 
   
-public class DefendAquarium : AquariumCard
+public class DefendAquarium() : AquariumCard(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
 {
-    public DefendAquarium() : base(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
-    {
-
-       
-    }
     protected override HashSet<CardTag> CanonicalTags
     {
         get => new HashSet<CardTag>() { CardTag.Defend };

@@ -40,23 +40,34 @@ public static class CardCmdPatches
     public static CardKeyword Weapon;
     
     static string _PreviousCard = "null";
+    private static int _PreviousCardInt = 0;
     
     public static void Postfix(PlayerChoiceContext choiceContext, CardModel card)
     {
         // Only autoplay if the card has the Weapon keyword
-      
         if (!card.Keywords.Contains(Weapon))
             return;
         if (_PreviousCard == card.Title)
-            return;
+            if (_PreviousCardInt == 1) 
+                return;
+        _PreviousCardInt = 1;
         _PreviousCard = card.Title;
+        if(_PreviousCard != card.Title)
+            _PreviousCardInt = 0;
+        if (card.Keywords.Contains(CardKeyword.Ethereal))
+                 card.AddKeyword(CardKeyword.Exhaust);
+        card.ExhaustOnNextPlay = true;
         
-        // Don't set ExhaustOnNextPlay for Ethereal cards - let them follow their natural removal path
-      
-            card.ExhaustOnNextPlay = true;
-        
-        
-        // Autoplay the exhausted card
+        // Autoplay the card
         TaskHelper.RunSafely(CardCmd.AutoPlay(choiceContext, card, (Creature)null, AutoPlayType.Default));
+    }
+        [HarmonyPatch(typeof(CombatManager), nameof(CombatManager.IsEnding))]
+    public static class CombatEndPatch
+    {
+        public static void Postfix()
+        {
+            _PreviousCard = "null";
+            _PreviousCardInt = 0;
+        }
     }
 }

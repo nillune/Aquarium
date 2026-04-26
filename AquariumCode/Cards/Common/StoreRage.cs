@@ -20,7 +20,7 @@ public class StoreRage() : AquariumCard(2,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [  new BlockVar(10, ValueProp.Move), new PowerVar<VigorPower>(6)];
-
+   // public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardCmdPatches.Weapon ,CardKeyword.Ethereal ];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

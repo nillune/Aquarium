@@ -1,12 +1,15 @@
+using System.Reflection;
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
 
 namespace Aquarium.AquariumCode;
 
-[ModInitializer(nameof(Initialize))]
+[ModInitializer(nameof(Initialize) )]
+
 public partial class MainFile : Node
 {
+    
     public const string ModId = "Aquarium"; //Used for resource filepath
     public const string ResPath = $"res://{ModId}";
 

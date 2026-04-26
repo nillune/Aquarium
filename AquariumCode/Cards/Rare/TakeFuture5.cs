@@ -15,7 +15,7 @@ public class TakeFuture5() : AquariumCard(0,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar (2), new PowerVar<VigorPower>(10), new CardsVar(3), new PowerVar<FrailPower>(99),new PowerVar<VulnerablePower>(99)];
-
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardKeyword.Exhaust, CardCmdPatches.Weapon ];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -23,16 +23,9 @@ public class TakeFuture5() : AquariumCard(0,
         TakeFuture5 takeFuture = this;
         await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, takeFuture.Owner );
         IEnumerable<CardModel> cardModels = await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, takeFuture.Owner);
-        await PowerCmd.Apply<FrailPower>(
-            Owner.Creature,
-            DynamicVars[nameof(FrailPower)].BaseValue,
-            Owner.Creature,
-            this);
-        await PowerCmd.Apply<VulnerablePower>(
-            Owner.Creature,
-            DynamicVars[nameof(VulnerablePower)].BaseValue,
-            Owner.Creature,
-            this);
+        TakeFuture5 cardSource = this;
+        VulnNextTurnPower vulnNextTurnPower = await PowerCmd.Apply<VulnNextTurnPower>(cardSource.Owner.Creature, 99M,
+            cardSource.Owner.Creature, (CardModel)cardSource);
         await PowerCmd.Apply<VigorPower>(
             Owner.Creature,
             DynamicVars[nameof(VigorPower)].BaseValue,

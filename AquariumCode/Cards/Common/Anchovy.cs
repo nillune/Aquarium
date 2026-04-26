@@ -44,9 +44,10 @@ public class Anchovy() : AquariumCard(0,
                 -Owner.Creature.GetPowerAmount<VigorPower>(),
                 Owner.Creature,
                 (CardModel) null);
-            IEnumerable<CardModel> cardModels =
-                await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, anchovy.Owner);
+           
         }
+        IEnumerable<CardModel> cardModels =
+            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, anchovy.Owner);
     }
 
     protected override void OnUpgrade() => this.RemoveKeyword(CardKeyword.Exhaust);

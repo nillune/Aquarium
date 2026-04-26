@@ -19,8 +19,8 @@ public class LightUp() : AquariumCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<FrailPower>(1),
-        new BlockVar(15, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<FrailPower>(2),
+        new BlockVar(10, ValueProp.Move)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -36,7 +36,7 @@ public class LightUp() : AquariumCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Block"].UpgradeValueBy(5m);
+        DynamicVars["Block"].UpgradeValueBy(3m);
     }
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
     

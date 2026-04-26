@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://731kt20n1u1k"]
+
+[ext_resource type="Texture2D" uid="uid://dds3h4iidhevk" path="res://Aquarium/scenes/placeholder.png" id="1_qnukr"]
+
+[node name="Aquarium" type="Node2D" unique_id=1580666285]
+
+[node name="Bounds" type="Control" parent="." unique_id=1968539222]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -106.0
+offset_top = -330.0
+offset_right = 105.0
+offset_bottom = 13.0
+
+[node name="CenterPos" type="Marker2D" parent="." unique_id=1632477572]
+position = Vector2(3, -181)
+
+[node name="IntentPos" type="Marker2D" parent="." unique_id=259655100]
+position = Vector2(3, -332)
+
+[node name="Visuals" type="Sprite2D" parent="." unique_id=382455819]
+position = Vector2(6, -147)
+scale = Vector2(0.24800001, 0.3115)
+texture = ExtResource("1_qnukr")
