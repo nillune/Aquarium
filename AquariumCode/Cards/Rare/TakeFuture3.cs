@@ -23,11 +23,9 @@ public class TakeFuture3() : AquariumCard(0,
         TakeFuture3 takeFuture = this;
         await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, takeFuture.Owner );
         IEnumerable<CardModel> cardModels = await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, takeFuture.Owner);
-        await PowerCmd.Apply<FrailPower>(
-            Owner.Creature,
-            DynamicVars[nameof(FrailPower)].BaseValue,
-            Owner.Creature,
-            this);
+        TakeFuture3 cardSource = this;
+        VulnNextTurnPower vulnNextTurnPower = await PowerCmd.Apply<VulnNextTurnPower>(cardSource.Owner.Creature, 99M,
+            cardSource.Owner.Creature, (CardModel)cardSource);
         await PowerCmd.Apply<VulnerablePower>(
             Owner.Creature,
             DynamicVars[nameof(VulnerablePower)].BaseValue,

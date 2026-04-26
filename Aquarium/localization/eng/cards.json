@@ -24,7 +24,7 @@
   "AQUARIUM-NO_GET_HIT.description": "Gain {FrailPower:diff()} [gold]Frail[/gold] \nGain {DexterityPower:diff()} [gold]Dexterity[/gold] ",
   "AQUARIUM-NO_GET_HIT.title": "Don't Get Hit",
 
-  "AQUARIUM-TAKE_FUTURE.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, gain {FrailPower:diff()} [gold]Frail[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]",
+  "AQUARIUM-TAKE_FUTURE.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, Gain {VulnerablePower:diff()} [gold]Vulnerable[/gold]",
   "AQUARIUM-TAKE_FUTURE.title": "Take From The Future",
 
   "AQUARIUM-RELOAD.description": "[gold]Block[/gold] is not removed at the start of your {IfUpgraded:show:next 2 turns|next turn }. \nAt the start of your next turn, gain [gold]Vigor[/gold] equal to block",
@@ -105,5 +105,11 @@
   "AQUARIUM-KNIFE_GUN.title": "Knife Gun",
 
   "AQUARIUM-FEEL_PAIN.description": "Gain {Block:diff()} [gold]Block[/gold], if you have [gold]Frail[/gold], Gain {StrengthPower:diff()} [gold]Strength[/gold]",
-  "AQUARIUM-FEEL_PAIN.title": "Feel Pain"
+  "AQUARIUM-FEEL_PAIN.title": "Feel Pain",
+
+  "AQUARIUM-SHOW_OFF.description": "Deal {Damage:diff()} damage \n  Gain {VulnerablePower:diff()} [gold]Vulnerable[/gold]",
+  "AQUARIUM-SHOW_OFF.title": "Show-Off",
+
+  "AQUARIUM-BINDING_KELP.description": "Deal {Damage:diff()} damage to ALL enemies \n Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies",
+  "AQUARIUM-BINDING_KELP.title": "Binding Kelp"
 }

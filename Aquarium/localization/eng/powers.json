@@ -21,5 +21,9 @@
 
   "BOOTSTRAP_POWER.description": "Vigor gets returned after attacking.",
   "BOOTSTRAP_POWER.smartDescription": "Vigor gets returned after attacking.",
-  "BOOTSTRAP_POWER.title": "BootstrapPower"
+  "BOOTSTRAP_POWER.title": "Bootstrapped",
+
+  "VULN_NEXT_TURN_POWER.description": "Gain 99 Vulnerable Next turn",
+  "VULN_NEXT_TURN_POWER.smartDescription": "Gain 99 Vulnerable Next turn",
+  "VULN_NEXT_TURN_POWER.title": "Vulnerable Power"
 }
