@@ -48,7 +48,7 @@ public class BootstrapPower : PowerModel
                 RealVigor,
                 power.Owner,
                 (CardModel)null);
-        
+        power.Flash();
         // RealVigor = power.Owner.GetPowerAmount<VigorPower>();
         
     }

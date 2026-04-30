@@ -7,10 +7,10 @@
   "AQUARIUM-AQUARIUM.description": "A fish-piloted mech from the Underdocks.\n Endlessly versatile, skilled with any Weapon.",
   "AQUARIUM-AQUARIUM.eventDeathPrevention": "Fshhhhhhhhhhhhhh ",
   "AQUARIUM-AQUARIUM.goldMonologue": "Line spoken when obtaining a large amount of gold",
-  "AQUARIUM-AQUARIUM.possessiveAdjective": "she/her/hers",
-  "AQUARIUM-AQUARIUM.pronounObject": "she/hers/her",
-  "AQUARIUM-AQUARIUM.pronounPossessive": "she/hers/her",
-  "AQUARIUM-AQUARIUM.pronounSubject": "she/hers/her",
+  "AQUARIUM-AQUARIUM.possessiveAdjective": "her",
+  "AQUARIUM-AQUARIUM.pronounObject": "her",
+  "AQUARIUM-AQUARIUM.pronounPossessive": "she",
+  "AQUARIUM-AQUARIUM.pronounSubject": "she",
   "AQUARIUM-AQUARIUM.title": "The Aquarium",
   "AQUARIUM-AQUARIUM.titleObject": "The Aquarium"
 

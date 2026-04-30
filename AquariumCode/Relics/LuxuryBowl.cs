@@ -1,6 +1,7 @@
 ﻿using Aquarium.AquariumCode.Character;
 using Aquarium.AquariumCode.Extensions;
 using Aquarium.AquariumCode.Relics;
+using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.CardSelection;
@@ -20,6 +21,7 @@ namespace Aquarium.AquariumCode.Relics;
 [Pool(typeof(AquariumRelicPool))]
 public class LuxuryBowl() : AquariumRelic
 {
+   
     public override RelicRarity Rarity =>
         RelicRarity.Starter;
     public override async Task BeforeFlushLate(PlayerChoiceContext choiceContext, Player player)

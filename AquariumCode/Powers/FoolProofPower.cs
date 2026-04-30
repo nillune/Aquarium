@@ -34,8 +34,11 @@ public class FoolproofPower : PowerModel
         PlayerChoiceContext choiceContext,
         CombatState combatState)
     {
+        FoolproofPower foolproofPower = this;
         CardsPlayedThisTurn = 0;
         if (!AttackPlayedThisTurn)
+         
+        foolproofPower.Flash();
             AttackPlayedLastTurn = false;
         AttackPlayedThisTurn = false;
 

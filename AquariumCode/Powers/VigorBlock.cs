@@ -35,6 +35,7 @@ public sealed class VigorBlock : PowerModel
             power.Owner.Block,
             power.Owner,
             (CardModel) null);
+        power.Flash();
         await PowerCmd.Remove((PowerModel) power);
     }
 }

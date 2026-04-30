@@ -140,14 +140,32 @@
   
   "AQUARIUM-OCTORIFLE.description": "Deal {Damage:diff()} damage \n Choose an attack in your hand to become [gold]Inky[/gold].",
   "AQUARIUM-OCTORIFLE.title": "Octorifle",
-
+  "AQUARIUM-OCTORIFLE.selectionScreenPrompt": "Choose a card to get [gold]Inky[/gold]",
+  
   "AQUARIUM-FISHTICUFFS.description": "Deal {Damage:diff()} damage for each unique effect you have.",
   "AQUARIUM-FISHTICUFFS.title": "Fishticuffs",
+ 
 
   "AQUARIUM-DRAGUN_FISH.description": "After playing an attack that hits ALL enemies, gain {Power:diff()} [gold]Vigor[/gold].",
   "AQUARIUM-DRAGUN_FISH.title": "DragunFish",
  
   "AQUARIUM-FOOLPROOF.description": "If you do not play any attack on your turn. The first card you play next turn is free.",
-  "AQUARIUM-FOOLPROOF.title": "Foolproof Strategy"
-  
+  "AQUARIUM-FOOLPROOF.title": "Foolproof Strategy",
+
+  "AQUARIUM-REEL_BACK.description": "Choose a card from your [gold]exhaust pile[/gold]. [gold]Exhaust[/gold] it again.",
+  "AQUARIUM-REEL_BACK.title": "Reel Back",
+  "AQUARIUM-REEL_BACK.selectionScreenPrompt": "Choose a card to get [gold]Exhaust[/gold]",
+
+  "AQUARIUM-CARRIED.description": "All other players Gain {DexterityPower:diff()} [gold]Dexterity[/gold] \n  Gain {FrailPower:diff()} [gold]Frail[/gold]",
+  "AQUARIUM-CARRIED.title": "Carried",
+
+  "AQUARIUM-IMPROVISE.description": "Choose {CardSelect:diff()} {IfUpgraded:show:cards|card} to gain [gold]Weapon[/gold]\n[gold]Exhaust[/gold] {IfUpgraded:show:them|it} ",
+  "AQUARIUM-IMPROVISE.title": "Improvise",
+  "AQUARIUM-IMPROVISE.selectionScreenPrompt": "Choose {CardSelect:diff()} {IfUpgraded:show:cards|card} to gain [gold]Weapon[/gold] then get [gold]Exhausted[/gold] ",
+          
+  "AQUARIUM-SMOKE_BOMB.description": "At the end of {Turns:diff()} {Turns:plural:turn|turns}, Gain {BombDexterity:diff()} [gold]Dexterity[/gold]",
+  "AQUARIUM-SMOKE_BOMB.title": "Smoke Bomb",
+
+  "AQUARIUM-AINT_BROKE.description": "Whenever you gain [gold]Frail[/gold], draw a card.",
+  "AQUARIUM-AINT_BROKE.title": "It Ain't Broke"
 }

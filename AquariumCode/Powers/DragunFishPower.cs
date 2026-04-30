@@ -24,6 +24,7 @@ public class DragunFishPower : PowerModel
             power.Owner.Block,
             power.Owner,
             (CardModel) null);
+        power.Flash();
     
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Aquarium.AquariumCode.Extensions;
+using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -17,7 +18,7 @@ public class Railgun : AquariumCard
        
 
     }
-        
+   
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(5, ValueProp.Move), new RepeatVar(5)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardCmdPatches.Weapon ];
     protected override async Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, CardPlay play)

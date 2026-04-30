@@ -21,6 +21,7 @@ public class Whirlpool() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay cardPlay)
     {
+        
         Whirlpool whirlpool  = this;
         IEnumerable<CardModel> cardModels = await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, whirlpool.Owner);
        

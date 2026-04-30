@@ -30,6 +30,7 @@ public sealed class VulnNextTurnPower : PowerModel
             power.Amount,
             power.Owner,
             (CardModel) null);
+        power.Flash();
         await PowerCmd.Remove((PowerModel)power);
     }
 }

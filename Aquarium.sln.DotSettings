@@ -84,4 +84,5 @@ public class $CLASS$() : Aquarium.AquariumCode.Relics.AquariumRelic {
     $END$
 }</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Octorifle/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Prefire/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Wurms/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

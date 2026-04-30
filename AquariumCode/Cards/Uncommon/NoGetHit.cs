@@ -34,7 +34,7 @@ public class NoGetHit() : AquariumCard(1,
             Owner.Creature,
             this);
         NoGetHit noGetHit = this;
-        IEnumerable<CardModel> cardModels = await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, noGetHit.Owner);
+        //IEnumerable<CardModel> cardModels = await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, noGetHit.Owner);
     }
 
     protected override void OnUpgrade()

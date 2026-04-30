@@ -30,6 +30,7 @@ public sealed class RideOrDiePower : PowerModel
         Creature? dealer,
         CardModel? cardSource)
     {
+        
         return target == this.Owner || !props.IsPoweredAttack() ? amount = amount + amount : amount = amount;
     }
 

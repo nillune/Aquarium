@@ -34,8 +34,11 @@ public sealed class ReCyclePower : PowerModel
         PileType pileType,
         CardPilePosition position)
     {
+    
         if (card.Owner.Creature != this.Owner)
             return (pileType, position);
+        ReCyclePower reCyclePower = this;
+        reCyclePower.Flash();
         return  (PileType.Exhaust, position);
     }
 

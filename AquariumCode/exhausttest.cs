@@ -1,6 +1,9 @@
 ﻿using System.Reflection;
+using Aquarium.AquariumCode.Cards.Ancient;
+using Aquarium.AquariumCode.Cards.Basic;
 using BaseLib.Patches.Content;
 using HarmonyLib;
+using MegaCrit.Sts2.Core.Models.Relics;
 
 namespace Aquarium.AquariumCode;
 using Godot;
@@ -36,6 +39,15 @@ using MegaCrit.Sts2.Core.Commands;
 [HarmonyPatch(typeof(CardCmd), nameof(CardCmd.Exhaust))]
 public static class CardCmdPatches
 {
+    [HarmonyPatch(typeof(ArchaicTooth), "TranscendenceUpgrades", MethodType.Getter)]
+    public class ArchaicToothPatch
+    {
+        [HarmonyPostfix]
+        public static void Postfix(ref Dictionary<ModelId, CardModel> __result)
+        {
+            __result[ModelDb.Card<Blaster>().Id] = ModelDb.Card<Railgun>();
+        }
+    }
     [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Weapon;
     
@@ -66,6 +78,26 @@ public static class CardCmdPatches
     {
         public static void Postfix()
         {
+            _PreviousCard = "null";
+            _PreviousCardInt = 0;
+        }
+    }
+    [HarmonyPatch(typeof(CombatManager), nameof(CombatManager.IsEnemyTurnStarted))]
+    public static class MoreWeaponStuff
+    {
+        public static void Postfix()
+        {
+            
+            _PreviousCard = "null";
+            _PreviousCardInt = 0;
+        }
+    }
+     [HarmonyPatch(typeof(CardCmd), nameof(CardCmd.Discard))]   
+     public static class EvenMoreWeaponFixes
+    {
+        public static void Postfix()
+        {
+            
             _PreviousCard = "null";
             _PreviousCardInt = 0;
         }
