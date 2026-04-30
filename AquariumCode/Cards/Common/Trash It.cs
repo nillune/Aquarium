@@ -1,6 +1,7 @@
 ﻿using Aquarium.AquariumCode.Cards;
 using Aquarium.AquariumCode.Extensions;
 using BaseLib.Extensions;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -23,13 +24,18 @@ public class Trash_It() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        Trash_It trashIt = this;
+        Trash_It source = this;
         await PowerCmd.Apply<VigorPower>(
             Owner.Creature,
             DynamicVars[nameof(VigorPower)].BaseValue,
             Owner.Creature,
             this);
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat((CardModel) trashIt.CombatState.CreateCard<Dazed>(trashIt.Owner), PileType.Draw, true));
+        CardSelectorPrefs prefs = new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1);
+        CardModel card = (await CardSelectCmd.FromHand(choiceContext, source.Owner, prefs, (Func<CardModel, bool>) null, (AbstractModel) source)).FirstOrDefault<CardModel>();
+        if (card == null)
+            return;
+        await CardCmd.Exhaust(choiceContext, card);
+        //CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat((CardModel) trashIt.CombatState.CreateCard<Dazed>(trashIt.Owner), PileType.Draw, true));
     }
 
     protected override void OnUpgrade()

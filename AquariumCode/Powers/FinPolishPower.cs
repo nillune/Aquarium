@@ -16,8 +16,8 @@ public override PowerType Type => PowerType.Buff;
 
 public override PowerStackType StackType => PowerStackType.Counter;
 
-public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
-{
+public override async Task BeforeCardPlayed(CardPlay cardPlay)
+                             {
     FinPolishPower finPolishPower = this;
     FinPolishPower power = this;
     if (cardPlay.Card.Owner != finPolishPower.Owner.Player || cardPlay.Card.Type != CardType.Skill)

@@ -47,8 +47,8 @@
   "FOOLPROOF_POWER.smartDescription": "Play cards for free after not attacking",
   "FOOLPROOF_POWER.title": "FoolproofPower",
 
-  "SMOKE_BOMB_POWER.description": "At the end of {Amount:plural:this turn|[blue]{}[/blue] turns}, deal [blue]{DexterityPower}[/blue] damage to ALL enemies.",
-  "SMOKE_BOMB_POWER.smartDescription": "At the end of {Amount:plural:this turn|[blue]{}[/blue] turns}, deal [blue]{DexterityPower}[/blue] damage to ALL enemies.",
+  "SMOKE_BOMB_POWER.description": "At the end of {Amount:plural:this turn|[blue]{}[/blue] turns}, Gain [blue]{DexterityPower}[/blue] Dexterity.",
+  "SMOKE_BOMB_POWER.smartDescription": "At the end of {Amount:plural:this turn|[blue]{}[/blue] turns}, Gain [blue]{DexterityPower}[/blue] Dexterity.",
   "SMOKE_BOMB_POWER.title": "Smoke Bomb Power",
 
   "AINT_BROKE_POWER.description": "Whenever you gain [gold]Frail[/gold], draw [blue]1[/blue] card",

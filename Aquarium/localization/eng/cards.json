@@ -18,7 +18,7 @@
   "AQUARIUM-AMMO_BAG.description": "Gain {Energy:energyIcons()}",
   "AQUARIUM-AMMO_BAG.title": "Ammo Bag",
   
-  "AQUARIUM-CONCEALED_WEAPON.description": "Draw {Cards:diff()}",
+  "AQUARIUM-CONCEALED_WEAPON.description": "Draw {Cards:diff()} Cards.",
   "AQUARIUM-CONCEALED_WEAPON.title": "Concealed Weapon",
   
   "AQUARIUM-NO_GET_HIT.description": "Gain {FrailPower:diff()} [gold]Frail[/gold] \nGain {DexterityPower:diff()} [gold]Dexterity[/gold] ",
@@ -147,7 +147,7 @@
  
 
   "AQUARIUM-DRAGUN_FISH.description": "After playing an attack that hits ALL enemies, gain {Power:diff()} [gold]Vigor[/gold].",
-  "AQUARIUM-DRAGUN_FISH.title": "DragunFish",
+  "AQUARIUM-DRAGUN_FISH.title": "Dragunfish",
  
   "AQUARIUM-FOOLPROOF.description": "If you do not play any attack on your turn. The first card you play next turn is free.",
   "AQUARIUM-FOOLPROOF.title": "Foolproof Strategy",
@@ -167,5 +167,14 @@
   "AQUARIUM-SMOKE_BOMB.title": "Smoke Bomb",
 
   "AQUARIUM-AINT_BROKE.description": "Whenever you gain [gold]Frail[/gold], draw a card.",
-  "AQUARIUM-AINT_BROKE.title": "It Ain't Broke"
+  "AQUARIUM-AINT_BROKE.title": "It Ain't Broke",
+
+  "AQUARIUM-SUNKEN_TREASURE.description": "Deal {Damage:diff()} damage. If [gold]Fatal[/gold], gain a relic after combat. ",
+  "AQUARIUM-SUNKEN_TREASURE.title": "Sunken Treasure",
+
+  "AQUARIUM-SWIRLING_GLOWWATER.description": "[gold]Exhaust[/gold] a Card \n {IfUpgraded:show:Draw a card|}",
+  "AQUARIUM-SWIRLING_GLOWWATER.title": "Swirling Glowwater",
+
+  "AQUARIUM-PESCOMANCER.description": "Deal {Damage:diff()} damage {Repeat:diff()} times. Increase HP loss by 1 for this combat. \n Add a [gold]Dazed[/gold] to your draw pile.",
+  "AQUARIUM-PESCOMANCER.title": "Pescomancer"
 }

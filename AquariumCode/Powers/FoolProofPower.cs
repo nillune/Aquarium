@@ -23,8 +23,16 @@ public class FoolproofPower : PowerModel
     private bool AttackPlayedLastTurn = true; 
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
+        FoolproofPower power = this;
+        if (cardPlay.Card.Owner.Creature != power.Owner)
+            return;
         if (cardPlay.Card.Type == CardType.Attack)
+        {
             AttackPlayedThisTurn = true;
+            AttackPlayedLastTurn = true;
+        }
+           
+        
         CardsPlayedThisTurn = CardsPlayedThisTurn + 1;
         
     }
@@ -37,9 +45,9 @@ public class FoolproofPower : PowerModel
         FoolproofPower foolproofPower = this;
         CardsPlayedThisTurn = 0;
         if (!AttackPlayedThisTurn)
-         
-        foolproofPower.Flash();
             AttackPlayedLastTurn = false;
+        foolproofPower.Flash();
+           
         AttackPlayedThisTurn = false;
 
     }
@@ -51,7 +59,7 @@ public class FoolproofPower : PowerModel
     {
         modifiedCost = originalCost;
        
-            if (this.ShouldSkip(card) || AttackPlayedLastTurn)
+            if (this.ShouldSkip(card))
                 return false;
         
 
@@ -65,7 +73,7 @@ public class FoolproofPower : PowerModel
         out Decimal modifiedCost)
     {
         modifiedCost = originalCost;
-        if (this.ShouldSkip(card)  || AttackPlayedLastTurn )
+        if (this.ShouldSkip(card)   )
         
             return false;
         modifiedCost = 0M;
@@ -94,7 +102,7 @@ public class FoolproofPower : PowerModel
             label_5:
             flag1 = !flag2;
         }
-        return flag1 || CardsPlayedThisTurn >= this.Amount ;
+        return flag1 || CardsPlayedThisTurn >= this.Amount || AttackPlayedLastTurn ;
     }
 
 

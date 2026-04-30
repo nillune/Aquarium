@@ -25,5 +25,5 @@ public class FinPolish() : AquariumCard(1,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }
 
-    protected override void OnUpgrade() => this.DynamicVars["Power"].UpgradeValueBy(3M);
+    protected override void OnUpgrade() => this.DynamicVars["Power"].UpgradeValueBy(1M);
 }

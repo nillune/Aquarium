@@ -24,7 +24,7 @@ public class Anchovy() : AquariumCard(0,
     TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardKeyword.Exhaust ];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1), new DynamicVar(nameof(AnchovyPower), 3M)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
