@@ -23,7 +23,7 @@ public class EndlesslyVersatile() : AquariumCard(2,
     {
         foreach (CardModel allCard in this.Owner.PlayerCombatState.AllCards)
         {
-            if (allCard != this && allCard.IsUpgradable)
+           
                 CardCmd.ApplyKeyword(allCard,  CardCmdPatches.Weapon );
         }
 

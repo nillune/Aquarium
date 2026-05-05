@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Aquarium.AquariumCode.Cards.Common;
 
@@ -13,7 +14,7 @@ public class SwirlingGlowwater() : AquariumCard(0,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1), new PowerVar<FrailPower>(1)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -25,8 +26,14 @@ public class SwirlingGlowwater() : AquariumCard(0,
         if (card == null)
             return;
         await CardCmd.Exhaust(choiceContext, card);
+        await PowerCmd.Apply<FrailPower>(
+            Owner.Creature,
+            DynamicVars[nameof(FrailPower)].BaseValue,
+            Owner.Creature,
+            this);
         if (source.IsUpgraded)
             await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, source.Owner);
+        
     }
 
     

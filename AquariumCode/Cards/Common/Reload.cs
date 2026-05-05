@@ -35,7 +35,8 @@ public class Reload() : AquariumCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Blur"].UpgradeValueBy(1M);
+   this.EnergyCost.UpgradeBy(-1);
+       // DynamicVars["Blur"].UpgradeValueBy(1M);
     }
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
     

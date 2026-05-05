@@ -18,7 +18,7 @@ public class AssaultBattery() : AquariumCard(2,
     CardType.Attack, CardRarity.Common,
     TargetType.AllEnemies)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(10, ValueProp.Move),  (DynamicVar) new PowerVar<WeakPower>(1M) ];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(10, ValueProp.Move),  (DynamicVar) new PowerVar<VulnerablePower>(2M) ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -38,7 +38,7 @@ public class AssaultBattery() : AquariumCard(2,
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars.Weak.UpgradeValueBy(1M);
+        this.DynamicVars.Damage.UpgradeValueBy(5M);
     }
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
     

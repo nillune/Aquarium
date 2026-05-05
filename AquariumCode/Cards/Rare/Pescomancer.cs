@@ -1,6 +1,7 @@
 ﻿using Aquarium.AquariumCode.Cards;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -11,7 +12,7 @@ namespace Aquarium.AquariumCode.Cards.Rare;
 
   
 public class Pescomancer() : AquariumCard(1,
-    CardType.Attack, CardRarity.Rare,
+    CardType.Skill, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
     private const string _increaseKey = "Increase";
@@ -32,12 +33,13 @@ public class Pescomancer() : AquariumCard(1,
         CardPlay play)
     {
         Pescomancer pescomancer = this;
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
-            .Targeting(play.Target)
-            .WithHitCount(DynamicVars.Repeat.IntValue)
-            .WithHitFx("vfx/vfx_attack_slash")
-            .Execute(choiceContext);
+        Pescomancer cardSource = this;
+        for (int i = 0; i < DynamicVars.Repeat.IntValue; i++)
+        {
+            IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, play.Target,
+                cardSource.DynamicVars.Damage, (CardModel)cardSource);
+        }
+
         Decimal baseValue = this.DynamicVars["Increase"].BaseValue;
         DamageVar damage = this.DynamicVars.Damage;
         damage.BaseValue = damage.BaseValue + baseValue;

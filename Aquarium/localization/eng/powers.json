@@ -53,5 +53,21 @@
 
   "AINT_BROKE_POWER.description": "Whenever you gain [gold]Frail[/gold], draw [blue]1[/blue] card",
   "AINT_BROKE_POWER.smartDescription": "Whenever you gain [gold]Frail[/gold], draw [blue]{Amount}[/blue] {Amount:plural:card|cards}.",
-  "AINT_BROKE_POWER.title": "It Ain't Broke Power"
+  "AINT_BROKE_POWER.title": "It Ain't Broke Power",
+
+  "DONT_FIX_POWER.description": "Gain block after playing the same card twice.",
+  "DONT_FIX_POWER.smartDescription": "After playing a card with the same name twice in a row, gain {Amount} [gold]Block[/gold].",
+  "DONT_FIX_POWER.title": "Don't Fix It",
+
+  "PORTABLE_BUBBLER_POWER.description": "At turn start, Gain [gold]Vigor[/gold] and [gold]Block[/gold]",
+  "PORTABLE_BUBBLER_POWER.smartDescription": "At the star tof your turn, Gain {Amount} [gold]Vigor[/gold] and {Amount} [gold]Block[/gold]",
+  "PORTABLE_BUBBLER_POWER.title": "Portable Bubbler Power",
+
+  "ATTENTION_TO_DETAIL_POWER.description": "At start of turn, {Amount} extra energy, draw 1 less card.",
+  "ATTENTION_TO_DETAIL_POWER.smartDescription": "At the start of your turn gain {Amount:energyIcons()}, and draw 1 less card. ",
+  "ATTENTION_TO_DETAIL_POWER.title": "Attention To Detail Power",
+
+  "DANCE_VERMIN_POWER.description": "Lose HP next turn",
+  "DANCE_VERMIN_POWER.smartDescription": "At the end of your next turn, lose {Power} HP",
+  "DANCE_VERMIN_POWER.title": "DanceVerminPower"
 }

@@ -58,13 +58,13 @@
   "AQUARIUM-BEARING.description": "Deal {Damage:diff()} Damage \n This attack does not remove [gold]Vigor[/gold]",
   "AQUARIUM-BEARING.title": "Bearing",
 
-  "AQUARIUM-TRASH_IT.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold].\\nAdd a [gold]Dazed[/gold] into your [gold]Draw Pile[/gold]. ",
+  "AQUARIUM-TRASH_IT.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold].\n[gold]Exhaust[/gold] 1 card. ",
   "AQUARIUM-TRASH_IT.title": "Trash It",
 
   "AQUARIUM-FRAGILE_HEAD.description": "Gain {Energy:energyIcons()} \n Gain {FrailPower:diff()} [gold]Frail[/gold] ",
   "AQUARIUM-FRAGILE_HEAD.title": "Fragile Head",
 
-  "AQUARIUM-ASSAULT_BATTERY.description": "Deal {Damage:diff()} damage and apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "AQUARIUM-ASSAULT_BATTERY.description": "Deal {Damage:diff()} damage and apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies.",
   "AQUARIUM-ASSAULT_BATTERY.title": "Assault Battery",
 
   "AQUARIUM-SPECIAL_CUSTOMER.description": "Deal {Damage:diff()} to ALL enemies \n Gain [gold]Vigor[/gold] equal to damage dealt.",
@@ -108,7 +108,7 @@
   "AQUARIUM-FEEL_PAIN.description": "Gain {Block:diff()} [gold]Block[/gold], if you have [gold]Frail[/gold], Gain {StrengthPower:diff()} [gold]Strength[/gold]",
   "AQUARIUM-FEEL_PAIN.title": "Feel Pain",
 
-  "AQUARIUM-SHOW_OFF.description": "Deal {Damage:diff()} damage \n  Gain {VulnerablePower:diff()} [gold]Vulnerable[/gold]",
+  "AQUARIUM-SHOW_OFF.description": "Deal {Damage:diff()} damage \n [gold]Exhaust[/gold] 1 card",
   "AQUARIUM-SHOW_OFF.title": "Show-Off",
 
   "AQUARIUM-BINDING_KELP.description": "Deal {Damage:diff()} damage to ALL enemies \n Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies",
@@ -152,7 +152,7 @@
   "AQUARIUM-FOOLPROOF.description": "If you do not play any attack on your turn. The first card you play next turn is free.",
   "AQUARIUM-FOOLPROOF.title": "Foolproof Strategy",
 
-  "AQUARIUM-REEL_BACK.description": "Choose a card from your [gold]exhaust pile[/gold]. [gold]Exhaust[/gold] it again.",
+  "AQUARIUM-REEL_BACK.description": "Choose a card from your [gold]Exhaust pile[/gold]. [gold]Exhaust[/gold] it again.",
   "AQUARIUM-REEL_BACK.title": "Reel Back",
   "AQUARIUM-REEL_BACK.selectionScreenPrompt": "Choose a card to get [gold]Exhaust[/gold]",
 
@@ -172,9 +172,39 @@
   "AQUARIUM-SUNKEN_TREASURE.description": "Deal {Damage:diff()} damage. If [gold]Fatal[/gold], gain a relic after combat. ",
   "AQUARIUM-SUNKEN_TREASURE.title": "Sunken Treasure",
 
-  "AQUARIUM-SWIRLING_GLOWWATER.description": "[gold]Exhaust[/gold] a Card \n {IfUpgraded:show:Draw a card|}",
+  "AQUARIUM-SWIRLING_GLOWWATER.description": "[gold]Exhaust[/gold] 1 Card\n Gain {FrailPower:diff()} [gold]Frail[/gold]\n {IfUpgraded:show:Draw a card|}",
   "AQUARIUM-SWIRLING_GLOWWATER.title": "Swirling Glowwater",
 
-  "AQUARIUM-PESCOMANCER.description": "Deal {Damage:diff()} damage {Repeat:diff()} times. Increase HP loss by 1 for this combat. \n Add a [gold]Dazed[/gold] to your draw pile.",
-  "AQUARIUM-PESCOMANCER.title": "Pescomancer"
+  "AQUARIUM-PESCOMANCER.description": "An enemy loses {Damage:diff()} HP {Repeat:diff()} times. Increase HP loss by 1 for this combat. \n Add a [gold]Dazed[/gold] to your draw pile.",
+  "AQUARIUM-PESCOMANCER.title": "Pescomancer",
+
+  "AQUARIUM-DONT_FIX.description": "Whenever you play a card, if the previously played card had the same name, gain {Power:diff()} [gold]Block[/gold]",
+  "AQUARIUM-DONT_FIX.title": "Don't Fix It",
+
+  "AQUARIUM-ATTENTION_TO_DETAIL.description": "At the start of your turn, gain {Power:energyIcons()}, and draw 1 less card",
+  "AQUARIUM-ATTENTION_TO_DETAIL.title": "Attention To Detail",
+
+  "AQUARIUM-PORTABLE_BUBBLER.description": "At the start of your turn, Gain {Power:diff()} [gold]Block[/gold] and  {Power:diff()} [gold]Vigor[/gold]",
+  "AQUARIUM-PORTABLE_BUBBLER.title": "Portable Bubbler",
+
+  "AQUARIUM-SCHOOLING.description": "Gain {Block:diff()} [gold]Block[/gold] {Repeat:diff()} times",
+  "AQUARIUM-SCHOOLING.title": "Schooling",
+
+  "AQUARIUM-SEA_MASS.description": "Gain {Block:diff()} [gold]Block[/gold] \n Ff you have [gold]Frail[/gold], gain [gold]Block[/gold] {Repeat:diff()} additional times ",
+  "AQUARIUM-SEA_MASS.title": "Sea Mass",
+
+  "AQUARIUM-DANCE_VERMIN.description": "Gain {IntangiblePower:diff()} [gold]Intangible[/gold] \n Lose {Power:diff()} HP at the end of your next turn." ,
+  "AQUARIUM-DANCE_VERMIN.title": "Dance Vermin",
+
+  "AQUARIUM-SHEER_GIRTH.description": "Deal {Damage:diff()}. \n If you have [gold]Frail[/gold] hits {Repeat:diff()} times",
+  "AQUARIUM-SHEER_GIRTH.title": "Sheer Girth",
+
+  "AQUARIUM-HEAD_SMASH.description": "Deal {Damage:diff()}. \n Gain {FrailPower:diff()} [gold]Frail[/gold].",
+  "AQUARIUM-HEAD_SMASH.title": "Head Smash",
+
+  "AQUARIUM-DIZZY_STRIKE.description": "Deal {Damage:diff()} to ALL enemies. \n If you have [gold]Frail[/gold] hits {Repeat:diff()} times",
+  "AQUARIUM-DIZZY_STRIKE.title": "Dizzy Strike",
+
+  "AQUARIUM-BOXER_JELLIES.description": "Deal {Damage:diff()} to ALL enemies. \n If you have [gold]Frail[/gold] hits {Repeat:diff()} times",
+  "AQUARIUM-BOXER_JELLIES.title": "Boxer Jellies"
 }

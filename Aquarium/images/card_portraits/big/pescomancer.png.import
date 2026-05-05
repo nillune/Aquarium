@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7q5y2vp8xm2v"
-path="res://.godot/imported/can_of_wurms.png-bfe451fcac5d457a408f0ad705941ec4.ctex"
+uid="uid://brftye2kglq15"
+path="res://.godot/imported/pescomancer.png-f06d444f3b4d3e02dbef40858b24d183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/relics/big/can_of_wurms.png"
-dest_files=["res://.godot/imported/can_of_wurms.png-bfe451fcac5d457a408f0ad705941ec4.ctex"]
+source_file="res://Aquarium/images/card_portraits/big/pescomancer.png"
+dest_files=["res://.godot/imported/pescomancer.png-f06d444f3b4d3e02dbef40858b24d183.ctex"]
 
 [params]
 

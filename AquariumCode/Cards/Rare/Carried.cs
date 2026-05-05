@@ -24,19 +24,25 @@ public class Carried() : AquariumCard(1,
         CardPlay play)
     {
         Carried carried = this;
-        foreach (Creature creature in carried.CombatState.GetTeammatesOf(carried.Owner.Creature).Where<Creature>((Func<Creature, bool>) (c => c != null && c.IsAlive && !c.IsPlayer)))
-          
+        await PowerCmd.Apply<FrailPower>(
+            Owner.Creature,
+            DynamicVars[nameof(FrailPower)].BaseValue,
+            Owner.Creature,
+            this);
+        foreach (Creature creature in carried.CombatState.GetTeammatesOf(carried.Owner.Creature)
+                     .Where<Creature>((Func<Creature, bool>)(c => c != null && c.IsAlive && c.IsPlayer)))
+        {
+            if (carried.Owner.Creature == creature)
+                return;
             await PowerCmd.Apply<DexterityPower>(
                 creature,
                 DynamicVars[nameof(DexterityPower)].BaseValue,
                 Owner.Creature,
                 this);
-            //await PlayerCmd.GainEnergy((Decimal) carried.DynamicVars.Energy.IntValue, creature.Player);
-            await PowerCmd.Apply<FrailPower>(
-                Owner.Creature,
-                DynamicVars[nameof(FrailPower)].BaseValue,
-                Owner.Creature,
-                this);
+        }
+
+        //await PlayerCmd.GainEnergy((Decimal) carried.DynamicVars.Energy.IntValue, creature.Player);
+      
     }   
 
     protected override void OnUpgrade()

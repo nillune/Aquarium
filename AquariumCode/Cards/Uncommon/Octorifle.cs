@@ -21,18 +21,17 @@ public class Octorifle() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        Octorifle octorifle = this;
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+        Octorifle source = this;
+        await DamageCmd.Attack(source.DynamicVars.Damage.BaseValue)
+            .FromCard(source)
             .Targeting(play.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        CardSelectorPrefs prefs = new CardSelectorPrefs(octorifle.SelectionScreenPrompt, 1);
-        CardModel card = (await CardSelectCmd.FromHand(choiceContext, octorifle.Owner, prefs, (Func<CardModel, bool>) (c => c.Type == CardType.Attack), (AbstractModel) octorifle)).FirstOrDefault<CardModel>();
+        CardSelectorPrefs prefs = new CardSelectorPrefs(source.SelectionScreenPrompt, 1);
+        CardModel card = (await CardSelectCmd.FromHand(choiceContext, source.Owner, prefs, c => c.Type == CardType.Attack && c.Enchantment == null , (AbstractModel) source)).FirstOrDefault<CardModel>();
         if (card == null)
             return;
-       
-        CardCmd.Enchant<Inky>(card, 1M);
+         CardCmd.Enchant<Inky>(card, 1M);
     }
 
     protected override void OnUpgrade()

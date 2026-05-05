@@ -73,8 +73,7 @@ public class FoolproofPower : PowerModel
         out Decimal modifiedCost)
     {
         modifiedCost = originalCost;
-        if (this.ShouldSkip(card)   )
-        
+        if (this.ShouldSkip(card))
             return false;
         modifiedCost = 0M;
         return true;
@@ -102,7 +101,8 @@ public class FoolproofPower : PowerModel
             label_5:
             flag1 = !flag2;
         }
-        return flag1 || CardsPlayedThisTurn >= this.Amount || AttackPlayedLastTurn ;
+        // Apply zero cost only if NO cards played this turn AND NO attacks played last turn
+        return flag1 || CardsPlayedThisTurn > 0 || AttackPlayedLastTurn;
     }
 
 

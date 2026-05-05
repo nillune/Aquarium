@@ -29,7 +29,7 @@ public class DefendAquarium() : AquariumCard(1, CardType.Skill, CardRarity.Basic
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Block"].UpgradeValueBy(2m);
+        DynamicVars["Block"].UpgradeValueBy(3m);
     }
     //Image size:
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();

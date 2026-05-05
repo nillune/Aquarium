@@ -17,11 +17,15 @@ public class DragunFishPower : PowerModel
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
         DragunFishPower power = this;
-        if (cardPlay.Card.Type != CardType.Attack && cardPlay.Card.TargetType != TargetType.AllEnemies)
+        if (cardPlay.Card.Owner.Creature != power.Owner)
+            return;
+        if (cardPlay.Card.Type != CardType.Attack) 
+            return;
+        if (cardPlay.Card.TargetType != TargetType.AllEnemies)
             return;
         VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
             power.Owner,
-            power.Owner.Block,
+            power.Amount,
             power.Owner,
             (CardModel) null);
         power.Flash();

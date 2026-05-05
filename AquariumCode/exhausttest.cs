@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Aquarium.AquariumCode.Cards.Ancient;
 using Aquarium.AquariumCode.Cards.Basic;
+using Aquarium.AquariumCode.Relics;
 using BaseLib.Patches.Content;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Models.Relics;
@@ -40,6 +41,7 @@ using MegaCrit.Sts2.Core.Commands;
 public static class CardCmdPatches
 {
     [HarmonyPatch(typeof(ArchaicTooth), "TranscendenceUpgrades", MethodType.Getter)]
+  
     public class ArchaicToothPatch
     {
         [HarmonyPostfix]
@@ -48,6 +50,7 @@ public static class CardCmdPatches
             __result[ModelDb.Card<Blaster>().Id] = ModelDb.Card<Railgun>();
         }
     }
+    
     [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Weapon;
     
@@ -56,6 +59,11 @@ public static class CardCmdPatches
     
     public static void Postfix(PlayerChoiceContext choiceContext, CardModel card)
     {
+        if (card.Owner.Relics.OfType<LuxuryBowl>().Any())
+            return;
+        if (card.Owner.Relics.OfType<DecroratedBowl>().Any())
+            return;
+        MainFile.Logger.Info(  _PreviousCard + _PreviousCard + "exhaust");
         // Only autoplay if the card has the Weapon keyword
         if (!card.Keywords.Contains(Weapon))
             return;
@@ -73,33 +81,36 @@ public static class CardCmdPatches
         // Autoplay the card
         TaskHelper.RunSafely(CardCmd.AutoPlay(choiceContext, card, (Creature)null, AutoPlayType.Default));
     }
-        [HarmonyPatch(typeof(CombatManager), nameof(CombatManager.IsEnding))]
+    [HarmonyPatch(typeof(Hook), nameof(Hook.AfterCombatEnd))]
     public static class CombatEndPatch
     {
         public static void Postfix()
         {
             _PreviousCard = "null";
             _PreviousCardInt = 0;
+            MainFile.Logger.Info(_PreviousCard + _PreviousCard + "Combat ended patch");
         }
     }
-    [HarmonyPatch(typeof(CombatManager), nameof(CombatManager.IsEnemyTurnStarted))]
+    [HarmonyPatch(typeof(Hook), nameof(Hook.AfterSideTurnStart))]
     public static class MoreWeaponStuff
     {
-        public static void Postfix()
+        public static void Postfix(CombatSide side)
         {
-            
+            if (side != CombatSide.Enemy)
+                return;
             _PreviousCard = "null";
             _PreviousCardInt = 0;
+            MainFile.Logger.Info("Enemy turn start patch");
         }
     }
-     [HarmonyPatch(typeof(CardCmd), nameof(CardCmd.Discard))]   
-     public static class EvenMoreWeaponFixes
+    [HarmonyPatch(typeof(CardCmd), nameof(CardCmd.Discard))]   
+    public static class EvenMoreWeaponFixes
     {
         public static void Postfix()
         {
-            
             _PreviousCard = "null";
             _PreviousCardInt = 0;
+            MainFile.Logger.Info(  _PreviousCard + _PreviousCard + "discard patch ");
         }
     }
 }

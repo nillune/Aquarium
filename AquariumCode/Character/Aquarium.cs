@@ -17,7 +17,7 @@ public  class Aquarium : PlaceholderCharacterModel
 {
     public const string CharacterId = "Aquarium";
 
-    public static readonly Color Color = new("ffffff");
+    public static readonly Color Color = new("0F2F60");
 
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
