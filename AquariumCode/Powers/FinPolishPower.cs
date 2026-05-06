@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Aquarium.AquariumCode.Powers;
 
  
-public class FinPolishPower : PowerModel
+public abstract class FinPolishPower : PowerModel
 {
 public override PowerType Type => PowerType.Buff;
 

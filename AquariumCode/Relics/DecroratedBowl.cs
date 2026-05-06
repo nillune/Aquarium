@@ -14,6 +14,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Aquarium.AquariumCode.Relics;
@@ -42,43 +43,51 @@ public class DecroratedBowl() : AquariumRelic
             card.GiveSingleTurnRetain();
             decroratedBowl.Flash();
     }
-    static CardModel _PreviousCard;
-  
+    // ReSharper disable once InconsistentNaming
+    static CardModel[] PreviousCards = {null!, null!};
+    private int playedWeapons;
     public override async Task AfterCardExhausted(
         PlayerChoiceContext choiceContext,
         CardModel card,
         bool _)
     {
-        DecroratedBowl decroratedBowl = this;
-        MainFile.Logger.Info(  _PreviousCard + "exhaust");
+        if (playedWeapons >= 11)
+            return;
+        playedWeapons++;
+        //MainFile.Logger.Info(  _PreviousCard + "exhaust");
         // Only autoplay if the card has the Weapon keyword
         if (!card.Keywords.Contains(CardCmdPatches.Weapon))
             return;
-        if (_PreviousCard == card)
+        if (PreviousCards[0] == card)
                 return;
-    
-        _PreviousCard = card;
+        if (PreviousCards[1] == card)
+            return;
+        PreviousCards[1] = PreviousCards[0];
+        PreviousCards[0] = card;
        
            
         if (card.Keywords.Contains(CardKeyword.Ethereal))
             card.AddKeyword(CardKeyword.Exhaust);
         card.ExhaustOnNextPlay = true;
-        //decroratedBowl.AutoplayingCards.Add(card);
+       
         await CardCmd.AutoPlay(choiceContext, card, (Creature) null);
-        //decroratedBowl.AutoplayingCards.Remove(card);
+     
         // Autoplay the card
         //TaskHelper.RunSafely(CardCmd.AutoPlay(choiceContext, card, (Creature)null, AutoPlayType.Default));
     }
 
     public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
     {
-     
-        _PreviousCard = null;
+        playedWeapons = 0;
+        PreviousCards[0] = null!;
+        PreviousCards[1] = null!;
     }
     public override async Task BeforeCardPlayed(CardPlay cardPlay)
-    {
-     if (cardPlay.Card != _PreviousCard)
-         _PreviousCard = null;
+    { 
+     if (cardPlay.Card != PreviousCards[0])
+         PreviousCards[0] = null!;
+     if (cardPlay.Card != PreviousCards[1])
+         PreviousCards[1] = null!;
     }
 
 }

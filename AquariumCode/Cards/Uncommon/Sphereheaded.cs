@@ -21,13 +21,14 @@ public class Sphereheaded() : AquariumCard(1,
         Sphereheaded sphereheaded = this;
         
         await OrbCmd.Channel(choiceContext, OrbModel.GetRandomOrb(sphereheaded.Owner.RunState.Rng.CombatOrbGeneration).ToMutable(), sphereheaded.Owner);
-        await OrbCmd.EvokeNext(choiceContext, sphereheaded.Owner, false);
-      
         if (sphereheaded.IsUpgraded)
         {
             await Cmd.CustomScaledWait(0.1f, 0.25f);
-            await OrbCmd.EvokeNext(choiceContext, sphereheaded.Owner);
+            await OrbCmd.EvokeNext(choiceContext, sphereheaded.Owner,  false);
         }
+        await OrbCmd.EvokeNext(choiceContext, sphereheaded.Owner);
+      
+       
        
     }
 

@@ -13,7 +13,7 @@ public class AttentionToDetail() : AquariumCard(2,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar (1) ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -22,9 +22,9 @@ public class AttentionToDetail() : AquariumCard(2,
         AttentionToDetail attentionToDetail = this;
         AttentionToDetail cardSource = this;
       
-        AttentionToDetailPower attentionToDetailPower = await PowerCmd.Apply<AttentionToDetailPower>(cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
+        AttentionToDetailPower attentionToDetailPower = await PowerCmd.Apply<AttentionToDetailPower>(cardSource.Owner.Creature, DynamicVars.Energy.IntValue ,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }
 
-    protected override void OnUpgrade() => this.DynamicVars["Power"].UpgradeValueBy(1M);
+    protected override void OnUpgrade() => this.DynamicVars.Energy.UpgradeValueBy(1M);
 }

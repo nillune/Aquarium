@@ -12,8 +12,8 @@ namespace Aquarium.AquariumCode.Cards.Uncommon;
 
   
 public class SodaMintBomb() : AquariumCard(2,
-    CardType.Attack, CardRarity.Basic,
-    TargetType.Self)
+    CardType.Attack, CardRarity.Uncommon,
+    TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [(DynamicVar) new DamageVar(14M, ValueProp.Move),
         new DynamicVar("StrengthLoss", 10M)];

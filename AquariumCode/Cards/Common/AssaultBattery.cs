@@ -32,7 +32,7 @@ public class AssaultBattery() : AquariumCard(2,
         foreach (Creature enemy in CombatState.HittableEnemies)
         {
             VulnerablePower vulnerablePower = await PowerCmd.Apply<VulnerablePower>(enemy,
-                assaultBattery.DynamicVars.Weak.BaseValue, assaultBattery.Owner.Creature, (CardModel)assaultBattery);
+                assaultBattery.DynamicVars.Vulnerable.BaseValue, assaultBattery.Owner.Creature, (CardModel)assaultBattery);
         }
     }
 

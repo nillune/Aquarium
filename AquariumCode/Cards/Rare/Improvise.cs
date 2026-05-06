@@ -21,14 +21,19 @@ public class Improvise() : AquariumCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-       
+
         Improvise improvise = this;
-        
-        CardSelectorPrefs prefs = new CardSelectorPrefs(improvise.SelectionScreenPrompt, Decimal.ToInt32(this.DynamicVars["CardSelect"].BaseValue));
-        CardModel card = (await CardSelectCmd.FromHand(choiceContext, improvise.Owner, prefs, (Func<CardModel, bool>) (c => c.Rarity.Equals(CardRarity.None)), (AbstractModel) improvise)).FirstOrDefault<CardModel>();
-        if (card == null)
-            return;
-        CardCmd.ApplyKeyword(card, CardKeyword.Exhaust);
+
+        CardSelectorPrefs prefs = new CardSelectorPrefs(improvise.SelectionScreenPrompt,
+            Decimal.ToInt32(this.DynamicVars["CardSelect"].BaseValue));
+        foreach (CardModel card in await CardSelectCmd.FromHand(choiceContext, improvise.Owner, prefs,
+                     (Func<CardModel, bool>)null, (AbstractModel)improvise))
+        {
+            if (card == null)
+                return;
+            CardCmd.ApplyKeyword(card, CardCmdPatches.Weapon);
+            await CardCmd.Exhaust(choiceContext, card);
+        }
     }
 
     protected override void OnUpgrade() => this.DynamicVars["CardSelect"].UpgradeValueBy(1M);

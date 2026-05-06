@@ -12,13 +12,14 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Aquarium.AquariumCode.Cards.Uncommon;
 
   
-public class Unstable() : AquariumCard(1,
+public class Unstable() : AquariumCard(0,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardKeyword.Retain ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(5, ValueProp.Move),  (DynamicVar) new PowerVar<VulnerablePower>(1M) ];
-
-
+   
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -29,29 +30,20 @@ public class Unstable() : AquariumCard(1,
             .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-
-        foreach (Creature enemy in CombatState.HittableEnemies)
+        if (this.Owner.Creature.HasPower<FrailPower>())
         {
-            VulnerablePower vulnerablePower = await PowerCmd.Apply<VulnerablePower>(enemy,
-                unstable.DynamicVars.Weak.BaseValue, unstable.Owner.Creature, (CardModel)unstable);
+            foreach (Creature enemy in CombatState.HittableEnemies)
+            {
+                VulnerablePower vulnerablePower = await PowerCmd.Apply<VulnerablePower>(enemy,
+                    unstable.DynamicVars.Vulnerable.BaseValue, unstable.Owner.Creature, (CardModel)unstable);
+            }
         }
     }
-
+    
     protected override void OnUpgrade()
     {
         this.DynamicVars.Damage.UpgradeValueBy(3M);
     }
 
-    public override async Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
-    {
-        Unstable unstable = this;
-        if (this.Owner.Creature.HasPower<FrailPower>())
-        {
-            unstable.AddKeyword(CardKeyword.Retain);
-        }
-        else
-        {
-            unstable.RemoveKeyword(CardKeyword.Retain);
-        }
-    }
+   
 }

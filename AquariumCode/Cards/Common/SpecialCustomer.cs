@@ -12,7 +12,7 @@ namespace Aquarium.AquariumCode.Cards.Common;
 
 
 public class SpecialCustomer() : AquariumCard(1,
-    CardType.Attack, CardRarity.Basic,
+    CardType.Attack, CardRarity.Common,
     TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4, ValueProp.Move),];
