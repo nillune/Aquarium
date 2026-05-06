@@ -10,7 +10,7 @@ namespace Aquarium.AquariumCode.Cards.Uncommon;
 
   
 public class DontFix() : AquariumCard(1,
-    CardType.Power, CardRarity.Basic,
+    CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",7)];
