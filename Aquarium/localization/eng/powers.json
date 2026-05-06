@@ -69,5 +69,9 @@
 
   "DANCE_VERMIN_POWER.description": "Lose HP next turn",
   "DANCE_VERMIN_POWER.smartDescription": "At the end of your next turn, lose {Power} HP",
-  "DANCE_VERMIN_POWER.title": "DanceVerminPower"
+  "DANCE_VERMIN_POWER.title": "DanceVerminPower",
+
+  "EEL_WHIP_POWER.description": "Eel Whip does double damage to this enemy",
+  "EEL_WHIP_POWER.smartDescription": "Eel Whip does double damage to this enemy",
+  "EEL_WHIP_POWER.title": "Eel Whip Power"
 }

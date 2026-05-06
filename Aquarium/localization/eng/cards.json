@@ -172,7 +172,7 @@
   "AQUARIUM-SUNKEN_TREASURE.description": "Deal {Damage:diff()} damage. If [gold]Fatal[/gold], gain a relic after combat. ",
   "AQUARIUM-SUNKEN_TREASURE.title": "Sunken Treasure",
 
-  "AQUARIUM-SWIRLING_GLOWWATER.description": "[gold]Exhaust[/gold] 1 Card\n Gain {FrailPower:diff()} [gold]Frail[/gold]\n {IfUpgraded:show:Draw a card|}",
+  "AQUARIUM-SWIRLING_GLOWWATER.description": "[gold]Exhaust[/gold] 1 Card\n Gain {FrailPower:diff()} [gold]Frail[/gold]\n {IfUpgraded:show:Draw 1 card|}",
   "AQUARIUM-SWIRLING_GLOWWATER.title": "Swirling Glowwater",
 
   "AQUARIUM-PESCOMANCER.description": "An enemy loses {Damage:diff()} HP {Repeat:diff()} times. Increase HP loss by 1 for this combat. \n Add a [gold]Dazed[/gold] to your draw pile.",
@@ -205,6 +205,24 @@
   "AQUARIUM-DIZZY_STRIKE.description": "Deal {Damage:diff()} to ALL enemies. \n If you have [gold]Frail[/gold] hits {Repeat:diff()} times",
   "AQUARIUM-DIZZY_STRIKE.title": "Dizzy Strike",
 
-  "AQUARIUM-BOXER_JELLIES.description": "Deal {Damage:diff()} to ALL enemies. \n If you have [gold]Frail[/gold] hits {Repeat:diff()} times",
-  "AQUARIUM-BOXER_JELLIES.title": "Boxer Jellies"
+  "AQUARIUM-BOXER_JELLIES.description": "Deal {Damage:diff()} to enemies {Repeat:diff()} times \n Apply {WeakPower:diff()} [gold]Weak[/gold]",
+  "AQUARIUM-BOXER_JELLIES.title": "Boxer Jellies",
+
+  "AQUARIUM-SODA_MINT_BOMB.description": "Deal {Damage:diff()} \n If you have [gold]Frail[/gold] the enemy loses {StrengthLoss:diff()} [gold]Strength[/gold] this turn. ",
+  "AQUARIUM-SODA_MINT_BOMB.title": "Soda Mint Bomb",
+
+  "AQUARIUM-ENTHRALLING_ANGER.description": "Deal {Damage:diff()} Damage. \n If this is in your hand, it must be played before other cards. ",
+  "AQUARIUM-ENTHRALLING_ANGER.title": "Enthralling Anger",
+
+  "AQUARIUM-FIN_REAPER.description": "Deal {Damage:diff()} Damage {Repeat:diff()} times \n Apply [gold]Doom[/gold] equal to damage dealt.",
+  "AQUARIUM-FIN_REAPER.title": "Fin Reaper",
+
+  "AQUARIUM-EEL_WHIP.description": "Deal {Damage:diff()} Damage. This turn, double the damage ALL Eel Whip cards deal to this enemy. ",
+  "AQUARIUM-EEL_WHIP.title": "Eel Whip",
+
+  "AQUARIUM-SPHEREHEADED.description": "Channel 1 random orb. \n Evoke it {IfUpgraded:show:twice|}\n Draw 1 card.",
+  "AQUARIUM-SPHEREHEADED.title": "Sphereheaded",
+
+  "AQUARIUM-UNSTABLE.description": "Deal {Damage:diff()} Damage and apply {VulnerablePower:diff()} to ALL enemies. \n This has [gold]Retain[/gold] if you have [gold]Frail[/gold]",
+  "AQUARIUM-UNSTABLE.title": "Unstable"
 }

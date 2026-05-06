@@ -20,7 +20,7 @@ public class SunkenTreasure() : AquariumCard(3,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(1, ValueProp.Move)];
-
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardKeyword.Exhaust ];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         SunkenTreasure sunkenTreasure = this;
