@@ -208,8 +208,8 @@
   "AQUARIUM-BOXER_JELLIES.description": "Deal {Damage:diff()} to enemies {Repeat:diff()} times \n Apply {WeakPower:diff()} [gold]Weak[/gold]",
   "AQUARIUM-BOXER_JELLIES.title": "Boxer Jellies",
 
-  "AQUARIUM-SODA_MINT_BOMB.description": "Deal {Damage:diff()} \n If you have [gold]Frail[/gold] the enemy loses {StrengthLoss:diff()} [gold]Strength[/gold] this turn. ",
-  "AQUARIUM-SODA_MINT_BOMB.title": "Soda Mint Bomb",
+  "AQUARIUM-SODA_MINT_BOMB.description": "Deal {Damage:diff()} Damage \n If you have [gold]Frail[/gold] the enemy loses {StrengthLoss:diff()} [gold]Strength[/gold] this turn. ",
+  "AQUARIUM-SODA_MINT_BOMB.title": "Nucleation",
 
   "AQUARIUM-ENTHRALLING_ANGER.description": "Deal {Damage:diff()} Damage. \n If this is in your hand, it must be played before other cards. ",
   "AQUARIUM-ENTHRALLING_ANGER.title": "Enthralling Anger",
@@ -223,6 +223,6 @@
   "AQUARIUM-SPHEREHEADED.description": "Channel 1 random orb. \n Evoke it {IfUpgraded:show:twice|}\n Draw 1 card.",
   "AQUARIUM-SPHEREHEADED.title": "Sphereheaded",
 
-  "AQUARIUM-UNSTABLE.description": "Deal {Damage:diff()} Damage and apply {VulnerablePower:diff()} to ALL enemies. \n This has [gold]Retain[/gold] if you have [gold]Frail[/gold]",
+  "AQUARIUM-UNSTABLE.description": "Deal {Damage:diff()} Damage and apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies. \n This has [gold]Retain[/gold] if you have [gold]Frail[/gold]",
   "AQUARIUM-UNSTABLE.title": "Unstable"
 }

@@ -24,7 +24,7 @@ public class DizzyStrike() : AquariumCard(1,
             .FromCard(this)
             //.Targeting(play.Target)
             .TargetingAllOpponents(CombatState)
-           // .WithHitCount(DynamicVars.Repeat.IntValue)
+            .WithHitCount(DynamicVars.Repeat.IntValue)
             .WithHitFx("vfx/vfx_starry_impact")
             .Execute(choiceContext);
     }

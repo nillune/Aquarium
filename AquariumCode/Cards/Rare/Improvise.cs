@@ -25,7 +25,7 @@ public class Improvise() : AquariumCard(2,
         Improvise improvise = this;
         
         CardSelectorPrefs prefs = new CardSelectorPrefs(improvise.SelectionScreenPrompt, Decimal.ToInt32(this.DynamicVars["CardSelect"].BaseValue));
-        CardModel card = (await CardSelectCmd.FromHand(choiceContext, improvise.Owner, prefs, (Func<CardModel, bool>) (c => c.Rarity.Equals(CardRarity.None)), (AbstractModel) improvise)).FirstOrDefault<CardModel>();
+        CardModel card = (await CardSelectCmd.FromHand(choiceContext, improvise.Owner, prefs, null, (AbstractModel) improvise)).FirstOrDefault<CardModel>();
         if (card == null)
             return;
         CardCmd.ApplyKeyword(card, CardKeyword.Exhaust);

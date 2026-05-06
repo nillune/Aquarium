@@ -26,12 +26,13 @@ public class LightUp() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+       
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
         await PowerCmd.Apply<FrailPower>(
             Owner.Creature,
             DynamicVars[nameof(FrailPower)].BaseValue,
             Owner.Creature,
             this);
-        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
     }
 
     protected override void OnUpgrade()
