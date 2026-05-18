@@ -23,6 +23,8 @@ public class DoubleGunPower : PowerModel
 
     public override async Task BeforeCardPlayed(CardPlay cardPlay)
     {
+        if (this.Owner != cardPlay.Card.Owner.Creature)
+            return;
         DoubleGunPower doubleGunPower = this;
         if (!cardPlay.Card.Keywords.Contains(CardCmdPatches.Weapon))
             return;
@@ -35,6 +37,7 @@ public class DoubleGunPower : PowerModel
     }
     public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
     {
+        
         DoubleGunPower power = this;
         await PowerCmd.Remove((PowerModel) power);
     }

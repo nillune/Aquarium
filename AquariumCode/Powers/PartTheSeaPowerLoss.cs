@@ -1,0 +1,16 @@
+﻿using Aquarium.AquariumCode.Cards.Rare;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Models.Powers;
+
+namespace Aquarium.AquariumCode.Powers;
+
+#nullable enable
+
+
+public class PartTheSeaPowerLoss : TemporaryStrengthPower
+{
+    public override AbstractModel OriginModel => (AbstractModel) ModelDb.Card<PartTheSea>();
+
+    protected override bool IsPositive => false;
+}

@@ -18,14 +18,13 @@ public override PowerStackType StackType => PowerStackType.Counter;
 
 public override async Task BeforeCardPlayed(CardPlay cardPlay)
                              {
-    FinPolishPower finPolishPower = this;
-    FinPolishPower power = this;
-    if (cardPlay.Card.Owner != finPolishPower.Owner.Player || cardPlay.Card.Type != CardType.Skill)
+    
+    if (cardPlay.Card.Owner != this.Owner.Player || cardPlay.Card.Type != CardType.Skill)
         return;
     VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
-        power.Owner,
-        power.Amount,
-        power.Owner,
+        this.Owner,
+        this.Amount,
+        this.Owner,
         (CardModel) null);
 }
 public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)

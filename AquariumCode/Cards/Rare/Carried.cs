@@ -23,16 +23,16 @@ public class Carried() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        Carried carried = this;
+        
         await PowerCmd.Apply<FrailPower>(
             Owner.Creature,
             DynamicVars[nameof(FrailPower)].BaseValue,
             Owner.Creature,
             this);
-        foreach (Creature creature in carried.CombatState.GetTeammatesOf(carried.Owner.Creature)
+        foreach (Creature creature in this.CombatState.GetTeammatesOf(this.Owner.Creature)
                      .Where<Creature>((Func<Creature, bool>)(c => c != null && c.IsAlive && c.IsPlayer)))
         {
-            if (carried.Owner.Creature == creature)
+            if (this.Owner.Creature == creature)
                 return;
             await PowerCmd.Apply<DexterityPower>(
                 creature,

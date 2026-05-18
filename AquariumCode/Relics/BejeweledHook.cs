@@ -17,7 +17,7 @@ public class BejeweledHook() : AquariumRelic
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Vigorous", 5M)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get => HoverTipFactory.FromEnchantment<Momentum>(this.DynamicVars["Vigorous"].IntValue);
+        get => HoverTipFactory.FromEnchantment<Vigorous>(this.DynamicVars["Vigorous"].IntValue);
     }
   
     public override RelicRarity Rarity =>

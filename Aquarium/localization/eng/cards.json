@@ -227,5 +227,23 @@
   "AQUARIUM-UNSTABLE.title": "Unstable",
 
   "AQUARIUM-HILARIOUS_JOKE.description": "ALl other players get {VigorPower:diff()} [gold]Vigor[/gold]",
-  "AQUARIUM-HILARIOUS_JOKE.title": "Hilarious Joke"
+  "AQUARIUM-HILARIOUS_JOKE.title": "Hilarious Joke",
+
+  "AQUARIUM-FATEMAKER.description": "ALL enemies lose {Damage:diff()} HP X{IfUpgraded:show:+1|} times.",
+  "AQUARIUM-FATEMAKER.title": "Fatemaker",
+
+  "AQUARIUM-BLAST_PHEMY.description": "Deal {IfUpgraded:show:triple|double} damage this turn. \n Die next turn.",
+  "AQUARIUM-BLAST_PHEMY.title": "Blast-phemy",
+
+  "AQUARIUM-PART_THE_SEA.description": "An enemy loses {StrengthLoss:diff()} [gold]Strength[/gold] this turn. \n All other enemies gain {StrengthGain:diff()} [gold]Strength[/gold] this turn",
+  "AQUARIUM-PART_THE_SEA.title": "Part the Sea",
+
+  "AQUARIUM-HURRICANE_FORM.description": "All attacks deal damage an extra time",
+  "AQUARIUM-HURRICANE_FORM.title": "Hurricane Form",
+
+  "AQUARIUM-GLOW_IN_THE_DARK.description": "Gain {Energy:energyIcons()} at the start of each turn.",
+  "AQUARIUM-GLOW_IN_THE_DARK.title": "Glow in the Dark",
+
+  "AQUARIUM-WALL_OF_BULLETS.description": "Whenever you play an [gold]Weapon[/gold] card, gain {BlockOnExhaust:diff()} [gold]Block[/gold].",
+  "AQUARIUM-WALL_OF_BULLETS.title": "Wall of Bullets"
 }

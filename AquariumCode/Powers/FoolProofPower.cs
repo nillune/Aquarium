@@ -23,8 +23,8 @@ public class FoolproofPower : PowerModel
     private bool AttackPlayedLastTurn = true; 
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
-        FoolproofPower power = this;
-        if (cardPlay.Card.Owner.Creature != power.Owner)
+        
+        if (cardPlay.Card.Owner.Creature != this.Owner)
             return;
         if (cardPlay.Card.Type == CardType.Attack)
         {
@@ -42,6 +42,8 @@ public class FoolproofPower : PowerModel
         PlayerChoiceContext choiceContext,
         CombatState combatState)
     {
+        if (player.Creature != this.Owner) 
+            return;
         FoolproofPower foolproofPower = this;
         CardsPlayedThisTurn = 0;
         if (!AttackPlayedThisTurn)

@@ -17,13 +17,13 @@ public class DontFixPower : PowerModel
     public override PowerStackType StackType => PowerStackType.Counter;
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
-        DontFixPower power = this;
+       
         if (cardPlay.Card.Owner.Creature != this.Owner)
             return;
         if (cardPlay.Card.Title == PreviousCard)
         {
-            await CreatureCmd.GainBlock(power.Owner, (Decimal)power.Amount, ValueProp.Unpowered, (CardPlay)null);
-            power.Flash();
+            await CreatureCmd.GainBlock(this.Owner, (Decimal)this.Amount, ValueProp.Unpowered, (CardPlay)null);
+            this.Flash();
         }
 
         PreviousCard = cardPlay.Card.Title;

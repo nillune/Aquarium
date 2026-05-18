@@ -25,35 +25,35 @@
 
   "VULN_NEXT_TURN_POWER.description": "Gain {Amount} [gold]Vulnerable[/gold] Next turn",
   "VULN_NEXT_TURN_POWER.smartDescription": "Gain {Amount} [gold]Vulnerable[/gold] Next turn",
-  "VULN_NEXT_TURN_POWER.title": "Vulnerable Power",
+  "VULN_NEXT_TURN_POWER.title": "Vulnerable",
 
   "PILLAR_OF_JUNK_POWER.description": "At the start of your turn, gain {Amount} [gold]Block[/gold] and add a random status to your hand ",
   "PILLAR_OF_JUNK_POWER.smartDescription": "At the start of your turn, gain {Amount} [gold]Block[/gold] and add a random status to your hand ",
-  "PILLAR_OF_JUNK_POWER.title": "Pillar Of Junk Power",
+  "PILLAR_OF_JUNK_POWER.title": "Pillar Of Junk",
 
   "FIN_POLISH_POWER.description": "Gain [gold]Vigor[/gold] after playing a skill",
   "FIN_POLISH_POWER.smartDescription": "Gain [gold]Vigor[/gold] after playing a skill",
-  "FIN_POLISH_POWER.title": "Fin Polish Power",
+  "FIN_POLISH_POWER.title": "Fin Polish",
 
   "DOUBLE_GUN_POWER.description": "Gain a copy of the next Weapon Card you play",
   "DOUBLE_GUN_POWER.smartDescription": "Gain a copy of the next Weapon Card you play",
-  "DOUBLE_GUN_POWER.title": "Double Gun Power",
+  "DOUBLE_GUN_POWER.title": "Double Gun",
 
   "DRAGUN_FISH_POWER.description": "Gain {Amount} [gold]Vigor[/gold] after playing an attack that hits ALL enemies",
   "DRAGUN_FISH_POWER.smartDescription": "Gain {Amount} [gold]Vigor[/gold] after playing an attack that hits ALL enemies",
-  "DRAGUN_FISH_POWER.title": "DragunfishPower",
+  "DRAGUN_FISH_POWER.title": "Dragunfish",
 
   "FOOLPROOF_POWER.description": "Play cards for free after not attacking",
   "FOOLPROOF_POWER.smartDescription": "Play cards for free after not attacking",
-  "FOOLPROOF_POWER.title": "FoolproofPower",
+  "FOOLPROOF_POWER.title": "Foolproof",
 
   "SMOKE_BOMB_POWER.description": "At the end of {Amount:plural:this turn|[blue]{}[/blue] turns}, Gain [blue]{DexterityPower}[/blue] Dexterity.",
   "SMOKE_BOMB_POWER.smartDescription": "At the end of {Amount:plural:this turn|[blue]{}[/blue] turns}, Gain [blue]{DexterityPower}[/blue] Dexterity.",
-  "SMOKE_BOMB_POWER.title": "Smoke Bomb Power",
+  "SMOKE_BOMB_POWER.title": "Smoke Bomb",
 
   "AINT_BROKE_POWER.description": "Whenever you gain [gold]Frail[/gold], draw [blue]1[/blue] card",
   "AINT_BROKE_POWER.smartDescription": "Whenever you gain [gold]Frail[/gold], draw [blue]{Amount}[/blue] {Amount:plural:card|cards}.",
-  "AINT_BROKE_POWER.title": "It Ain't Broke Power",
+  "AINT_BROKE_POWER.title": "It Ain't Broke",
 
   "DONT_FIX_POWER.description": "Gain block after playing the same card twice.",
   "DONT_FIX_POWER.smartDescription": "After playing a card with the same name twice in a row, gain {Amount} [gold]Block[/gold].",
@@ -61,17 +61,37 @@
 
   "PORTABLE_BUBBLER_POWER.description": "At turn start, Gain [gold]Vigor[/gold] and [gold]Block[/gold]",
   "PORTABLE_BUBBLER_POWER.smartDescription": "At the star tof your turn, Gain {Amount} [gold]Vigor[/gold] and {Amount} [gold]Block[/gold]",
-  "PORTABLE_BUBBLER_POWER.title": "Portable Bubbler Power",
+  "PORTABLE_BUBBLER_POWER.title": "Portable Bubbler",
 
   "ATTENTION_TO_DETAIL_POWER.description": "At start of turn, {Amount} extra energy, draw 1 less card.",
   "ATTENTION_TO_DETAIL_POWER.smartDescription": "At the start of your turn gain {Amount:energyIcons()}, and draw 1 less card. ",
-  "ATTENTION_TO_DETAIL_POWER.title": "Attention To Detail Power",
+  "ATTENTION_TO_DETAIL_POWER.title": "Attention To Detail",
 
   "DANCE_VERMIN_POWER.description": "Lose HP next turn",
   "DANCE_VERMIN_POWER.smartDescription": "At the end of your next turn, lose {Power} HP",
-  "DANCE_VERMIN_POWER.title": "DanceVerminPower",
+  "DANCE_VERMIN_POWER.title": "Dance Vermin",
 
   "EEL_WHIP_POWER.description": "Eel Whip does double damage to this enemy",
   "EEL_WHIP_POWER.smartDescription": "Eel Whip does double damage to this enemy",
-  "EEL_WHIP_POWER.title": "Eel Whip Power"
+  "EEL_WHIP_POWER.title": "Eel Whip",
+
+  "BLAST_EMPHY_POWER.description": "you're gonna die mf ",
+  "BLAST_EMPHY_POWER.smartDescription": "Die next turn.",
+  "BLAST_EMPHY_POWER.title": "Blast-Emphy",
+
+  "TRIPLE_DAMAGE_POWER.description": "surely you can guess what this does, right?",
+  "TRIPLE_DAMAGE_POWER.smartDescription": "You deal triple damage",
+  "TRIPLE_DAMAGE_POWER.title": "Triple Damage",
+
+  "HURRICANE_FORM_POWER.description": "Every attack deals damage an extra time.",
+  "HURRICANE_FORM_POWER.smartDescription": "Every attack deals damage an extra time.",
+  "HURRICANE_FORM_POWER.title": "Hurricane Form",
+
+  "GLOW_IN_THE_DARK_POWER.description": "Gain [blue]1[/blue] [gold]Energy[/gold] at the start of each turn.",
+  "GLOW_IN_THE_DARK_POWER.smartDescription": "Gain {Amount:energyIcons()} at the start of each turn.",
+  "GLOW_IN_THE_DARK_POWER.title": "Glow in the Dark",
+
+  "WALL_OF_BULLETS_POWER.description": "Whenever you play an [gold]Weapon[/gold] card, gain [blue]4[/blue] [gold]Block[/gold].",
+  "WALL_OF_BULLETS_POWER.smartDescription": "Whenever you play an [gold]Ethereal[/gold] card, gain [blue]{Amount}[/blue] [gold]Block[/gold].",
+  "WALL_OF_BULLETS_POWER.title": "Wall of Bullets"
 }

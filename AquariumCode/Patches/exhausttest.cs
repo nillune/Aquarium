@@ -36,7 +36,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Commands;
 
-
+//namespace Aquarium.AquariumCode.Patches;
 [HarmonyPatch(typeof(CardCmd), nameof(CardCmd.Exhaust))]
 public static class CardCmdPatches
 {

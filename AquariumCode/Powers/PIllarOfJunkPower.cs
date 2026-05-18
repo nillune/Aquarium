@@ -24,24 +24,24 @@ public sealed class PillarOfJunkPower : PowerModel
         PlayerChoiceContext choiceContext,
         CombatState combatState)
     {
-        PillarOfJunkPower pillarOfJunkPower = this;
-        if (player != pillarOfJunkPower.Owner.Player || pillarOfJunkPower.AmountOnTurnStart < 1)
+        //PillarOfJunkPower this = this;
+        if (player != this.Owner.Player || this.AmountOnTurnStart < 1)
             return;
         
-        pillarOfJunkPower.Flash();
+        this.Flash();
         
         // Gain block
-        await CreatureCmd.GainBlock(pillarOfJunkPower.Owner, (Decimal)pillarOfJunkPower.Amount, ValueProp.Unpowered, (CardPlay)null);
+        await CreatureCmd.GainBlock(this.Owner, (Decimal)this.Amount, ValueProp.Unpowered, (CardPlay)null);
         
         // Add random status card to hand
         var statusCards = ModelDb.CardPool<StatusCardPool>()
-            .GetUnlockedCards(pillarOfJunkPower.Owner.Player.UnlockState, pillarOfJunkPower.Owner.Player.RunState.CardMultiplayerConstraint);
+            .GetUnlockedCards(this.Owner.Player.UnlockState, this.Owner.Player.RunState.CardMultiplayerConstraint);
         
         var statusCardsForCombat = CardFactory.GetDistinctForCombat(
-            pillarOfJunkPower.Owner.Player,
+            this.Owner.Player,
             statusCards,
             1,
-            pillarOfJunkPower.Owner.Player.RunState.Rng.CombatCardGeneration);
+            this.Owner.Player.RunState.Rng.CombatCardGeneration);
         
         await CardPileCmd.AddGeneratedCardsToCombat(statusCardsForCombat, PileType.Hand, true);
     }

@@ -6,6 +6,7 @@
 
 #nullable enable
 using Godot;
+using HarmonyLib;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -52,7 +53,19 @@ public class LureRestSiteOption(Player owner) : RestSiteOption(owner)
     return await Task.FromResult<bool>(true);
   }
 
-  public virtual string? CustomIconPath => "res://Aquarium/images/ui/rest_site/option_lure.png";
+  public virtual string CustomIconPath => "res://Aquarium/images/ui/rest_site/option_lure.png";
+  [HarmonyPatch(typeof(RestSiteOption), "IconPath", MethodType.Getter)]
+internal class CustomRestSiteOptionIconPath
+{
+    [HarmonyPrefix]
+    private static bool Custom(RestSiteOption __instance, ref string __result)
+    {
+        if (__instance is not LureRestSiteOption { CustomIconPath: { } path })
+            return true;
+        __result = path;
+        return false;
+    }
+}
 
   public override Task DoLocalPostSelectVfx(CancellationToken ct = default (CancellationToken))
   {
@@ -73,4 +86,5 @@ public class LureRestSiteOption(Player owner) : RestSiteOption(owner)
     child.Position = Vector2.Zero;
     return Task.CompletedTask;
   }
+  
 }
