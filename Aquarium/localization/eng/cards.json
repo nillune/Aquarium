@@ -224,5 +224,8 @@
   "AQUARIUM-SPHEREHEADED.title": "Sphereheaded",
 
   "AQUARIUM-UNSTABLE.description": "Deal {Damage:diff()} Damage.\n If you're [gold]Frail[/gold], apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies" ,
-  "AQUARIUM-UNSTABLE.title": "Unstable"
+  "AQUARIUM-UNSTABLE.title": "Unstable",
+
+  "AQUARIUM-HILARIOUS_JOKE.description": "ALl other players get {VigorPower:diff()} [gold]Vigor[/gold]",
+  "AQUARIUM-HILARIOUS_JOKE.title": "Hilarious Joke"
 }

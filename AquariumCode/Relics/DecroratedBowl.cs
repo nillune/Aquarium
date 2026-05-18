@@ -51,6 +51,9 @@ public class DecroratedBowl() : AquariumRelic
         CardModel card,
         bool _)
     {
+        DecroratedBowl decroratedBowl = this;
+        if (decroratedBowl.Owner != card.Owner)
+            return;
         if (playedWeapons >= 11)
             return;
         playedWeapons++;

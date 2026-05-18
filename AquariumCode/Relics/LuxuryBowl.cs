@@ -50,6 +50,9 @@ public class LuxuryBowl() : AquariumRelic
         CardModel card,
         bool _)
     {
+        LuxuryBowl luxuryBowl = this;
+        if (luxuryBowl.Owner != card.Owner)
+            return;
         if (playedWeapons >= 11)
             return;
         playedWeapons++;

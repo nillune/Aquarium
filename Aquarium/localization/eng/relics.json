@@ -10,5 +10,9 @@
   "AQUARIUM-LUXURY_BOWL.description": "At the end of your turn, choose up to 2 cards to get retained.",
   "AQUARIUM-LUXURY_BOWL.flavor": "https://tenor.com/view/steve-smith-american-dad-bowl-bowl-steve-bow-bowl-bowl-gif-6240834832148063262",
   "AQUARIUM-LUXURY_BOWL.title": "Luxury Bowl",
-  "AQUARIUM-LUXURY_BOWL.selectionScreenPrompt": "choose up to 2 cards to get retained."
+  "AQUARIUM-LUXURY_BOWL.selectionScreenPrompt": "choose up to 2 cards to get retained.",
+
+  "AQUARIUM-BEJEWELED_HOOK.description": "Go fish",
+  "AQUARIUM-BEJEWELED_HOOK.flavor": "fshhhhhhhh",
+  "AQUARIUM-BEJEWELED_HOOK.title": "BejeweledHook"
 }
