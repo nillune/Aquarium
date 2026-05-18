@@ -18,13 +18,21 @@ using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Aquarium.AquariumCode.Extensions;
+using BaseLib.Abstracts;
+using BaseLib.Extensions;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 #nullable enable
-namespace MegaCrit.Sts2.Core.Models.Powers;
 
-  
-public sealed class SmokeBombPower : PowerModel
+namespace Aquarium.AquariumCode.Powers;
+public sealed class SmokeBombPower : CustomPowerModel
 {
+
+   
+
+
   public override PowerType Type => PowerType.Buff;
 
   public override PowerStackType StackType => PowerStackType.Counter;

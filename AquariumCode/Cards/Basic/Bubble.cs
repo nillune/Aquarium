@@ -11,6 +11,7 @@ using BaseLib.Extensions;
 using BaseLib.Utils;
 
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Aquarium.AquariumCode.Cards.Basic;
 
@@ -22,6 +23,10 @@ public class Bubble : AquariumCard
     {
         
        
+    }
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[] {   HoverTipFactory.FromPower<DoomPower>()};
     }
     protected override IEnumerable<DynamicVar> CanonicalVars => [  new BlockVar(3, ValueProp.Move), new PowerVar<VigorPower>(3)];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

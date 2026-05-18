@@ -9,12 +9,39 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Aquarium.AquariumCode.Extensions;
+using BaseLib.Abstracts;
+using BaseLib.Extensions;
+using Godot;
+
 
 namespace Aquarium.AquariumCode.Powers;
 
   
-public sealed class PillarOfJunkPower : PowerModel
+public sealed class PillarOfJunkPower : CustomPowerModel
 {
+
+    public override string CustomPackedIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
+            
+            return ResourceLoader.Exists(path) ? path : "power.png".PowerImagePath();
+        }
+    }
+
+    public override string CustomBigIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
+           
+            return ResourceLoader.Exists(path) ? path : "power.png".BigPowerImagePath();
+        }
+    }
+
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
@@ -24,24 +51,24 @@ public sealed class PillarOfJunkPower : PowerModel
         PlayerChoiceContext choiceContext,
         CombatState combatState)
     {
-        PillarOfJunkPower pillarOfJunkPower = this;
-        if (player != pillarOfJunkPower.Owner.Player || pillarOfJunkPower.AmountOnTurnStart < 1)
+        //PillarOfJunkPower this = this;
+        if (player != this.Owner.Player || this.AmountOnTurnStart < 1)
             return;
         
-        pillarOfJunkPower.Flash();
+        this.Flash();
         
         // Gain block
-        await CreatureCmd.GainBlock(pillarOfJunkPower.Owner, (Decimal)pillarOfJunkPower.Amount, ValueProp.Unpowered, (CardPlay)null);
+        await CreatureCmd.GainBlock(this.Owner, (Decimal)this.Amount, ValueProp.Unpowered, (CardPlay)null);
         
         // Add random status card to hand
         var statusCards = ModelDb.CardPool<StatusCardPool>()
-            .GetUnlockedCards(pillarOfJunkPower.Owner.Player.UnlockState, pillarOfJunkPower.Owner.Player.RunState.CardMultiplayerConstraint);
+            .GetUnlockedCards(this.Owner.Player.UnlockState, this.Owner.Player.RunState.CardMultiplayerConstraint);
         
         var statusCardsForCombat = CardFactory.GetDistinctForCombat(
-            pillarOfJunkPower.Owner.Player,
+            this.Owner.Player,
             statusCards,
             1,
-            pillarOfJunkPower.Owner.Player.RunState.Rng.CombatCardGeneration);
+            this.Owner.Player.RunState.Rng.CombatCardGeneration);
         
         await CardPileCmd.AddGeneratedCardsToCombat(statusCardsForCombat, PileType.Hand, true);
     }

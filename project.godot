@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Aquarium"
-config/features=PackedStringArray("4.7", "Mobile")
+config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://Aquarium/mod_image.png"
 
 [display]

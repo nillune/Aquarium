@@ -11,18 +11,46 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 
+using Aquarium.AquariumCode.Extensions;
+using BaseLib.Abstracts;
+using BaseLib.Extensions;
+using Godot;
+
 
 namespace Aquarium.AquariumCode.Powers;
 
 #nullable enable
-public class DoubleGunPower : PowerModel
+public class DoubleGunPower : CustomPowerModel
 {
+
+    public override string CustomPackedIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
+            
+            return ResourceLoader.Exists(path) ? path : "power.png".PowerImagePath();
+        }
+    }
+
+    public override string CustomBigIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
+           
+            return ResourceLoader.Exists(path) ? path : "power.png".BigPowerImagePath();
+        }
+    }
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Single;
 
     public override async Task BeforeCardPlayed(CardPlay cardPlay)
     {
+        if (this.Owner != cardPlay.Card.Owner.Creature)
+            return;
         DoubleGunPower doubleGunPower = this;
         if (!cardPlay.Card.Keywords.Contains(CardCmdPatches.Weapon))
             return;
@@ -35,6 +63,8 @@ public class DoubleGunPower : PowerModel
     }
     public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
     {
+        if (side != CombatSide.Player)
+            return;
         DoubleGunPower power = this;
         await PowerCmd.Remove((PowerModel) power);
     }

@@ -10,6 +10,9 @@ using System;
 using System.Buffers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Aquarium.AquariumCode.Extensions;
+using BaseLib.Abstracts;
+using BaseLib.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models.Badges;
@@ -18,9 +21,31 @@ using MegaCrit.Sts2.Core.Models.Badges;
 namespace MegaCrit.Sts2.Core.Models.Powers;
 
   
-  
-public sealed class AnchovyPower : PowerModel
+  /*
+public sealed class AnchovyPower : CustomPowerModel
 {
+
+    public override string CustomPackedIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
+            
+            return ResourceLoader.Exists(path) ? path : "power.png".PowerImagePath();
+        }
+    }
+
+    public override string CustomBigIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
+           
+            return ResourceLoader.Exists(path) ? path : "power.png".BigPowerImagePath();
+        }
+    }
+
+
    
   
     public override PowerType Type => PowerType.Buff;
@@ -73,4 +98,4 @@ public sealed class AnchovyPower : PowerModel
 
     public int BearingVigor;
     
-}
+} */

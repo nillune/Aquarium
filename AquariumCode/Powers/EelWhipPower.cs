@@ -12,6 +12,10 @@ using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
 using Aquarium.AquariumCode.Cards.Uncommon;
+using Aquarium.AquariumCode.Extensions;
+using BaseLib.Abstracts;
+using BaseLib.Extensions;
+using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -21,8 +25,30 @@ using MegaCrit.Sts2.Core.Models;
 namespace Aquarium.AquariumCode.Powers;
 
  
-public sealed class EelWhipPower : PowerModel
+public sealed class EelWhipPower : CustomPowerModel
 {
+
+    public override string CustomPackedIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
+            
+            return ResourceLoader.Exists(path) ? path : "power.png".PowerImagePath();
+        }
+    }
+
+    public override string CustomBigIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
+           
+            return ResourceLoader.Exists(path) ? path : "power.png".BigPowerImagePath();
+        }
+    }
+
+
     public override PowerType Type => PowerType.Debuff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

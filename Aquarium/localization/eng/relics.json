@@ -1,5 +1,5 @@
 {
-  "AQUARIUM-CAN_OF_WURMS.description": "Whenever you gain {VigorPower:diff()} [gold]Vigor[/gold], increase the amount gained by 1",
+  "AQUARIUM-CAN_OF_WURMS.description": "Whenever you gain [gold]Vigor[/gold], increase the amount gained by 1",
   "AQUARIUM-CAN_OF_WURMS.flavor": "Wurmy...",
   "AQUARIUM-CAN_OF_WURMS.title": "Can Of Wurms",
 
@@ -12,7 +12,7 @@
   "AQUARIUM-LUXURY_BOWL.title": "Luxury Bowl",
   "AQUARIUM-LUXURY_BOWL.selectionScreenPrompt": "choose up to 2 cards to get retained.",
 
-  "AQUARIUM-BEJEWELED_HOOK.description": "Go fish",
+  "AQUARIUM-BEJEWELED_HOOK.description": "You can now [gold]Enchant[/gold] a card in your deck with [gold]Vigourous[/gold] [blue]5[/blue] at rest sites.",
   "AQUARIUM-BEJEWELED_HOOK.flavor": "fshhhhhhhh",
-  "AQUARIUM-BEJEWELED_HOOK.title": "BejeweledHook"
+  "AQUARIUM-BEJEWELED_HOOK.title": "Bejeweled Hook"
 }

@@ -63,7 +63,6 @@
         <Folder Include="Aquarium\images\card_portraits\big\"/>
         <Folder Include="Aquarium\images\powers\big\"/>
         <Folder Include="Aquarium\images\relics\big\"/>
-        <Folder Include="Aquarium\images\ui\rest_site\" />
     </ItemGroup>
 
     <Target Name="CheckDependencyPaths">
