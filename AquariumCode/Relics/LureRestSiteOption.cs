@@ -52,7 +52,7 @@ public class LureRestSiteOption(Player owner) : RestSiteOption(owner)
     return await Task.FromResult<bool>(true);
   }
 
-
+  public virtual string? CustomIconPath => "res://Aquarium/images/ui/rest_site/option_lure.png";
 
   public override Task DoLocalPostSelectVfx(CancellationToken ct = default (CancellationToken))
   {
@@ -65,7 +65,7 @@ public class LureRestSiteOption(Player owner) : RestSiteOption(owner)
     NRestSiteRoom instance = NRestSiteRoom.Instance;
     NRestSiteCharacter parent = instance != null ? instance.Characters.First<NRestSiteCharacter>((Func<NRestSiteCharacter, bool>) (c => c.Player == this.Owner)) : (NRestSiteCharacter) null;
     parent?.Shake();
-    NRelicFlashVfx child = NRelicFlashVfx.Create((RelicModel) ModelDb.Relic<Girya>());
+    NRelicFlashVfx child = NRelicFlashVfx.Create((RelicModel) ModelDb.Relic<BejeweledHook>());
     if (child == null)
       return Task.CompletedTask;
     if (parent != null)
