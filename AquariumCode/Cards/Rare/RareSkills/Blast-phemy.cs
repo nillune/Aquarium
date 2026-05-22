@@ -32,7 +32,7 @@ public class Blast_phemy() : AquariumCard(0,
         }
 
        //NoBlockPower noBlockPower = await PowerCmd.Apply<NoBlockPower>(this.Owner.Creature, this.DynamicVars["NoBlockTurns"].BaseValue, this.Owner.Creature, (CardModel) this);
-        Blast_EmphyPower blast_EmphyPower = await PowerCmd.Apply<Blast_EmphyPower>(this.Owner.Creature,1, this.Owner.Creature, (CardModel) this);
+        Blast_EmphyPower blast_EmphyPower =  await PowerCmd.Apply<Blast_EmphyPower>(this.Owner.Creature,1, this.Owner.Creature, (CardModel) this);
     
     }
 

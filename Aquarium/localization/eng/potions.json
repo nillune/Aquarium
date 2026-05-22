@@ -1,0 +1,10 @@
+﻿{
+  "AQUARIUM-TOILET_WATER.description": "Draw [blue]{Cards}[/blue] cards. [gold]Exhaust[/gold] a card in your hand.",
+  "AQUARIUM-TOILET_WATER.title": "Toilet Water",
+
+  "AQUARIUM-BUCKET_OF_CHUM.description": "Gain [blue]{VigorPower}[/blue] [gold]Vigor[/gold].",
+  "AQUARIUM-BUCKET_OF_CHUM.title": "Bucket of Chum",
+
+  "AQUARIUM-USE_YOUR_HEAD.description": "Deal [blue]{Damage}[/blue] Damage. Gain [blue]{FrailPower}[/blue] Frail.",
+  "AQUARIUM-USE_YOUR_HEAD.title": "Use Your Head"
+}

@@ -45,7 +45,7 @@ public class CauldronOfEverything() : AquariumCard(1,
             Owner.Creature,
             this);
         CauldronOfEverythingPower cauldronOfEverythingPower = await PowerCmd.Apply<CauldronOfEverythingPower>(play.Target,
-            this.DynamicVars["StrengthLoss"].BaseValue, this.Owner.Creature, (CardModel)this);
+            this.DynamicVars["StrengthLoss"].BaseValue*-1, this.Owner.Creature, (CardModel)this);
         
     }
 

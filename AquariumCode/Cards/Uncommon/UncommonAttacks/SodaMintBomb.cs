@@ -35,7 +35,7 @@ public class SodaMintBomb() : AquariumCard(2,
             .Execute(choiceContext);
         if (this.Owner.Creature.HasPower<FrailPower>())
         {
-            SodaMintBombPower sodaMintBombPower = await PowerCmd.Apply<SodaMintBombPower>(play.Target, this.DynamicVars["StrengthLoss"].BaseValue, this.Owner.Creature, (CardModel) this);
+            SodaMintBombPower sodaMintBombPower = await PowerCmd.Apply<SodaMintBombPower>(play.Target, this.DynamicVars["StrengthLoss"].BaseValue*-1, this.Owner.Creature, (CardModel) this);
         }    
         
     }

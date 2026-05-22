@@ -60,10 +60,15 @@ public  class Aquarium : PlaceholderCharacterModel
         }
     }
 
+    public override string CustomCharacterSelectBg => "res://Aquarium/scenes/charselectbg/charselectbg.tscn";
     public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_char_name.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
-    
+    public override string CustomArmPointingTexturePath  => "res://Aquarium/images/arms/defaulthand.png";
+    public override string CustomArmPaperTexturePath  => "res://Aquarium/images/arms/paperhand.png";
+    public override string CustomArmScissorsTexturePath  => "res://Aquarium/images/arms/scissors.png";
+    public override string CustomArmRockTexturePath  => "res://Aquarium/images/arms/rock.png";
+
     public override string CustomVisualPath => "res://Aquarium/scenes/aquarium.tscn";
 }

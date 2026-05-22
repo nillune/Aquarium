@@ -1,10 +1,12 @@
 ﻿using Aquarium.AquariumCode.Cards;
 using Aquarium.AquariumCode.Extensions;
+using Aquarium.AquariumCode.Powers;
 using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Aquarium.AquariumCode.Cards.Common;
@@ -19,13 +21,21 @@ public class MantaRay() : AquariumCard(2,
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         MantaRay mantaRay = this;
+        int StoredVigor = 0;
+        if (!this.Owner.Creature.HasPower<BootstrapPower>())
+         
+        {
+             StoredVigor = this.Owner.Creature.GetPowerAmount<VigorPower>();
+            //this is dumb but vigor doesn't actually stay over lol. hopefully doesn't break.
+        }
+
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         DamageVar dynamicVar = (DamageVar) this.DynamicVars["AllDamage"];
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+        await DamageCmd.Attack(DynamicVars["AllDamage"].BaseValue + StoredVigor)
             .FromCard(this)
             .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")

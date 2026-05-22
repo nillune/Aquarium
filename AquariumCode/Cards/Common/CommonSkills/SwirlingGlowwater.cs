@@ -1,4 +1,6 @@
 ﻿using Aquarium.AquariumCode.Cards;
+using Aquarium.AquariumCode.Extensions;
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -21,11 +23,12 @@ public class SwirlingGlowwater() : AquariumCard(0,
         get => new[] {    
              HoverTipFactory.FromPower<FrailPower>()
         };
-    }
+    } public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        
         SwirlingGlowwater source = this;
         CardSelectorPrefs prefs = new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1);
         CardModel card = (await CardSelectCmd.FromHand(choiceContext, source.Owner, prefs, (Func<CardModel, bool>) null, (AbstractModel) source)).FirstOrDefault<CardModel>();
@@ -40,7 +43,13 @@ public class SwirlingGlowwater() : AquariumCard(0,
         if (source.IsUpgraded)
             await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, source.Owner);
         
+   
+        
     }
 
-    
 }
+
+
+
+
+    

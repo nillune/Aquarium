@@ -30,7 +30,7 @@ public class PartTheSea() : AquariumCard(1,
         CardPlay play)
     {
         ArgumentNullException.ThrowIfNull((object) play.Target, "play.Target");
-        PartTheSeaPowerLoss  partTheSeaPowerLoss = await PowerCmd.Apply<PartTheSeaPowerLoss>(play.Target, this.DynamicVars["StrengthLoss"].BaseValue, this.Owner.Creature, (CardModel) this);
+        PartTheSeaPowerLoss  partTheSeaPowerLoss = await PowerCmd.Apply<PartTheSeaPowerLoss>(play.Target, this.DynamicVars["StrengthLoss"].BaseValue*-1, this.Owner.Creature, (CardModel) this);
 
         foreach (Creature hittableEnemy in (IEnumerable<Creature>) this.CombatState.HittableEnemies)
         {

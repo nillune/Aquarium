@@ -83,7 +83,7 @@
   "AQUARIUM-BOTTLE_CANNON.description": "Can only be played if you have no potions. \nDeal {Damage:diff()} Damage.",
   "AQUARIUM-BOTTLE_CANNON.title": "Bottle Cannon",
 
-  "AQUARIUM-MANTA_RAY.description": "Deal {Damage:diff()} Damage to ALL Enemies.",
+  "AQUARIUM-MANTA_RAY.description": "Deal {Damage:diff()} Damage.\nDeal {AllDamage:diff()} Damage to ALL enemies.",
   "AQUARIUM-MANTA_RAY.title": "Manta Ray",
 
   "AQUARIUM-TAKE_FUTURE2.description": "Gain {Energy:energyIcons()} \nDraw {Cards:diff()} Card \nGain {VigorPower:diff()} [gold]Vigor[/gold] \nNext turn, gain {FrailPower:diff()} [gold]Frail[/gold] and {VulnerablePower:diff()} [gold]Vulnerable[/gold]\"",
@@ -205,7 +205,7 @@
   "AQUARIUM-DIZZY_STRIKE.description": "Deal {Damage:diff()} Damage to ALL enemies. \nIf you have [gold]Frail[/gold], hits {Repeat:diff()} times.",
   "AQUARIUM-DIZZY_STRIKE.title": "Dizzy Strike",
 
-  "AQUARIUM-BOXER_JELLIES.description": "Deal {Damage:diff()} to enemies {Repeat:diff()} times \nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "AQUARIUM-BOXER_JELLIES.description": "Deal {Damage:diff()} {Repeat:diff()} times \nIf the enemy does not have [gold]Weak[/gold], Apply {WeakPower:diff()} [gold]Weak[/gold]\nIf the enemy does not have [gold]Vulnerable[/gold], Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "AQUARIUM-BOXER_JELLIES.title": "Boxer Jellies",
 
   "AQUARIUM-SODA_MINT_BOMB.description": "Deal {Damage:diff()} Damage \nIf you have [gold]Frail[/gold] the enemy loses {StrengthLoss:diff()} [gold]Strength[/gold] this turn. ",
@@ -271,7 +271,7 @@
   "AQUARIUM-BRING_DOWN.description": "Deal {Damage:diff()} damage X times.\nDouble X if you have [gold]Frail[/gold].",
   "AQUARIUM-BRING_DOWN.title": "Bring Down",
 
-  "AQUARIUM-IMMOVABLE_OBJECT.description": "If you end your turn with [gold]Frail[/gold], double your [gold]Block[/gold].{IfUpgraded:show:\nGain {Block:diff()} [gold]Block[/gold].",
+  "AQUARIUM-IMMOVABLE_OBJECT.description": "If you end your turn with [gold]Frail[/gold], double your [gold]Block[/gold].{IfUpgraded:show:\nGain {Block:diff()}} [gold]Block[/gold].",
   "AQUARIUM-IMMOVABLE_OBJECT.title": "Immovable Object",
 
   "AQUARIUM-BLOOD_FYSHRISITE.description": "Deal {Damage:diff()} damage.\nAdd a copy of this to your draw pile,\nit costs {Energy:energyIcons()} less.",
@@ -281,5 +281,8 @@
   "AQUARIUM-BIG_HAMMERHEAD.title": "Big Hammerhead",
 
   "AQUARIUM-WHATEVER_WORKS.description": "Add a random card with [gold]Weapon[/gold] into your hand.\nIt's free to play this turn.",
-  "AQUARIUM-WHATEVER_WORKS.title": "Whatever Works"
+  "AQUARIUM-WHATEVER_WORKS.title": "Whatever Works",
+
+  "AQUARIUM-THUNDERDOME.description": "Prevent the next {BufferPower:plural:time|{BufferPower:diff()} times} you would lose HP this turn.\nAt the start of your turn, if this is in your [gold]Exhaust Pile[/gold], play it.",
+  "AQUARIUM-THUNDERDOME.title": "Thunderdome"
 }

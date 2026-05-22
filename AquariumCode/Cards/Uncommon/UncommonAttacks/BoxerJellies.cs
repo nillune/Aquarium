@@ -14,7 +14,8 @@ public class BoxerJellies() : AquariumCard(2,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(1, ValueProp.Move), new RepeatVar(2), new PowerVar<WeakPower>(2)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(3, ValueProp.Move), new RepeatVar(3), new PowerVar<WeakPower>(2), 
+        new PowerVar<VulnerablePower>(2)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardCmdPatches.Weapon ];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -27,16 +28,26 @@ public class BoxerJellies() : AquariumCard(2,
             .WithHitCount(DynamicVars.Repeat.IntValue)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        await PowerCmd.Apply<WeakPower>(
+        if (!play.Target.HasPower<VulnerablePower>() ){
+                await PowerCmd.Apply<VulnerablePower>(
             play.Target,
-            DynamicVars[nameof(WeakPower)].BaseValue,
+            DynamicVars[nameof(VulnerablePower)].BaseValue,
             Owner.Creature,
             this);
+        } 
+        if (!play.Target.HasPower<WeakPower>() ){
+            await PowerCmd.Apply<WeakPower>(
+                play.Target,
+                DynamicVars[nameof(WeakPower)].BaseValue,
+                Owner.Creature,
+                this);
+        } 
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Repeat.UpgradeValueBy(1m);
         DynamicVars["WeakPower"].UpgradeValueBy(1m);
+        DynamicVars["VulnerablePower"].UpgradeValueBy(1m);
     }
 }

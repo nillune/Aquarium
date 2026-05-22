@@ -19,6 +19,7 @@ public class Blaster : AquariumCard
     }
         
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(2, ValueProp.Move), new RepeatVar(4)];
+    
     protected override async Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, CardPlay play)
     {  
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)

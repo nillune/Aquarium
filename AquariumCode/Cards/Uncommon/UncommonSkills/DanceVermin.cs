@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Aquarium.AquariumCode.Cards.Uncommon;
 
-  
+  /*
 public class DanceVermin() : AquariumCard(2,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
@@ -33,3 +33,4 @@ public class DanceVermin() : AquariumCard(2,
 
     protected override void OnUpgrade() => this.DynamicVars["Power"].UpgradeValueBy(-5M);
 }
+*/

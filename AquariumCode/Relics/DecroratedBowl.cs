@@ -46,6 +46,9 @@ public class DecroratedBowl() : AquariumRelic
     // ReSharper disable once InconsistentNaming
     static CardModel[] PreviousCards = {null!, null!};
     private int playedWeapons;
+    
+    //lolll you figured out my secret and that I just added weapon into aquarium starting relics LOL. originally it wasn't but it was buggy so i just moved it here.
+    //though dw it still works as other classes, just a bit more buggy.
     public override async Task AfterCardExhausted(
         PlayerChoiceContext choiceContext,
         CardModel card,

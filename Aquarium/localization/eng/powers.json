@@ -57,8 +57,8 @@
   "AQUARIUM-EEL_WHIP_POWER.smartDescription": "Eel Whip does double damage to this enemy.",
   "AQUARIUM-EEL_WHIP_POWER.title": "Eel Whip",
   "AQUARIUM-BLAST_EMPHY_POWER.description": "you're gonna die mf.",
-  "AQUARIUM-BLAST_EMPHY_POWER.smartDescription": "Die next turn.",
-  "AQUARIUM-BLAST_EMPHY_POWER.title": "Blast_Emphy",
+  "AQUARIUM-BLAST_EMPHY_POWER.smartDescription": "At the start of your turn, die.",
+  "AQUARIUM-BLAST_EMPHY_POWER.title": "Blast-Phemy",
   "AQUARIUM-TRIPLE_DAMAGE_POWER.description": "surely you can guess what this does, right?",
   "AQUARIUM-TRIPLE_DAMAGE_POWER.smartDescription": "You deal triple damage this turn.",
   "AQUARIUM-TRIPLE_DAMAGE_POWER.title": "Triple Damage",
@@ -85,5 +85,8 @@
   "AQUARIUM-SUNKEN_TREASURE_POWER.title": "Sunken Treasure",
   "AQUARIUM-IMMOVABLE_OBJECT_POWER.description": "If you end your turn with [gold]Frail[/gold], double your [gold]Block[/gold].",
   "AQUARIUM-IMMOVABLE_OBJECT_POWER.smartDescription": "If you end your turn with [gold]Frail[/gold], double your [gold]Block[/gold].",
-  "AQUARIUM-IMMOVABLE_OBJECT_POWER.title": "Immovable Object"
+  "AQUARIUM-IMMOVABLE_OBJECT_POWER.title": "Immovable Object",
+  "AQUARIUM-THUNDERDOME_POWER.description": "Prevent the next time you would lose HP.",
+  "AQUARIUM-THUNDERDOME_POWER.smartDescription": "Prevent the next {Amount:plural:time|[blue]{}[/blue] times} you would lose HP.",
+  "AQUARIUM-THUNDERDOME_POWER.title": "Thunderdome"
 }

@@ -12,15 +12,17 @@ using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Entities.Powers;
 
 
 #nullable enable
 namespace Aquarium.AquariumCode.Powers;
 
-public class SodaMintBombPower : TemporaryStrengthPower
+public class SodaMintBombPower : CustomTemporaryPowerModelWrapper<SodaMintBombPower, StrengthPower>
 {
-
-    public  string CustomPackedIconPath
+    protected  bool InvertInternalPowerAmount => true;
+    public override PowerType Type => PowerType.Debuff;
+    public override string CustomPackedIconPath
     {
         get
         {
@@ -30,7 +32,7 @@ public class SodaMintBombPower : TemporaryStrengthPower
         }
     }
 
-    public  string CustomBigIconPath
+    public override string CustomBigIconPath
     {
         get
         {
@@ -43,5 +45,6 @@ public class SodaMintBombPower : TemporaryStrengthPower
 
     public override AbstractModel OriginModel => (AbstractModel) ModelDb.Card<SodaMintBomb>();
 
-    protected override bool IsPositive => false;
+   
 }
+
