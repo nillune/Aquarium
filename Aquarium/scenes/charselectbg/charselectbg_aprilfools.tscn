@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3ccn1qktdjnu"]
+
+[ext_resource type="Texture2D" uid="uid://cy3t2cfscdlbq" path="res://Aquarium/scenes/charselectbg/aquariumselectscreen.png" id="1_hwnmv"]
+[ext_resource type="PackedScene" uid="uid://b01ljrdqx0k6r" path="res://Aquarium/scenes/charselectbg/char_select_bg_regent.tscn" id="2_ml0dp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 69.0
+offset_top = 6.0
+offset_right = 109.0
+offset_bottom = 46.0
+
+[node name="Aquariumselectscreen" type="Sprite2D" parent="."]
+position = Vector2(1270, 599)
+texture = ExtResource("1_hwnmv")
+
+[node name="RegentBg" parent="." instance=ExtResource("2_ml0dp")]
+layout_mode = 1
+offset_left = -241.0
+offset_top = -245.0
+offset_right = 2319.0
+offset_bottom = 955.0
+script = null
+
+[node name="RegentBg" parent="RegentBg" instance=ExtResource("2_ml0dp")]
+layout_mode = 1
+offset_left = -509.0
+offset_top = -517.0
+offset_right = 2051.0
+offset_bottom = 683.0
+script = null
+
+[node name="RegentBg" parent="RegentBg/RegentBg" instance=ExtResource("2_ml0dp")]
+layout_mode = 1
+offset_left = -1190.0
+offset_top = 5.0
+offset_right = 1316.0
+offset_bottom = 796.0
+script = null
+
+[node name="RegentBg" parent="RegentBg/RegentBg/RegentBg" instance=ExtResource("2_ml0dp")]
+layout_mode = 1
+offset_left = -464.0
+offset_top = -470.5
+offset_right = 2042.0
+offset_bottom = 320.5
+script = null
+
+[node name="RegentBg" parent="RegentBg/RegentBg/RegentBg/RegentBg" instance=ExtResource("2_ml0dp")]
+layout_mode = 1
+offset_left = -2853.0
+offset_top = -312.5
+offset_right = -347.0
+offset_bottom = 478.5
+script = null

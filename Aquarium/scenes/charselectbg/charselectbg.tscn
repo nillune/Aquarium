@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://731kt20n1u1k"]
+
+[ext_resource type="Texture2D" uid="uid://cy3t2cfscdlbq" path="res://Aquarium/scenes/charselectbg/aquariumselectscreen.png" id="1_hwnmv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 69.0
+offset_top = 6.0
+offset_right = 109.0
+offset_bottom = 46.0
+
+[node name="Aquariumselectscreen" type="Sprite2D" parent="."]
+position = Vector2(1270, 599)
+texture = ExtResource("1_hwnmv")
