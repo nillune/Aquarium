@@ -61,11 +61,5 @@ public class DoubleGunPower : CustomPowerModel
         power.Flash();
         await PowerCmd.Remove((PowerModel) power);
     }
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
-    {
-        if (side != CombatSide.Player)
-            return;
-        DoubleGunPower power = this;
-        await PowerCmd.Remove((PowerModel) power);
-    }
+    
 }

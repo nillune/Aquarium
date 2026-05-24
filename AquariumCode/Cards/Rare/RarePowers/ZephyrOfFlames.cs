@@ -14,7 +14,7 @@ public class ZephyrOfFlames() : AquariumCard(1,
     CardType.Power, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power", 2M)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power", 99M)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get => new[] {     HoverTipFactory.FromPower<ArtifactPower>(), HoverTipFactory.Static(StaticHoverTip.Block)
@@ -23,6 +23,7 @@ public class ZephyrOfFlames() : AquariumCard(1,
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         ZephyrOfFlames cardSource = this;
         ArgumentNullException.ThrowIfNull((object) cardPlay.Target, "cardPlay.Target");
         await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "Cast", cardSource.Owner.Character.CastAnimDelay);
@@ -35,8 +36,5 @@ public class ZephyrOfFlames() : AquariumCard(1,
         VulnerablePower vulnerablePower2 = await PowerCmd.Apply<VulnerablePower>(cardSource.Owner.Creature, (Decimal) amount, cardSource.Owner.Creature, (CardModel) cardSource);
     }
 
-    protected override void OnUpgrade()
-    {
-
-    }
+    protected override void OnUpgrade() => this.EnergyCost.UpgradeBy(-1);
 }

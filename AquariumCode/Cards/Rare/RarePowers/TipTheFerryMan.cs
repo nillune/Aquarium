@@ -19,6 +19,7 @@ public class TipTheFerryMan() : AquariumCard(3,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         TipTheFerrymanPower tipTheFerrymanPower = await PowerCmd.Apply<TipTheFerrymanPower>(this.Owner.Creature, 1 ,
             this.Owner.Creature, (CardModel)this);
     }

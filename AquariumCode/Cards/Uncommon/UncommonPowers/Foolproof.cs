@@ -21,7 +21,7 @@ public class Foolproof() : AquariumCard(1,
     {
         Foolproof foolproof = this;
         Foolproof cardSource = this;
-      
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         FoolproofPower foolproofPower = await PowerCmd.Apply<FoolproofPower>(cardSource.Owner.Creature, 1 ,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }

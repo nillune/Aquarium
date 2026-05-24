@@ -14,7 +14,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Aquarium.AquariumCode.Powers;
 
  
-public abstract class FinPolishPower : CustomPowerModel
+public  class FinPolishPower : CustomPowerModel
 {
 
     public override string CustomPackedIconPath

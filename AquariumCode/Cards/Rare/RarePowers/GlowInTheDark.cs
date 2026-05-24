@@ -21,6 +21,7 @@ public class GlowInTheDark() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         GlowInTheDarkPower glowInTheDarkPower = await PowerCmd.Apply<GlowInTheDarkPower>(this.Owner.Creature, DynamicVars.Energy.IntValue,
             this.Owner.Creature, (CardModel)this);
         foreach (Creature hittableEnemy in (IEnumerable<Creature>)this.CombatState.HittableEnemies)

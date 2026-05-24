@@ -21,6 +21,7 @@ public class EndlesslyVersatile() : AquariumCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         foreach (CardModel allCard in this.Owner.PlayerCombatState.AllCards)
         {
            

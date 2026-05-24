@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc0b6qei0y6kt"
-path="res://.godot/imported/relic.png-3cf3e848c80ab0cc2823a87ec095f74b.ctex"
+uid="uid://0bay0ncg3ve5"
+path="res://.godot/imported/dissassembly_power.png-08751cb8e93f32b8f970a7c7b2026519.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/relics/big/relic.png"
-dest_files=["res://.godot/imported/relic.png-3cf3e848c80ab0cc2823a87ec095f74b.ctex"]
+source_file="res://Aquarium/images/powers/dissassembly_power.png"
+dest_files=["res://.godot/imported/dissassembly_power.png-08751cb8e93f32b8f970a7c7b2026519.ctex"]
 
 [params]
 

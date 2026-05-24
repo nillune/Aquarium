@@ -26,7 +26,7 @@ public class SpecialCustomer() : AquariumCard(1,
         SpecialCustomer card = this;
         AttackCommand attackCommand = await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
             .FromCard(this)
-            .TargetingAllOpponents(CombatState)
+            .Targeting(play.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         Decimal VigorGained =

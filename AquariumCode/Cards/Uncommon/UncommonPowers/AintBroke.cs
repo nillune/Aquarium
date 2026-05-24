@@ -21,6 +21,7 @@ public class AintBroke() : AquariumCard(2,
         CardPlay play)
     {
         AintBroke cardSource = this;
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         AintBrokePower bootstrappedPower = await PowerCmd.Apply<AintBrokePower>(cardSource.Owner.Creature, 1M,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }

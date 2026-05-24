@@ -27,7 +27,7 @@ public class PortableBubbler() : AquariumCard(2,
     {
       
         PortableBubbler cardSource = this;
-      
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         PortableBubblerPower portableBubblerPower = await PowerCmd.Apply<PortableBubblerPower>(cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }

@@ -1,22 +1,19 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using Aquarium.AquariumCode.Extensions;
+using BaseLib.Abstracts;
+using BaseLib.Extensions;
+using Godot;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.ValueProps;
-using Aquarium.AquariumCode.Extensions;
-using BaseLib.Abstracts;
-using BaseLib.Extensions;
-using Godot;
-
 
 namespace Aquarium.AquariumCode.Powers;
 
  
-public class ImmovableObjectPower : CustomPowerModel
+public class FrailNextTurn : CustomPowerModel
 {
-
     public override string CustomPackedIconPath
     {
         get
@@ -37,19 +34,24 @@ public class ImmovableObjectPower : CustomPowerModel
         }
     }
 
-    
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+
+   
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (side != CombatSide.Player || !this.Owner.HasPower<FrailPower>())
+       
+        if (player != this.Owner.Player || this.AmountOnTurnStart == 0)
             return;
-        decimal GainedBlock = this.Owner.Block;
-            Decimal num = await CreatureCmd.GainBlock(this.Owner, (Decimal)this.Owner.Block,
-                ValueProp.Unpowered | ValueProp.Move, null);
-        
+        FrailNextTurn frailNextTurn = await PowerCmd.Apply<FrailNextTurn>(
+            this.Owner,
+            this.Amount,
+            this.Owner,
+            (CardModel) null);
+        this.Flash();
+        await PowerCmd.Remove((PowerModel)this);
     }
 }
-    
-    

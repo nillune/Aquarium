@@ -20,6 +20,7 @@ public class ImmovableObject() : AquariumCard(3,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         ImmovableObjectPower immovableObjectPower = await PowerCmd.Apply<ImmovableObjectPower>(this.Owner.Creature, 1 ,
             this.Owner.Creature, (CardModel)this);
 

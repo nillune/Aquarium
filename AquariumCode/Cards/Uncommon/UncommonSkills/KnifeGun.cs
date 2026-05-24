@@ -15,7 +15,7 @@ public class KnifeGun() : AquariumCard(3,
     TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardCmdPatches.Weapon];
-
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power", 99M)];
 
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

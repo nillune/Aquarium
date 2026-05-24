@@ -25,7 +25,7 @@ public class FinPolish() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        FinPolish pillarOfJunk = this;
+       
         FinPolish cardSource = this;
         FinPolishPower finPolishPower = await PowerCmd.Apply<FinPolishPower>(cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
             cardSource.Owner.Creature, (CardModel)cardSource);

@@ -21,7 +21,7 @@ public class AttentionToDetail() : AquariumCard(2,
     {
         AttentionToDetail attentionToDetail = this;
         AttentionToDetail cardSource = this;
-      
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         AttentionToDetailPower attentionToDetailPower = await PowerCmd.Apply<AttentionToDetailPower>(cardSource.Owner.Creature, DynamicVars.Energy.IntValue ,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }

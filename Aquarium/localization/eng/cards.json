@@ -40,7 +40,7 @@
   "AQUARIUM-LIGHT_UP.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {FrailPower:diff()} [gold]Frail[/gold].",
   "AQUARIUM-LIGHT_UP.title": "Light Up",
 
-  "AQUARIUM-RE_CYCLE.description": "Gain {Block:diff()} [gold]Block[/gold] for every card in your hand. \nAll cards played this turn [gold]Exhaust[/gold] after being played.",
+  "AQUARIUM-RE_CYCLE.description": "[gold]Exhaust[/gold] a card in your hand. \nGain {Block:diff()} [gold]Block[/gold] based on it's cost.",
   "AQUARIUM-RE_CYCLE.title": "ReCycle",
 
   "AQUARIUM-STARTER_PISTOL.description": "Next turn, gain \n{VigorNextTurnPower:diff()} [gold]Vigor[/gold] and gain {Energy:energyIcons()}.",
@@ -67,7 +67,7 @@
   "AQUARIUM-ASSAULT_BATTERY.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies.",
   "AQUARIUM-ASSAULT_BATTERY.title": "Assault Battery",
 
-  "AQUARIUM-SPECIAL_CUSTOMER.description": "Deal {Damage:diff()} to ALL enemies. \nGain [gold]Vigor[/gold] equal to damage dealt.",
+  "AQUARIUM-SPECIAL_CUSTOMER.description": "Deal {Damage:diff()}. \nGain [gold]Vigor[/gold] equal to damage dealt.",
   "AQUARIUM-SPECIAL_CUSTOMER.title": "Special Customer",
 
   "AQUARIUM-PREFIRE.description": "Deal {Damage:diff()} Damage. \nPut a card from your [gold]Draw Pile[/gold] into your [gold]Discard Pile[/gold].",
@@ -205,19 +205,19 @@
   "AQUARIUM-DIZZY_STRIKE.description": "Deal {Damage:diff()} Damage to ALL enemies. \nIf you have [gold]Frail[/gold], hits {Repeat:diff()} times.",
   "AQUARIUM-DIZZY_STRIKE.title": "Dizzy Strike",
 
-  "AQUARIUM-BOXER_JELLIES.description": "Deal {Damage:diff()} {Repeat:diff()} times \nIf the enemy does not have [gold]Weak[/gold], Apply {WeakPower:diff()} [gold]Weak[/gold]\nIf the enemy does not have [gold]Vulnerable[/gold], Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "AQUARIUM-BOXER_JELLIES.description": "Deal {Damage:diff()} Damage {Repeat:diff()} times \nIf it does not have [gold]Weak[/gold], Apply {WeakPower:diff()} [gold]Weak[/gold]\nIf it does not have [gold]Vulnerable[/gold], Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "AQUARIUM-BOXER_JELLIES.title": "Boxer Jellies",
 
   "AQUARIUM-SODA_MINT_BOMB.description": "Deal {Damage:diff()} Damage \nIf you have [gold]Frail[/gold] the enemy loses {StrengthLoss:diff()} [gold]Strength[/gold] this turn. ",
   "AQUARIUM-SODA_MINT_BOMB.title": "Nucleation",
 
-  "AQUARIUM-ENTHRALLING_ANGER.description": "Deal {Damage:diff()} Damage. \nIf this is in your hand, it must be played before other cards. ",
+  "AQUARIUM-ENTHRALLING_ANGER.description": "Deal {Damage:diff()} Damage.\n Gain {Block:diff()} Block.\nIf this is in your hand, it must be played before other cards. ",
   "AQUARIUM-ENTHRALLING_ANGER.title": "Enthralling Anger",
 
   "AQUARIUM-FIN_REAPER.description": "Deal {Damage:diff()} Damage {Repeat:diff()} times. \nApply [gold]Doom[/gold] equal to damage dealt.",
   "AQUARIUM-FIN_REAPER.title": "Fin Reaper",
 
-  "AQUARIUM-EEL_WHIP.description": "Deal {Damage:diff()} Damage.\nThis turn, double the damage ALL Eel Whip cards deal to this enemy. ",
+  "AQUARIUM-EEL_WHIP.description": "Deal {Damage:diff()} Damage.\nGain {Energy:energyIcons()}. ",
   "AQUARIUM-EEL_WHIP.title": "Eel Whip",
 
   "AQUARIUM-SPHEREHEADED.description": "Channel 1 random orb. \nEvoke it {IfUpgraded:show:twice|}\n Draw 1 card.",

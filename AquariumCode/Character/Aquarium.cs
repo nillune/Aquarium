@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 
 namespace Aquarium.AquariumCode.Character;
 
@@ -69,6 +70,6 @@ public  class Aquarium : PlaceholderCharacterModel
     public override string CustomArmPaperTexturePath  => "res://Aquarium/images/arms/paperhand.png";
     public override string CustomArmScissorsTexturePath  => "res://Aquarium/images/arms/scissors.png";
     public override string CustomArmRockTexturePath  => "res://Aquarium/images/arms/rock.png";
-
+   
     public override string CustomVisualPath => "res://Aquarium/scenes/aquarium.tscn";
 }

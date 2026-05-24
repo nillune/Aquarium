@@ -19,6 +19,7 @@ public class BlowingSteam() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        
         BlowingSteamPower blowingSteamPower = await PowerCmd.Apply<BlowingSteamPower>(this.Owner.Creature, this.DynamicVars["Power"].BaseValue ,
             this.Owner.Creature, (CardModel)this);
     }

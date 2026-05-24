@@ -25,6 +25,7 @@ public class CataclysmOrb() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         CataclysmOrbPower cataclysmOrbPower = await PowerCmd.Apply<CataclysmOrbPower>(this.Owner.Creature, this.DynamicVars["Power"].BaseValue ,
             this.Owner.Creature, (CardModel)this);
     }

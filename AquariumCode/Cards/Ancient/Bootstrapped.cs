@@ -26,6 +26,7 @@ public class Bootstrapped() : AquariumCard(4,
         CardPlay play)
     {
         Bootstrapped cardSource = this;
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         BootstrapPower bootstrappedPower = await PowerCmd.Apply<BootstrapPower>(cardSource.Owner.Creature, 1M,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }

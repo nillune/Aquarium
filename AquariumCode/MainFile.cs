@@ -9,7 +9,7 @@ namespace Aquarium.AquariumCode;
 
 public partial class MainFile : Node
 {
-    
+   
     public const string ModId = "Aquarium"; //Used for resource filepath
     public const string ResPath = $"res://{ModId}";
 
@@ -19,7 +19,7 @@ public partial class MainFile : Node
     public static void Initialize()
     {
         Harmony harmony = new(ModId);
-
+        Godot.Bridge.ScriptManagerBridge.LookupScriptsInAssembly(Assembly.GetExecutingAssembly()); 
         harmony.PatchAll();
     }
     

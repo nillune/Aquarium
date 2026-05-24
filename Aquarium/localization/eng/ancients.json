@@ -1,7 +1,27 @@
 {
-  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.0-0r.char": "Die",
-  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.0-0r.next": "Die",
-  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.0-1r.ancient": "Die",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.0-0r.char": "I’ll find great joy in this bullet between your eyes.",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.0-0r.next": "Continue",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.0-1r.ancient": "For what purpose? Nevermind, I don’t care.",
   "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM": "Die",
-  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.0-attack": "Die"
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.0-attack": "Die2",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.1-0r.char": "’ll find great joy in this bullet betw-",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.1-0r.next": "Continue",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.1-1r.ancient": "Heard it before. Come back with new material.",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.2-0r.char": "It’s been fun, but I’m ending this game here!",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.2-0r.next": "Continue",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.2-1r.ancient": "Then forfeit or die, that’s the only way this ends.",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.3-0r.char": "Rot in hell, loser!",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.3-0r.next": "Continue",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.3-1r.ancient": "I’ll see you there, long from now.",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.3-1r.next": "Continue",
+  "THE_ARCHITECT.talk.AQUARIUM-AQUARIUM.3-2r.char": "I don’t plan on going there.",
+
+
+  "NEOW.talk.AQUARIUM-AQUARIUM.0-0.ancient": "[sine]..He.... will entertain.... your bloodlust......[/sine]",
+  "NEOW.talk.AQUARIUM-AQUARIUM.0-1.char": "Who? Be more specific, idiot!",
+  "NEOW.talk.AQUARIUM-AQUARIUM.0-0.ancient": "[sine]....[red]The Architect[/red]... at the top…[/sine]",
+  "NEOW.talk.AQUARIUM-AQUARIUM.1-0.ancient": "[sine]Quench… your thirst..... with his blood..[/sine]",
+  "NEOW.talk.AQUARIUM-AQUARIUM.2-0.char": "Can this guy even die?!?",
+  "NEOW.talk.AQUARIUM-AQUARIUM.2-1.ancient": "[sine]..[red]He[/red] will fall.... Keep going....[/sine]"
+ 
 }

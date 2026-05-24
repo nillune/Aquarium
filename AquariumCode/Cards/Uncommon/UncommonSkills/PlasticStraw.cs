@@ -12,7 +12,7 @@ namespace Aquarium.AquariumCode.Cards.Uncommon;
 public class PlasticStraw() : AquariumCard(0,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
-{
+{public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardKeyword.Exhaust ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<FrailPower>(7)];
 
     protected override async Task OnPlay(

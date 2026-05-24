@@ -19,8 +19,11 @@ public class HurricaneForm() : AquariumCard(3,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         HurricaneFormPower hurricaneFormPower = await PowerCmd.Apply<HurricaneFormPower>(this.Owner.Creature, 1 ,
             this.Owner.Creature, (CardModel)this);
+     
     }
 
     protected override void OnUpgrade() => this.RemoveKeyword(CardKeyword.Ethereal);

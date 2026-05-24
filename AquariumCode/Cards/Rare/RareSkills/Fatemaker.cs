@@ -25,7 +25,7 @@ public class Fatemaker() : AquariumCard(0,
         if (this.IsUpgraded)
             ++hitCount;
         ArgumentNullException.ThrowIfNull((object)this.CombatState, "this.CombatState");
-        for (int i = 0; i < DynamicVars.Repeat.IntValue; i++)
+        for (int i = 0; i < hitCount; i++)
         {
             IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, cardPlay.Target,
                 this.DynamicVars.Damage, (CardModel)this);

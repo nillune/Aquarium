@@ -28,7 +28,7 @@ public class DragunFish() : AquariumCard(2,
         
         DragunFish dragunFish = this;
         DragunFish cardSource = this;
-      
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
         DragunFishPower dragunFishPower = await PowerCmd.Apply<DragunFishPower>(cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }
