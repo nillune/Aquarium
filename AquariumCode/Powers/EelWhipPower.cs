@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using System;
 using System.Collections.Generic;
+using Aquarium.AquariumCode.Cards.Common;
 using Aquarium.AquariumCode.Cards.Uncommon;
 using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;

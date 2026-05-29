@@ -31,7 +31,7 @@ public class Thunderdome() : AquariumCard(5,
         PlayerChoiceContext choiceContext,
         CombatState combatState)
     {
-       
+       CardCmd.RemoveKeyword(this, CardKeyword.Exhaust);
         CardPile pile = this.Pile;
         if ((pile != null ? (pile.Type != PileType.Exhaust ? 1 : 0) : 1) != 0 || player != this.Owner)
             return;

@@ -11,10 +11,10 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Aquarium.AquariumCode.Cards.Common;
 
-
+/*
 public class SpecialCustomer() : AquariumCard(1,
     CardType.Attack, CardRarity.Common,
-    TargetType.AllEnemies)
+    TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4, ValueProp.Move),];
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -48,4 +48,4 @@ protected override void OnUpgrade()
     }
 
 
-}
+} */

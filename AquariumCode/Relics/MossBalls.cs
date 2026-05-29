@@ -1,6 +1,7 @@
 ﻿using Aquarium.AquariumCode.Character;
 using Aquarium.AquariumCode.Relics;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
@@ -18,7 +19,7 @@ public class MossBalls() : AquariumRelic
     public override RelicRarity Rarity =>
         RelicRarity.Rare;
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<VigorPower>(5)];
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
 
         if (!this.Owner.Creature.HasPower<VigorPower>())

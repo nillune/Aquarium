@@ -40,7 +40,7 @@
   "AQUARIUM-LIGHT_UP.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {FrailPower:diff()} [gold]Frail[/gold].",
   "AQUARIUM-LIGHT_UP.title": "Light Up",
 
-  "AQUARIUM-RE_CYCLE.description": "[gold]Exhaust[/gold] a card in your hand. \nGain {Block:diff()} [gold]Block[/gold] based on it's cost.",
+  "AQUARIUM-RE_CYCLE.description": "[gold]Exhaust[/gold] a card. \nGain {Block:diff()} [gold]Block[/gold] for each {1:energyIcons()} it costed.",
   "AQUARIUM-RE_CYCLE.title": "ReCycle",
 
   "AQUARIUM-STARTER_PISTOL.description": "Next turn, gain \n{VigorNextTurnPower:diff()} [gold]Vigor[/gold] and gain {Energy:energyIcons()}.",
@@ -52,7 +52,7 @@
   "AQUARIUM-STORE_RAGE.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {VigorPower:diff()} [gold]Vigor[/gold].",
   "AQUARIUM-STORE_RAGE.title": "Store Rage",
 
-  "AQUARIUM-ANCHOVY.description": "Lose all [gold]Vigor[/gold], \nGain it back next turn. \nDraw a card.",
+  "AQUARIUM-ANCHOVY.description": "Lose all [gold]Vigor[/gold] and [gold]Frail[/gold], \nGain both back next turn. \nDraw a card.",
   "AQUARIUM-ANCHOVY.title": "Anchovy Tin",
 
   "AQUARIUM-BEARING.description": "Deal {Damage:diff()} Damage. \nThis attack does not remove [gold]Vigor[/gold].",
@@ -67,7 +67,7 @@
   "AQUARIUM-ASSAULT_BATTERY.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies.",
   "AQUARIUM-ASSAULT_BATTERY.title": "Assault Battery",
 
-  "AQUARIUM-SPECIAL_CUSTOMER.description": "Deal {Damage:diff()}. \nGain [gold]Vigor[/gold] equal to damage dealt.",
+  "AQUARIUM-SPECIAL_CUSTOMER.description": "Deal {Damage:diff()} Damage. \nGain [gold]Vigor[/gold] equal to damage dealt.",
   "AQUARIUM-SPECIAL_CUSTOMER.title": "Special Customer",
 
   "AQUARIUM-PREFIRE.description": "Deal {Damage:diff()} Damage. \nPut a card from your [gold]Draw Pile[/gold] into your [gold]Discard Pile[/gold].",
@@ -102,16 +102,16 @@
   "AQUARIUM-BOOTSTRAPPED.description": "[gold]Vigor[/gold] gets returned after attacking.",
   "AQUARIUM-BOOTSTRAPPED.title": "Bootstrapped",
 
-  "AQUARIUM-KNIFE_GUN.description": "Fill your hand with [gold]{IfUpgraded:show:Shivs+|Shivs}[/gold].",
+  "AQUARIUM-KNIFE_GUN.description": "Gain {Cards:diff()} [gold]{IfUpgraded:show:Shivs+|Shivs}[/gold].",
   "AQUARIUM-KNIFE_GUN.title": "Knife Gun",
 
   "AQUARIUM-FEEL_PAIN.description": "Gain {Block:diff()} [gold]Block[/gold]. \nIf you have [gold]Frail[/gold], Gain {StrengthPower:diff()} [gold]Strength[/gold].",
   "AQUARIUM-FEEL_PAIN.title": "Feel Pain",
 
-  "AQUARIUM-SHOW_OFF.description": "Deal {Damage:diff()} damage \n[gold]Exhaust[/gold] 1 card.",
+  "AQUARIUM-SHOW_OFF.description": "Deal {Damage:diff()} damage. \n[gold]Exhaust[/gold] 1 card.",
   "AQUARIUM-SHOW_OFF.title": "Show-Off",
 
-  "AQUARIUM-BINDING_KELP.description": "Deal {Damage:diff()} damage to ALL enemies \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies",
+  "AQUARIUM-BINDING_KELP.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "AQUARIUM-BINDING_KELP.title": "Binding Kelp",
   
   "AQUARIUM-PILLAR_OF_JUNK.description": "At the start of your turn, gain {Power:diff()} [gold]Block[/gold] and add a random status to your hand.",
@@ -132,7 +132,7 @@
   "AQUARIUM-DOUBLE_GUN.description": "Deal {Damage:diff()} damage {Repeat:diff()} times. \nAdd a copy of the next [gold]Weapon[/gold] Card you play this turn to your hand.",
   "AQUARIUM-DOUBLE_GUN.title": "Double Gun",
  
-  "AQUARIUM-PLASTIC_STRAW.description": "Gain {FrailPower:diff()} [gold]Frail[/gold]",
+  "AQUARIUM-PLASTIC_STRAW.description": "Gain {FrailPower:diff()} [gold]Frail[/gold].",
   "AQUARIUM-PLASTIC_STRAW.title": "Plastic Straw",
   
   "AQUARIUM-WET_JET.description": "Deal {Damage:diff()} damage. \nIf this is the first attack you've played this turn, draw a card.",
@@ -156,7 +156,7 @@
   "AQUARIUM-REEL_BACK.title": "Reel Back",
   "AQUARIUM-REEL_BACK.selectionScreenPrompt": "Choose a card to get [gold]Exhaust[/gold]",
 
-  "AQUARIUM-CARRIED.description": "All other players Gain {DexterityPower:diff()} [gold]Dexterity[/gold]. \nGain {FrailPower:diff()} [gold]Frail[/gold].",
+  "AQUARIUM-CARRIED.description": "All other players gain {DexterityPower:diff()} [gold]Dexterity[/gold]. \nGain {FrailPower:diff()} [gold]Frail[/gold].",
   "AQUARIUM-CARRIED.title": "Carried",
 
   "AQUARIUM-IMPROVISE.description": "Choose {CardSelect:diff()} {IfUpgraded:show:cards|card} to gain [gold]Weapon[/gold]\n[gold]Exhaust[/gold] {IfUpgraded:show:them|it} ",
@@ -178,19 +178,19 @@
   "AQUARIUM-PESCOMANCER.description": "An enemy loses {Damage:diff()} HP {Repeat:diff()} times. Increase HP loss by 1 for this combat. \nAdd a [gold]Dazed[/gold] to your draw pile.",
   "AQUARIUM-PESCOMANCER.title": "Pescomancer",
 
-  "AQUARIUM-DONT_FIX.description": "Whenever you play a card, if the previously played card had the same name, gain {Power:diff()} [gold]Block[/gold]",
+  "AQUARIUM-DONT_FIX.description": "Whenever you play a card, if the previously played card had the same name, gain {Power:diff()} [gold]Block[/gold].",
   "AQUARIUM-DONT_FIX.title": "Don't Fix It",
 
-  "AQUARIUM-ATTENTION_TO_DETAIL.description": "At the start of your turn, gain {Energy:energyIcons()}, and draw 1 less card",
+  "AQUARIUM-ATTENTION_TO_DETAIL.description": "At the start of your turn, gain {Energy:energyIcons()}, and draw 1 less card.",
   "AQUARIUM-ATTENTION_TO_DETAIL.title": "Attention To Detail",
 
-  "AQUARIUM-PORTABLE_BUBBLER.description": "At the start of your turn, Gain {Power:diff()} [gold]Block[/gold] and  {Power:diff()} [gold]Vigor[/gold]",
+  "AQUARIUM-PORTABLE_BUBBLER.description": "At the start of your turn, Gain {Power:diff()} [gold]Block[/gold] and {Power:diff()} [gold]Vigor[/gold].",
   "AQUARIUM-PORTABLE_BUBBLER.title": "Portable Bubbler",
 
-  "AQUARIUM-SCHOOLING.description": "Gain {Block:diff()} [gold]Block[/gold] {Repeat:diff()} times",
+  "AQUARIUM-SCHOOLING.description": "Gain {Block:diff()} [gold]Block[/gold] {Repeat:diff()} times.",
   "AQUARIUM-SCHOOLING.title": "Schooling",
 
-  "AQUARIUM-SEA_MASS.description": "Gain {Block:diff()} [gold]Block[/gold]. \nIf you have [gold]Frail[/gold], gain [gold]Block[/gold] {Repeat:diff()} additional times ",
+  "AQUARIUM-SEA_MASS.description": "Gain {Block:diff()} [gold]Block[/gold]. \nIf you have [gold]Frail[/gold], gain [gold]Block[/gold] {Repeat:diff()} additional times.",
   "AQUARIUM-SEA_MASS.title": "Sea Mass",
 
   "AQUARIUM-DANCE_VERMIN.description": "Gain {IntangiblePower:diff()} [gold]Intangible[/gold] \nLose {Power:diff()} HP at the end of your next turn." ,
@@ -208,10 +208,10 @@
   "AQUARIUM-BOXER_JELLIES.description": "Deal {Damage:diff()} Damage {Repeat:diff()} times \nIf it does not have [gold]Weak[/gold], Apply {WeakPower:diff()} [gold]Weak[/gold]\nIf it does not have [gold]Vulnerable[/gold], Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "AQUARIUM-BOXER_JELLIES.title": "Boxer Jellies",
 
-  "AQUARIUM-SODA_MINT_BOMB.description": "Deal {Damage:diff()} Damage \nIf you have [gold]Frail[/gold] the enemy loses {StrengthLoss:diff()} [gold]Strength[/gold] this turn. ",
+  "AQUARIUM-SODA_MINT_BOMB.description": "Deal {Damage:diff()} Damage. \nIf you have [gold]Frail[/gold] the enemy loses {StrengthLoss:diff()} [gold]Strength[/gold] this turn. ",
   "AQUARIUM-SODA_MINT_BOMB.title": "Nucleation",
 
-  "AQUARIUM-ENTHRALLING_ANGER.description": "Deal {Damage:diff()} Damage.\n Gain {Block:diff()} Block.\nIf this is in your hand, it must be played before other cards. ",
+  "AQUARIUM-ENTHRALLING_ANGER.description": "Deal {Damage:diff()} Damage.\n Gain {Block:diff()} [gold]Block[/gold].\nIf this is in your hand, it must be played before other cards. ",
   "AQUARIUM-ENTHRALLING_ANGER.title": "Enthralling Anger",
 
   "AQUARIUM-FIN_REAPER.description": "Deal {Damage:diff()} Damage {Repeat:diff()} times. \nApply [gold]Doom[/gold] equal to damage dealt.",
@@ -220,19 +220,19 @@
   "AQUARIUM-EEL_WHIP.description": "Deal {Damage:diff()} Damage.\nGain {Energy:energyIcons()}. ",
   "AQUARIUM-EEL_WHIP.title": "Eel Whip",
 
-  "AQUARIUM-SPHEREHEADED.description": "Channel 1 random orb. \nEvoke it {IfUpgraded:show:twice|}\n Draw 1 card.",
+  "AQUARIUM-SPHEREHEADED.description": "Channel 1 random orb. \nEvoke it {IfUpgraded:show:twice|}.\n Draw 1 card.",
   "AQUARIUM-SPHEREHEADED.title": "Sphereheaded",
 
   "AQUARIUM-UNSTABLE.description": "Deal {Damage:diff()} Damage to ALL enemies.\nIf you're [gold]Frail[/gold], apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies." ,
   "AQUARIUM-UNSTABLE.title": "Unstable",
 
-  "AQUARIUM-HILARIOUS_JOKE.description": "ALl other players get {VigorPower:diff()} [gold]Vigor[/gold]",
+  "AQUARIUM-HILARIOUS_JOKE.description": "ALL other players get {VigorPower:diff()} [gold]Vigor[/gold].",
   "AQUARIUM-HILARIOUS_JOKE.title": "Hilarious Joke",
 
   "AQUARIUM-FATEMAKER.description": "ALL enemies lose {Damage:diff()} HP X{IfUpgraded:show:+1|} times.",
   "AQUARIUM-FATEMAKER.title": "Fatemaker",
 
-  "AQUARIUM-BLAST_PHEMY.description": "Deal {IfUpgraded:show:triple|double} damage this turn. \nDie next turn.",
+  "AQUARIUM-BLAST_PHEMY.description": "Deal {IfUpgraded:show:triple|double} damage this turn.\nDie next turn.",
   "AQUARIUM-BLAST_PHEMY.title": "Blast-phemy",
 
   "AQUARIUM-PART_THE_SEA.description": "Enemy loses {StrengthLoss:diff()} [gold]Strength[/gold] this turn. \nAll other enemies gain {StrengthGain:diff()} [gold]Strength[/gold] this turn",
@@ -284,5 +284,16 @@
   "AQUARIUM-WHATEVER_WORKS.title": "Whatever Works",
 
   "AQUARIUM-THUNDERDOME.description": "Prevent the next {BufferPower:plural:time|{BufferPower:diff()} times} you would lose HP this turn.\nAt the start of your turn, if this is in your [gold]Exhaust Pile[/gold], play it.",
-  "AQUARIUM-THUNDERDOME.title": "Thunderdome"
+  "AQUARIUM-THUNDERDOME.title": "Thunderdome",
+  "AQUARIUM-DEAD_BRANCH_WEAPON.description": "Whenever you [gold]Exhaust[/gold] a card with [gold]Weapon[/gold], generate a random [gold]Weapon[/gold] card.",
+  "AQUARIUM-DEAD_BRANCH_WEAPON.title": "Dead Branch Weapon",
+
+  "AQUARIUM-BRUISE.description": "Deal {Damage:diff()} Damage.\nApply {FrailPower:diff()} [gold]Frail[/gold].",
+  "AQUARIUM-BRUISE.title": "Bruise",
+
+  "AQUARIUM-TREAD_WATER.description": "Draw {Cards:diff()} Cards.\n They [gold]Retain[/gold] this turn.",
+  "AQUARIUM-TREAD_WATER.title": "Tread Water",
+
+  "AQUARIUM-MAKESHIFT_AMMO.description": "Whenever you Exhaust a card,[blue]{Power:diff()}[/blue] Vigor.",
+  "AQUARIUM-MAKESHIFT_AMMO.title": "Makeshift Ammo"
 }

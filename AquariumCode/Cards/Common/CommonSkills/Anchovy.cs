@@ -49,6 +49,18 @@ public class Anchovy() : AquariumCard(0,
                 Owner.Creature,
                 (CardModel) null);
            
+        }if (Owner.HasPower<FrailPower>())
+        {
+            
+            
+            FrailNextTurn frailNextTurn = await PowerCmd.Apply<FrailNextTurn>(cardSource.Owner.Creature,Owner.Creature.GetPowerAmount<FrailPower>() ,
+                cardSource.Owner.Creature, (CardModel)cardSource);
+            FrailPower FrailPower = await PowerCmd.Apply<FrailPower>(
+                Owner.Creature,
+                -Owner.Creature.GetPowerAmount<FrailPower>(),
+                Owner.Creature,
+                (CardModel) null);
+           
         }
         IEnumerable<CardModel> cardModels =
             await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, anchovy.Owner);

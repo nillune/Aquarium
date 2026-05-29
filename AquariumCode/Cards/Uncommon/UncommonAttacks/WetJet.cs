@@ -34,11 +34,12 @@ public class WetJet() : AquariumCard(0,
     ];
    
 
+    
     private bool CanDrawCard
     {
         get
         {
-            return CombatManager.Instance.History.CardPlaysFinished.Count<CardPlayFinishedEntry>((Func<CardPlayFinishedEntry, bool>) (e => e.HappenedThisTurn(this.CombatState) && e.CardPlay.Card.Owner == this.Owner && e.CardPlay.Card.Type != CardType.Attack)) < this.DynamicVars["PlayMax"].IntValue;
+            return CombatManager.Instance.History.CardPlaysFinished.Count<CardPlayFinishedEntry>((Func<CardPlayFinishedEntry, bool>) (e => e.HappenedThisTurn(this.CombatState) && e.CardPlay.Card.Owner == this.Owner && e.CardPlay.Card.Type == CardType.Attack)) < this.DynamicVars["PlayMax"].IntValue;
         }
     }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

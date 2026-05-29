@@ -48,28 +48,20 @@ public class BootstrapPower : CustomPowerModel
 
 
 
-    public override (PileType, CardPilePosition) ModifyCardPlayResultPileTypeAndPosition(
-        CardModel card,
-        bool isAutoPlay,
-        ResourceInfo resources,
-        PileType pileType,
-        CardPilePosition position)
+    public override async Task BeforeCardPlayed(CardPlay cardPlay)
     {
         BootstrapPower power = this;
-        if (card.Owner.Creature != this.Owner)
-            return (pileType, position);
+        if (cardPlay.Card.Owner.Creature != this.Owner)
+            return;
         RealVigor = power.Owner.GetPowerAmount<VigorPower>();
-        if (card.Type != CardType.Attack)
-        {
-            RealVigor = 0;
-        }
-        return  (pileType, position);
+      
     }
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
         BootstrapPower power = this;
         
-       
+        if (cardPlay.Card.Owner.Creature != this.Owner)
+            return;
 
         await PowerCmd.Apply<VigorPower>(
                 power.Owner,

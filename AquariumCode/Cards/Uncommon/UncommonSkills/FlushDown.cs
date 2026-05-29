@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 namespace Aquarium.AquariumCode.Cards.Uncommon;
 
   
-public class FlushDown() : AquariumCard(1,
+public class FlushDown() : AquariumCard(0,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
@@ -25,5 +25,5 @@ public class FlushDown() : AquariumCard(1,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }
 
-    protected override void OnUpgrade() => this.EnergyCost.UpgradeBy(-1);
+    protected override void OnUpgrade() => this.AddKeyword(CardKeyword.Retain);
 }

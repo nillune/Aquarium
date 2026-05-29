@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dds3h4iidhevk"
-path="res://.godot/imported/placeholder.png-a427bcbaa570dc253e188c33dc72cc0e.ctex"
+uid="uid://cgg4vh2kmavpp"
+path="res://.godot/imported/scope_attatchment.png-a6cbe75e19bebb32ba3f577a51993a2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/scenes/placeholder.png"
-dest_files=["res://.godot/imported/placeholder.png-a427bcbaa570dc253e188c33dc72cc0e.ctex"]
+source_file="res://Aquarium/images/relics/big/scope_attatchment.png"
+dest_files=["res://.godot/imported/scope_attatchment.png-a6cbe75e19bebb32ba3f577a51993a2d.ctex"]
 
 [params]
 

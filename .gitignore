@@ -10,4 +10,11 @@ packages/
 .editorconfig
 *.user
 Directory.Build.props
-/project.godot
+
+Aquarium.code-workspace
+
+
+
+Aquarium.csproj.DotSettings
+
+Aquarium.sln.DotSettings.user

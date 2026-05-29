@@ -91,5 +91,11 @@
   "AQUARIUM-IMMOVABLE_OBJECT_POWER.title": "Immovable Object",
   "AQUARIUM-THUNDERDOME_POWER.description": "Prevent the next time you would lose HP.",
   "AQUARIUM-THUNDERDOME_POWER.smartDescription": "Prevent the next {Amount:plural:time|[blue]{}[/blue] times} you would lose HP.",
-  "AQUARIUM-THUNDERDOME_POWER.title": "Thunderdome"
+  "AQUARIUM-THUNDERDOME_POWER.title": "Thunderdome",
+  "AQUARIUM-DEAD_BRANCH_WEAPON_POWER.description": "Whenever you exhaust a weapon card generate a weapon card.",
+  "AQUARIUM-DEAD_BRANCH_WEAPON_POWER.smartDescription": "Whenever you exhaust a weapon card generate a weapon card.",
+  "AQUARIUM-DEAD_BRANCH_WEAPON_POWER.title": "Dead Branch Weapon",
+  "AQUARIUM-MAKESHIFT_AMMO_POWER.description": "Whenever you Exhaust a card,[blue]1[/blue] Vigor.",
+  "AQUARIUM-MAKESHIFT_AMMO_POWER.smartDescription": "Whenever you Exhaust a card,[blue]{Amount}[/blue] Vigor.",
+  "AQUARIUM-MAKESHIFT_AMMO_POWER.title": "Makeshift Ammo"
 }

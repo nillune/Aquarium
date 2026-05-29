@@ -5,7 +5,11 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
-
+using Godot;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 namespace Aquarium.AquariumCode.Cards.Ancient;
 
   
@@ -29,7 +33,10 @@ public class Railgun : AquariumCard
             .TargetingAllOpponents(CombatState)
             .WithHitCount(DynamicVars.Repeat.IntValue)
             .WithHitFx("vfx/vfx_starry_impact")
+            .WithAttackerAnim("Attack", 0.5f)
+            .WithHitVfxNode(t => (Node2D) NHyperbeamVfx.Create(Owner.Creature, t)!)
             .Execute(choiceContext);
+            
     }
    
     protected override void OnUpgrade()

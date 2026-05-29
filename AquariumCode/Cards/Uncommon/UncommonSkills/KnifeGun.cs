@@ -15,7 +15,7 @@ public class KnifeGun() : AquariumCard(3,
     TargetType.Self)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardCmdPatches.Weapon];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power", 99M)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(5)];
 
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -28,7 +28,7 @@ public class KnifeGun() : AquariumCard(3,
         int num = 10 - CardPile.GetCards(knifeGun.Owner, PileType.Hand).Count<CardModel>();
 
         await Cmd.CustomScaledWait(0.0f, 0.25f);
-        IEnumerable<CardModel> inHand = await Shiv.CreateInHand(knifeGun.Owner, num, knifeGun.CombatState);
+        IEnumerable<CardModel> inHand = await Shiv.CreateInHand(knifeGun.Owner, DynamicVars.Cards.IntValue, knifeGun.CombatState);
         if (!knifeGun.IsUpgraded)
             return;
         foreach (CardModel card in inHand)

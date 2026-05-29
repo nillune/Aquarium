@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 
-namespace Aquarium.AquariumCode.Cards.Uncommon;
+namespace Aquarium.AquariumCode.Cards.Common;
 
   
 public class EelWhip() : AquariumCard(2,

@@ -27,8 +27,11 @@ public class Fatemaker() : AquariumCard(0,
         ArgumentNullException.ThrowIfNull((object)this.CombatState, "this.CombatState");
         for (int i = 0; i < hitCount; i++)
         {
-            IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, cardPlay.Target,
-                this.DynamicVars.Damage, (CardModel)this);
+            foreach (Creature enemy in CombatState.HittableEnemies)
+            {
+                IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, enemy,
+                    this.DynamicVars.Damage, (CardModel)this);
+            }
         }
     }
 

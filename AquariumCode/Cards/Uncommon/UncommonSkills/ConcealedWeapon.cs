@@ -17,7 +17,7 @@ public class ConcealedWeapon() : AquariumCard(1,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(2)];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Ethereal, CardCmdPatches.Weapon ];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardCmdPatches.Weapon ];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

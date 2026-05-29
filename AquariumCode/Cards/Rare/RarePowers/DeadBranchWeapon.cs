@@ -9,20 +9,20 @@ using MegaCrit.Sts2.Core.Models;
 namespace Aquarium.AquariumCode.Cards.Rare;
 
   
-public class BlowingSteam() : AquariumCard(1,
+public class DeadBranchWeapon() : AquariumCard(2,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        
-        BlowingSteamPower blowingSteamPower = await PowerCmd.Apply<BlowingSteamPower>(this.Owner.Creature, this.DynamicVars["Power"].BaseValue ,
+        await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
+        DeadBranchWeaponPower deadBranchWeaponPower = await PowerCmd.Apply<DeadBranchWeaponPower>(this.Owner.Creature, 1 ,
             this.Owner.Creature, (CardModel)this);
     }
-
-    protected override void OnUpgrade() => this.DynamicVars["Power"].UpgradeValueBy(1M);
+  
+    protected override void OnUpgrade() => this.EnergyCost.UpgradeBy(-1);
 }

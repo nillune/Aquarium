@@ -1,26 +1,37 @@
-﻿using Aquarium.AquariumCode.Cards.Rare;
-using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Cards;
-using MegaCrit.Sts2.Core.Models.Powers;
-using Aquarium.AquariumCode.Extensions;
+﻿using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
-using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace Aquarium.AquariumCode.Powers;
 
-#nullable enable
-
-
-public class PartTheSeaPower : CustomTemporaryPowerModelWrapper<PartTheSeaPower, StrengthPower>
+  
+public class MakeshiftAmmoPower : CustomPowerModel
 {
-   
     public override PowerType Type => PowerType.Buff;
+
+    public override PowerStackType StackType => PowerStackType.Counter;
+
+    public override async Task AfterCardExhausted(
+        PlayerChoiceContext choiceContext,
+        CardModel card,
+        bool _)
+    {
+        if (card.Owner.Creature != this.Owner)
+            return;
+        VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
+            this.Owner,
+            this.Amount,
+            this.Owner,
+            (CardModel) null);
+        this.Flash();
+    }
     public override string CustomPackedIconPath
     {
         get
@@ -40,20 +51,4 @@ public class PartTheSeaPower : CustomTemporaryPowerModelWrapper<PartTheSeaPower,
             return ResourceLoader.Exists(path) ? path : "power.png".BigPowerImagePath();
         }
     }
-
-  
-    
-
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
-    {
-       
-        if (side != this.Owner.Side)
-            return;
-        this.Flash();
-        await PowerCmd.Remove((PowerModel) this);
-        StrengthPower strengthPower = await PowerCmd.Apply<StrengthPower>(this.Owner, (Decimal) (-1 * this.Amount), this.Owner, (CardModel) null);
-    }
-    public override AbstractModel OriginModel => (AbstractModel) ModelDb.Card<PartTheSea>();
-
-    
 }

@@ -18,7 +18,7 @@ public class ComboStrike() : AquariumCard(1,
     {
         get
         {
-            return PileType.Hand.GetPile(this.Owner).Cards.All<CardModel>((Func<CardModel, bool>) (c => c.Type != CardType.Attack));
+            return PileType.Hand.GetPile(this.Owner).Cards.Count<CardModel>((Func<CardModel, bool>) (c => c.Type == CardType.Attack)) == 1;
         }
     }
     protected override async Task OnPlay(

@@ -12,7 +12,10 @@ using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
 
 #nullable enable
@@ -45,6 +48,14 @@ public class SodaMintBombPower : CustomTemporaryPowerModelWrapper<SodaMintBombPo
 
     public override AbstractModel OriginModel => (AbstractModel) ModelDb.Card<SodaMintBomb>();
 
-   
+    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    {
+       
+        if (side != this.Owner.Side)
+            return;
+        this.Flash();
+        await PowerCmd.Remove((PowerModel) this);
+        StrengthPower strengthPower = await PowerCmd.Apply<StrengthPower>(this.Owner, (Decimal) (-1 * this.Amount), this.Owner, (CardModel) null);
+    }
 }
 
