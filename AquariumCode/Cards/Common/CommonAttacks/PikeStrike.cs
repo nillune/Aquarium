@@ -4,6 +4,7 @@ using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -17,7 +18,10 @@ public class PikeStrike() : AquariumCard(0,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(1, ValueProp.Move), new PowerVar<VigorPower>(3), new BlockVar(0, ValueProp.Move)];
     protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
-
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
+    }
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -26,7 +30,7 @@ public class PikeStrike() : AquariumCard(0,
         if (source.IsUpgraded)
         { 
             await PowerCmd.Apply<VigorPower>(
-                Owner.Creature,
+                choiceContext,   Owner.Creature,
                 DynamicVars[nameof(VigorPower)].BaseValue,
                 Owner.Creature,
                 this);

@@ -28,7 +28,7 @@ public class RideOrDie() : AquariumCard(1,
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
         RideOrDie cardSource = this;
-        RideOrDiePower rideOrDiePower = await PowerCmd.Apply<RideOrDiePower>(cardSource.Owner.Creature, 1M,
+        RideOrDiePower rideOrDiePower = await PowerCmd.Apply<RideOrDiePower>(choiceContext, cardSource.Owner.Creature, 1M,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }
 

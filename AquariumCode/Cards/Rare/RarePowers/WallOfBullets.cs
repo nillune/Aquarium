@@ -25,7 +25,7 @@ public class WallOfBullets() : AquariumCard(2,
         CardPlay play)
     {
         await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
-        WallOfBulletsPower wallOfBulletsPower = await PowerCmd.Apply<WallOfBulletsPower>(this.Owner.Creature, DynamicVars["BlockOnExhaust"].IntValue ,
+        WallOfBulletsPower wallOfBulletsPower = await PowerCmd.Apply<WallOfBulletsPower>(choiceContext, this.Owner.Creature, DynamicVars["BlockOnExhaust"].IntValue ,
             this.Owner.Creature, (CardModel)this);
     }
 

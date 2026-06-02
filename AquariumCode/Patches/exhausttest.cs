@@ -103,14 +103,5 @@ public static class CardCmdPatches
             MainFile.Logger.Info("Enemy turn start patch");
         }
     }
-    [HarmonyPatch(typeof(CardCmd), nameof(CardCmd.Discard))]   
-    public static class EvenMoreWeaponFixes
-    {
-        public static void Postfix()
-        {
-            _PreviousCard = "null";
-            _PreviousCardInt = 0;
-            MainFile.Logger.Info(  _PreviousCard + _PreviousCard + "discard patch ");
-        }
-    }
+   
 }

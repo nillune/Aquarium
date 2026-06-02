@@ -28,7 +28,7 @@ public class BucketOfChum: CustomPotionModel
     protected override async Task OnUse(PlayerChoiceContext choiceContext, Creature? target)
     {
         NCombatRoom.Instance?.PlaySplashVfx(target, new Color("45e6d0"));
-        VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(target, DynamicVars[nameof(VigorPower)].BaseValue, this.Owner.Creature, (CardModel) null);
+        VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(choiceContext, target, DynamicVars[nameof(VigorPower)].BaseValue, this.Owner.Creature, (CardModel) null);
     }
     public override string? CustomPackedImagePath => "res://Aquarium/images/potions/bucket_of_chum.png";
     

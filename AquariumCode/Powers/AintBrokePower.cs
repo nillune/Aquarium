@@ -53,14 +53,15 @@ public sealed class AintBrokePower : CustomPowerModel
 
  
 
-    public override async Task AfterPowerAmountChanged(
-        PowerModel power,
-        Decimal amount,
-        Creature? target,
-        CardModel? cardSource)
-    {
+     public override async Task AfterPowerAmountChanged(
+    PlayerChoiceContext choiceContext,
+    PowerModel power,
+    Decimal amount,
+    Creature? applier,
+    CardModel? cardSource)
+  {
         AintBrokePower aintBrokePower = this;
-        if (amount <= 0M || target != aintBrokePower.Owner || !(power is FrailPower))
+        if (amount <= 0M || applier != aintBrokePower.Owner || !(power is FrailPower))
             return;
         aintBrokePower.Flash();
         IEnumerable<CardModel> cardModels = await CardPileCmd.Draw((PlayerChoiceContext) new BlockingPlayerChoiceContext(), (Decimal) aintBrokePower.Amount, aintBrokePower.Owner.Player);

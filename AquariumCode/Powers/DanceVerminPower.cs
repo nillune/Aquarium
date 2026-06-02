@@ -12,7 +12,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace Aquarium.AquariumCode.Powers;
 
-
+/*
 public class DanceVerminPower : CustomPowerModel
 {
 
@@ -57,4 +57,4 @@ public class DanceVerminPower : CustomPowerModel
             await PowerCmd.Remove((PowerModel)power);
         }
     }
-}
+} */

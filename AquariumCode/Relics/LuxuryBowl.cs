@@ -40,9 +40,7 @@ public class LuxuryBowl() : AquariumRelic
         luxuryBowl.Flash();
     }
 
-    private CardModel FuckingEtheral ;
-
-    private bool EtheralBool =false;
+    
     //lolll you figured out my secret and that I just added weapon into aquarium starting relics LOL. originally it wasn't but it was buggy so i just moved it here.
     //though dw it still works as other classes, just a bit more buggy.
     private bool RetainFilter(CardModel card) => !card.ShouldRetainThisTurn;
@@ -57,7 +55,7 @@ public class LuxuryBowl() : AquariumRelic
         LuxuryBowl luxuryBowl = this;
         if (luxuryBowl.Owner != card.Owner)
             return;
-        if (playedWeapons >= 11)
+        if (playedWeapons >= 20)
             return;
         playedWeapons++;
         //MainFile.Logger.Info(  _PreviousCard + "exhaust");
@@ -74,29 +72,15 @@ public class LuxuryBowl() : AquariumRelic
            
         
         card.ExhaustOnNextPlay = true;
-       if (card.Keywords.Contains(CardKeyword.Ethereal))
-       {
-           EtheralBool = true;
-           FuckingEtheral = card;
-           return;
-       }
+      
         await CardCmd.AutoPlay(choiceContext, card, (Creature) null);
      
         // Autoplay the card
         //TaskHelper.RunSafely(CardCmd.AutoPlay(choiceContext, card, (Creature)null, AutoPlayType.Default));
     }
 
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
-    {
-        if (EtheralBool)
-        {
-            EtheralBool = false;
-                FuckingEtheral.ExhaustOnNextPlay = true;
-            await CardCmd.AutoPlay(choiceContext, FuckingEtheral, (Creature)null);
-        }
-    }
-
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+  
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
        
         PreviousCards[0] = null;

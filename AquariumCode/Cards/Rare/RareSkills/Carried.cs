@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 
@@ -15,7 +16,10 @@ public class Carried() : AquariumCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<FrailPower>(2),
         new PowerVar<DexterityPower>(1)];
-
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[] {   HoverTipFactory.FromPower<DexterityPower>(), HoverTipFactory.FromPower<FrailPower>()};
+    }
     //protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
     public override CardMultiplayerConstraint MultiplayerConstraint  => CardMultiplayerConstraint.MultiplayerOnly;
     
@@ -25,6 +29,7 @@ public class Carried() : AquariumCard(1,
     {
         
         await PowerCmd.Apply<FrailPower>(
+            choiceContext, 
             Owner.Creature,
             DynamicVars[nameof(FrailPower)].BaseValue,
             Owner.Creature,
@@ -35,7 +40,7 @@ public class Carried() : AquariumCard(1,
             if (this.Owner.Creature != creature)
             {
                 await PowerCmd.Apply<DexterityPower>(
-                    creature,
+                    choiceContext, creature,
                     DynamicVars[nameof(DexterityPower)].BaseValue,
                     Owner.Creature,
                     this);

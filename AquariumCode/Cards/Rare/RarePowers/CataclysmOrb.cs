@@ -19,16 +19,20 @@ public class CataclysmOrb() : AquariumCard(1,
     {
         get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
     }
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",1),new PowerVar<VigorPower>(3)];
+    
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
         await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
-        CataclysmOrbPower cataclysmOrbPower = await PowerCmd.Apply<CataclysmOrbPower>(this.Owner.Creature, this.DynamicVars["Power"].BaseValue ,
+        CataclysmOrbPower cataclysmOrbPower = await PowerCmd.Apply<CataclysmOrbPower>(choiceContext, this.Owner.Creature, this.DynamicVars["Power"].BaseValue ,
+            this.Owner.Creature, (CardModel)this);
+        PermVigorNextTurnPower permVigorNextTurnPower = await PowerCmd.Apply<PermVigorNextTurnPower>(choiceContext,
+            this.Owner.Creature, DynamicVars[nameof(VigorPower)].BaseValue,
             this.Owner.Creature, (CardModel)this);
     }
 
-    protected override void OnUpgrade() => this.DynamicVars["Power"].UpgradeValueBy(2M);
+    protected override void OnUpgrade() =>  DynamicVars["VigorPower"].UpgradeValueBy(2m);
 }

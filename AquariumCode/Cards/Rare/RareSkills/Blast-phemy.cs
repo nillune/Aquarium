@@ -22,17 +22,17 @@ public class Blast_phemy() : AquariumCard(0,
     {
         if (this.IsUpgraded)
         {
-            TripleDamagePower tripleDamagePower = await PowerCmd.Apply<TripleDamagePower>(this.Owner.Creature, (Decimal) this.DynamicVars["DamageTurns"].BaseValue, this.Owner.Creature, (CardModel) null);
+            TripleDamagePower tripleDamagePower = await PowerCmd.Apply<TripleDamagePower>(choiceContext, this.Owner.Creature, (Decimal) this.DynamicVars["DamageTurns"].BaseValue, this.Owner.Creature, (CardModel) null);
 
         }
         else
         {
-            DoubleDamagePower doubleDamagePower = await PowerCmd.Apply<DoubleDamagePower>(this.Owner.Creature, (Decimal) this.DynamicVars["DamageTurns"].BaseValue, this.Owner.Creature, (CardModel) null);
+            DoubleDamagePower doubleDamagePower = await PowerCmd.Apply<DoubleDamagePower>(choiceContext, this.Owner.Creature, (Decimal) this.DynamicVars["DamageTurns"].BaseValue, this.Owner.Creature, (CardModel) null);
                 
         }
 
        //NoBlockPower noBlockPower = await PowerCmd.Apply<NoBlockPower>(this.Owner.Creature, this.DynamicVars["NoBlockTurns"].BaseValue, this.Owner.Creature, (CardModel) this);
-        Blast_EmphyPower blast_EmphyPower =  await PowerCmd.Apply<Blast_EmphyPower>(this.Owner.Creature,1, this.Owner.Creature, (CardModel) this);
+        Blast_EmphyPower blast_EmphyPower =  await PowerCmd.Apply<Blast_EmphyPower>(choiceContext, this.Owner.Creature,1, this.Owner.Creature, (CardModel) this);
     
     }
 

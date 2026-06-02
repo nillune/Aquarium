@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.DevConsole.ConsoleCommands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -16,7 +17,10 @@ public class Unstable() : AquariumCard(0,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
-    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[] {   HoverTipFactory.FromPower<FrailPower>(), HoverTipFactory.FromPower<VulnerablePower>()};
+    }
     public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardKeyword.Retain ];
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(5, ValueProp.Move),  (DynamicVar) new PowerVar<VulnerablePower>(1M) ];
     protected override bool ShouldGlowGoldInternal
@@ -40,7 +44,7 @@ public class Unstable() : AquariumCard(0,
         {
             foreach (Creature enemy in CombatState.HittableEnemies)
             {
-                VulnerablePower vulnerablePower = await PowerCmd.Apply<VulnerablePower>(enemy,
+                VulnerablePower vulnerablePower = await PowerCmd.Apply<VulnerablePower>(choiceContext, enemy,
                     unstable.DynamicVars.Vulnerable.BaseValue, unstable.Owner.Creature, (CardModel)unstable);
             }
         }

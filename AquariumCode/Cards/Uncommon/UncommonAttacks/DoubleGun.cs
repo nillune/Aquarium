@@ -28,7 +28,7 @@ public class DoubleGun() : AquariumCard(2,
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         DoubleGun cardSource = this;
-        DoubleGunPower doubleGunPower = await PowerCmd.Apply<DoubleGunPower>(cardSource.Owner.Creature, 1M,
+        DoubleGunPower doubleGunPower = await PowerCmd.Apply<DoubleGunPower>(choiceContext, cardSource.Owner.Creature, 1M,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }
 

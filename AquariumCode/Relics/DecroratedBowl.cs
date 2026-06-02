@@ -46,11 +46,7 @@ public class DecroratedBowl() : AquariumRelic
     // ReSharper disable once InconsistentNaming
     static CardModel[] PreviousCards = {null!, null!};
     private int playedWeapons;
-    private CardModel[] FuckingEtheral ;
-
-    private bool EtheralBool =false;
-    private bool EtheralBoolSecond =false;
-    private int EtheralsThisTurn =0;
+   
     //lolll you figured out my secret and that I just added weapon into aquarium starting relics LOL. originally it wasn't but it was buggy so i just moved it here.
     //though dw it still works as other classes, just a bit more buggy.
     public override async Task AfterCardExhausted(
@@ -61,7 +57,7 @@ public class DecroratedBowl() : AquariumRelic
         DecroratedBowl decroratedBowl = this;
         if (decroratedBowl.Owner != card.Owner)
             return;
-        if (playedWeapons >= 11)
+        if (playedWeapons >= 20)
             return;
         playedWeapons++;
         //MainFile.Logger.Info(  _PreviousCard + "exhaust");
@@ -77,36 +73,15 @@ public class DecroratedBowl() : AquariumRelic
        
            
         card.ExhaustOnNextPlay = true;
-        if (card.Keywords.Contains(CardKeyword.Ethereal) &&  EtheralBoolSecond)
-        {
-            EtheralBool = true;
-            FuckingEtheral[EtheralsThisTurn] = card;
-            EtheralsThisTurn++;
-            return;
-        }
+        
         await CardCmd.AutoPlay(choiceContext, card, (Creature) null);
      
         // Autoplay the card
         //TaskHelper.RunSafely(CardCmd.AutoPlay(choiceContext, card, (Creature)null, AutoPlayType.Default));
     }
 
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
-    {
-        if (EtheralBool)
-        {
-            for (int i = 0; i < FuckingEtheral.Length; i++)
-            {
-                EtheralBool = false;
-                FuckingEtheral[i].ExhaustOnNextPlay = true;
-                await CardCmd.AutoPlay(choiceContext, FuckingEtheral[i], (Creature)null);
-                FuckingEtheral[i] = null!;
-            }
-        }
-
-        EtheralsThisTurn = 0;
-        EtheralBoolSecond = false;
-    }
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+   
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
         playedWeapons = 0;
         PreviousCards[0] = null!;
@@ -120,9 +95,6 @@ public class DecroratedBowl() : AquariumRelic
          PreviousCards[1] = null!;
     }
 
-    public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
-    {
-        EtheralBoolSecond = true;
-    }
+   
 
 }

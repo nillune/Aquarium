@@ -25,7 +25,7 @@ using MegaCrit.Sts2.Core.Models;
 #nullable enable
 namespace Aquarium.AquariumCode.Powers;
 
- 
+ /*
 public sealed class EelWhipPower : CustomPowerModel
 {
 
@@ -70,4 +70,4 @@ public sealed class EelWhipPower : CustomPowerModel
     {
         await PowerCmd.Remove((PowerModel) this);
     }
-}
+} */

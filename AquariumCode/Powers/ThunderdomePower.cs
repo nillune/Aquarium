@@ -18,9 +18,7 @@ namespace Aquarium.AquariumCode.Powers;
  
 public class ThunderdomePower : CustomPowerModel
 {
-
-    
-
+    private int TurnsStarted = 0;
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
@@ -59,7 +57,12 @@ public class ThunderdomePower : CustomPowerModel
     }
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-       
+        if (TurnsStarted == 0)
+        {
+            TurnsStarted++;
+            return;
+        }
+
         if (player != this.Owner.Player)
             return;
         await PowerCmd.TickDownDuration((PowerModel) this);

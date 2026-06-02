@@ -38,7 +38,7 @@ public class HilariousJoke() : AquariumCard(2,
             if (this.Owner.Creature != creature)
             {
                 await PowerCmd.Apply<VigorPower>(
-                    creature,
+                    choiceContext,  creature,
                     DynamicVars[nameof(VigorPower)].BaseValue,
                     Owner.Creature,
                     this);

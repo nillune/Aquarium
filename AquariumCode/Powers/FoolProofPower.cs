@@ -14,7 +14,7 @@ using Godot;
 
 
 namespace Aquarium.AquariumCode.Powers;
-
+/*
   
 public class FoolproofPower : CustomPowerModel
 {
@@ -135,4 +135,4 @@ public class FoolproofPower : CustomPowerModel
     }
 
 
-}
+} FUCK THIS POWER!!!! IM GLAD ITS GONME!!!! */

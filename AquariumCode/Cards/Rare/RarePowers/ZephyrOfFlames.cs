@@ -32,8 +32,8 @@ public class ZephyrOfFlames() : AquariumCard(1,
         await CreatureCmd.LoseBlock(cardPlay.Target, (Decimal) cardPlay.Target.Block);
         if (cardPlay.Target.HasPower<ArtifactPower>())
             await PowerCmd.Remove<ArtifactPower>(cardPlay.Target);
-        VulnerablePower vulnerablePower = await PowerCmd.Apply<VulnerablePower>(cardPlay.Target, (Decimal) amount, cardSource.Owner.Creature, (CardModel) cardSource);
-        VulnerablePower vulnerablePower2 = await PowerCmd.Apply<VulnerablePower>(cardSource.Owner.Creature, (Decimal) amount, cardSource.Owner.Creature, (CardModel) cardSource);
+        VulnerablePower vulnerablePower = await PowerCmd.Apply<VulnerablePower>(choiceContext, cardPlay.Target, (Decimal) amount, cardSource.Owner.Creature, (CardModel) cardSource);
+        VulnerablePower vulnerablePower2 = await PowerCmd.Apply<VulnerablePower>(choiceContext, cardSource.Owner.Creature, (Decimal) amount, cardSource.Owner.Creature, (CardModel) cardSource);
     }
 
     protected override void OnUpgrade() => this.EnergyCost.UpgradeBy(-1);

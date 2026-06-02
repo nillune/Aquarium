@@ -32,9 +32,9 @@ public class Reload() : AquariumCard(1,
         CardPlay play)
     {
         Reload cardSource = this;
-        DisassemblyPower disassemblyPower = await PowerCmd.Apply<DisassemblyPower>(cardSource.Owner.Creature, 1M,
+        DisassemblyPower disassemblyPower = await PowerCmd.Apply<DisassemblyPower>(  choiceContext, cardSource.Owner.Creature, 1M,
             cardSource.Owner.Creature, (CardModel)cardSource);
-        BlurPower blurPower = await PowerCmd.Apply<BlurPower>(cardSource.Owner.Creature, cardSource.DynamicVars[nameof(Blur)].BaseValue, cardSource.Owner.Creature, (CardModel) cardSource);
+        BlurPower blurPower = await PowerCmd.Apply<BlurPower>(  choiceContext, cardSource.Owner.Creature, cardSource.DynamicVars[nameof(Blur)].BaseValue, cardSource.Owner.Creature, (CardModel) cardSource);
     }
 
     protected override void OnUpgrade()

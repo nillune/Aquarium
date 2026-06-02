@@ -23,6 +23,18 @@ public  class Aquarium : PlaceholderCharacterModel
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
     public override int StartingHp => 70;
+    
+    public override Color EnergyLabelOutlineColor => new Color("0F2F37");
+
+    public override Color DialogueColor => new Color("590700");
+
+    
+
+    public override Color MapDrawingColor => new Color("0F2F60");
+
+    public override Color RemoteTargetingLineColor => new Color("0F2F60");
+
+    public override Color RemoteTargetingLineOutline => new Color("0F2F37");
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
@@ -63,13 +75,17 @@ public  class Aquarium : PlaceholderCharacterModel
 
     public override string CustomCharacterSelectBg => "res://Aquarium/scenes/charselectbg/charselectbg.tscn";
     public override string CustomIconTexturePath => "res://Aquarium/images/ui/map_marker.png";
-    public override string CustomCharacterSelectIconPath => "char_select_char_name.png".CharacterUiPath();
+    public override string CustomCharacterSelectIconPath => "res://Aquarium/images/ui/CharacterSelectIcon.png";
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
+
+    public override string CustomEnergyCounterPath => "res://Aquarium/images/charui/aquarium_energy_counter.tscn";
     public override string CustomMapMarkerPath => "res://Aquarium/images/ui/map_marker.png";
     public override string CustomArmPointingTexturePath  => "res://Aquarium/images/arms/defaulthand.png";
     public override string CustomArmPaperTexturePath  => "res://Aquarium/images/arms/paperhand.png";
     public override string CustomArmScissorsTexturePath  => "res://Aquarium/images/arms/scissors.png";
     public override string CustomArmRockTexturePath  => "res://Aquarium/images/arms/rock.png";
     public override string CustomMerchantAnimPath  => "res://Aquarium/scenes/shopidle.tscn";
+
+    public override string CustomRestSiteAnimPath => "res://Aquarium/scenes/restsite.tscn";
     public override string CustomVisualPath => "res://Aquarium/scenes/combatanims/aquarium.tscn";
 }

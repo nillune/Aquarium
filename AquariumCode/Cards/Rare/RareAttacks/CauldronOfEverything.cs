@@ -21,7 +21,7 @@ public class CauldronOfEverything() : AquariumCard(1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get => new[] {     HoverTipFactory.FromPower<WeakPower>(), HoverTipFactory.Static(StaticHoverTip.Block)
-            , HoverTipFactory.FromPower<VulnerablePower>()
+            , HoverTipFactory.FromPower<VulnerablePower>(), HoverTipFactory.FromPower<StrengthPower>()
         };
     }
     protected override async Task OnPlay(
@@ -35,16 +35,16 @@ public class CauldronOfEverything() : AquariumCard(1,
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         await PowerCmd.Apply<WeakPower>(
-            play.Target,
+            choiceContext, play.Target,
             DynamicVars[nameof(WeakPower)].BaseValue,
             Owner.Creature,
             this);
         await PowerCmd.Apply<VulnerablePower>(
-            play.Target,
+            choiceContext, play.Target,
             DynamicVars[nameof(VulnerablePower)].BaseValue,
             Owner.Creature,
             this);
-        CauldronOfEverythingPower cauldronOfEverythingPower = await PowerCmd.Apply<CauldronOfEverythingPower>(play.Target,
+        CauldronOfEverythingPower cauldronOfEverythingPower = await PowerCmd.Apply<CauldronOfEverythingPower>(choiceContext, play.Target,
             this.DynamicVars["StrengthLoss"].BaseValue*-1, this.Owner.Creature, (CardModel)this);
         
     }

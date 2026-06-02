@@ -30,7 +30,7 @@ public class Bruise() : AquariumCard(1,
             .Execute(choiceContext);
         
         await PowerCmd.Apply<FrailPower>(
-            play.Target,
+            choiceContext, play.Target,
             DynamicVars["FrailPower"].BaseValue,
             Owner.Creature,
             this);

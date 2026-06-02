@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -18,8 +19,14 @@ public class ReCycle() : AquariumCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new BlockVar(5, ValueProp.Move)];
-
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new BlockVar(5, ValueProp.Move), new EnergyVar(1)];
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[]
+        {
+            HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
+        };
+    }
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -33,7 +40,12 @@ public class ReCycle() : AquariumCard(1,
             if (card2.EnergyCost.GetResolved() > 0)
             {
                 DynamicVars.Block.BaseValue = DynamicVars.Block.IntValue * card2.EnergyCost.GetResolved();
-                await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
+                await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block , play);
+                //why the hell do i need to do it like this let me put a decimal in for amount of block hello
+                DynamicVars.Block.BaseValue = 5;
+                if (this.IsUpgraded)
+                    DynamicVars.Block.BaseValue++;
+            
             }
             /*
         ReCycle cardSource = this;

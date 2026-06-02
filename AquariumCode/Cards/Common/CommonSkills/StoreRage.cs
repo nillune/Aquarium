@@ -8,9 +8,9 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
-using BaseLib.Utils;
 
-using MegaCrit.Sts2.Core.Entities.Cards;
+
+
 using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Aquarium.AquariumCode.Cards.Common;
@@ -31,11 +31,14 @@ public class StoreRage() : AquariumCard(2,
         CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await PowerCmd.Apply<VigorPower>(
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+        VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
+            choiceContext,
             Owner.Creature,
-            DynamicVars[nameof(VigorPower)].BaseValue,
+            DynamicVars[nameof(VigorPower)].IntValue,
             Owner.Creature,
             this);
+
     }
 
     protected override void OnUpgrade()

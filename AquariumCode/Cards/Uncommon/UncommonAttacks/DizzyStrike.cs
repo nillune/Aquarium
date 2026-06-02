@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -15,6 +16,11 @@ public class DizzyStrike() : AquariumCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(5, ValueProp.Move), new RepeatVar(2)];
     protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[] {   HoverTipFactory.FromPower<FrailPower>() };
+    }
     protected override bool ShouldGlowGoldInternal
     {
         get

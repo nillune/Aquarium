@@ -37,7 +37,7 @@ public sealed class SmokeBombPower : CustomPowerModel
 
   public override PowerStackType StackType => PowerStackType.Counter;
 
-  public override bool IsInstanced => true;
+  //public override bool IsInstanced => true;
 
  
   protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<DexterityPower>(5)];
@@ -48,7 +48,10 @@ public sealed class SmokeBombPower : CustomPowerModel
     DynamicVars["DexterityPower"].BaseValue = dexterity;
   }
 
-  public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+  public override async Task BeforeSideTurnEnd(
+    PlayerChoiceContext choiceContext,
+    CombatSide side,
+    IEnumerable<Creature> participants)
   {
     SmokeBombPower power = this;
     if (side != power.Owner.Side)
@@ -61,7 +64,7 @@ public sealed class SmokeBombPower : CustomPowerModel
     {
       power.Flash();
       await PowerCmd.Apply<DexterityPower>(
-        power.Owner,
+        new ThrowingPlayerChoiceContext(),  power.Owner,
         DynamicVars[nameof(DexterityPower)].BaseValue,
         power.Owner,
         (CardModel) null);

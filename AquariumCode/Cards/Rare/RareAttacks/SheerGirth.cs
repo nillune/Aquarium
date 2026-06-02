@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -13,7 +14,12 @@ public class SheerGirth() : AquariumCard(0,
     CardType.Attack, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(5, ValueProp.Move), new RepeatVar(4)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(4, ValueProp.Move), new RepeatVar(4)];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[] {  HoverTipFactory.FromPower<FrailPower>()};
+    }
     protected override bool ShouldGlowGoldInternal
     {
         get
@@ -40,6 +46,7 @@ public class SheerGirth() : AquariumCard(0,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Damage.UpgradeValueBy(1m);
+        DynamicVars.Repeat.UpgradeValueBy(1m);
     }
 }

@@ -8,6 +8,7 @@ using BaseLib.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
@@ -19,7 +20,7 @@ namespace Aquarium.AquariumCode.Powers;
 
 public class PartTheSeaPowerLoss :  CustomTemporaryPowerModelWrapper<PartTheSeaPowerLoss, StrengthPower>
 {
-    protected  bool InvertInternalPowerAmount => true;
+    //protected  bool InvertInternalPowerAmount => true;
     public override PowerType Type => PowerType.Debuff;
     public override string CustomPackedIconPath
     {
@@ -43,14 +44,17 @@ public class PartTheSeaPowerLoss :  CustomTemporaryPowerModelWrapper<PartTheSeaP
    
 
     public override AbstractModel OriginModel => (AbstractModel) ModelDb.Card<PartTheSea>();
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnEnd(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        IEnumerable<Creature> participants)
     {
        
         if (side != this.Owner.Side)
             return;
         this.Flash();
         await PowerCmd.Remove((PowerModel) this);
-        StrengthPower strengthPower = await PowerCmd.Apply<StrengthPower>(this.Owner, (Decimal) (-1 * this.Amount), this.Owner, (CardModel) null);
+        StrengthPower strengthPower = await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(),this.Owner, (Decimal) (-1 * this.Amount), this.Owner, (CardModel) null);
     }
 
 

@@ -26,6 +26,7 @@ public class FragileHead() : AquariumCard(1,
         FragileHead fragileHead = this;
         await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, fragileHead.Owner );
         await PowerCmd.Apply<FrailPower>(
+            choiceContext,
             Owner.Creature,
             DynamicVars[nameof(FrailPower)].BaseValue,
             Owner.Creature,

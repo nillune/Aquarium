@@ -11,29 +11,38 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Aquarium.AquariumCode.Cards.Uncommon;
 
-  
+
 public class FinReaper() : AquariumCard(1,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(4, ValueProp.Move), new RepeatVar(2)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4, ValueProp.Move), new RepeatVar(2)];
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get => new[] {   HoverTipFactory.FromPower<DoomPower>()};
+        get => new[] { HoverTipFactory.FromPower<DoomPower>() };
     }
-  
+
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
         FinReaper finReaper = this;
-        DoomPower doomPower = await PowerCmd.Apply<DoomPower>(play.Target, (Decimal)
-            (await DamageCmd.Attack(finReaper.DynamicVars.Damage.BaseValue).FromCard((CardModel) 
-                finReaper).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext)).WithHitCount(DynamicVars.Repeat.IntValue)
-            .Results.Sum<DamageResult>((Func<DamageResult, int>) (r => r.TotalDamage)), 
-            finReaper.Owner.Creature, (CardModel) finReaper);
-        
+        DoomPower doomPower = await PowerCmd.Apply<DoomPower>(choiceContext, play.Target,
+            (Decimal)(await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).FromCard((CardModel)this)
+                .Targeting(play.Target)
+                .WithHitCount(DynamicVars.Repeat.IntValue)
+                .WithHitFx("vfx/vfx_attack_slash")
+                .Execute(choiceContext)).Results
+            .SelectMany<List<DamageResult>, DamageResult>(
+                (Func<List<DamageResult>, IEnumerable<DamageResult>>)(r => (IEnumerable<DamageResult>)r))
+            .Sum<DamageResult>((Func<DamageResult, int>)(r => r.TotalDamage)), Owner.Creature, (CardModel)this);
     }
+
+
+
+
+
 
     protected override void OnUpgrade()
     {

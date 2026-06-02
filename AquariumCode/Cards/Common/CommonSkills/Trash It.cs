@@ -22,7 +22,7 @@ public class Trash_It() : AquariumCard(1,
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<VigorPower>(5)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
+        get => new[] {   HoverTipFactory.FromPower<VigorPower>(), HoverTipFactory.FromKeyword(CardKeyword.Exhaust)};
     }
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -31,7 +31,7 @@ public class Trash_It() : AquariumCard(1,
         
         Trash_It source = this;
         await PowerCmd.Apply<VigorPower>(
-            Owner.Creature,
+            choiceContext,   Owner.Creature,
             DynamicVars[nameof(VigorPower)].BaseValue,
             Owner.Creature,
             this);

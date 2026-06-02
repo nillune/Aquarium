@@ -8,6 +8,7 @@ using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Entities.Players;
 
 
 namespace Aquarium.AquariumCode.Powers;
@@ -37,16 +38,27 @@ public class DragunFishPower : CustomPowerModel
     }
 
 
-    public override PowerType Type => PowerType.Buff;
+    public override PowerType Type => PowerType.Debuff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        
+        VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
+            new ThrowingPlayerChoiceContext(),   this.Owner,
+            -Amount,
+            Owner,
+            (CardModel) null);
+        Flash();
+    }
+    /*
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
         DragunFishPower power = this;
         if (cardPlay.Card.Owner.Creature != power.Owner)
             return;
-        if (cardPlay.Card.Type != CardType.Attack) 
+        if (cardPlay.Card.Type != CardType.Attack)
             return;
         if (cardPlay.Card.TargetType != TargetType.AllEnemies)
             return;
@@ -56,6 +68,7 @@ public class DragunFishPower : CustomPowerModel
             power.Owner,
             (CardModel) null);
         power.Flash();
-    
+
     }
+    */
 }

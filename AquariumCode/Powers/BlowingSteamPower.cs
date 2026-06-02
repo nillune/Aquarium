@@ -5,6 +5,7 @@ using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -46,9 +47,12 @@ public class BlowingSteamPower : CustomPowerModel
     {
         get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
     }
-    public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task AfterSideTurnEnd(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        IEnumerable<Creature> participants)
     {
-        object blowingSteamPower;
+       
         if (side != CombatSide.Player)
             return;
         IReadOnlyList<Creature> hittableEnemies = this.CombatState.HittableEnemies;
@@ -57,13 +61,17 @@ public class BlowingSteamPower : CustomPowerModel
         Creature target = this.Owner.Player.RunState.Rng.CombatTargets.NextItem<Creature>((IEnumerable<Creature>) hittableEnemies);
         if (this.Owner.GetPowerAmount<VigorPower>() > 0)
         {
-             int calcDamage = (this.Owner.GetPowerAmount<VigorPower>() / 5 * this.Amount);
+             int calcDamage = (this.Owner.GetPowerAmount<VigorPower>() * 2);
              this.Flash();
              IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage((PlayerChoiceContext) new ThrowingPlayerChoiceContext(), target, (Decimal) calcDamage, ValueProp.Unpowered, this.Owner, (CardModel) null);
-
+             VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
+                 new ThrowingPlayerChoiceContext(),  this.Owner,
+                 -this.Owner.GetPowerAmount<VigorPower>(),
+                 this.Owner,
+                 (CardModel) null);
         }
 
         
     }
-
+    
 }

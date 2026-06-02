@@ -55,7 +55,7 @@ public sealed class VulnNextTurnPower : CustomPowerModel
         if (player != vulnNextTurnPower.Owner.Player || vulnNextTurnPower.AmountOnTurnStart == 0)
             return;
         VulnerablePower vulnerablePower = await PowerCmd.Apply<VulnerablePower>(
-            power.Owner,
+            new ThrowingPlayerChoiceContext(),    power.Owner,
             power.Amount,
             power.Owner,
             (CardModel) null);

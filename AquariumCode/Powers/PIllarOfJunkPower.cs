@@ -49,7 +49,7 @@ public sealed class PillarOfJunkPower : CustomPowerModel
     public override async Task BeforeHandDraw(
         Player player,
         PlayerChoiceContext choiceContext,
-        CombatState combatState)
+        ICombatState combatState)
     {
         //PillarOfJunkPower this = this;
         if (player != this.Owner.Player || this.AmountOnTurnStart < 1)
@@ -70,6 +70,6 @@ public sealed class PillarOfJunkPower : CustomPowerModel
             1,
             this.Owner.Player.RunState.Rng.CombatCardGeneration);
         
-        await CardPileCmd.AddGeneratedCardsToCombat(statusCardsForCombat, PileType.Hand, true);
+        await CardPileCmd.AddGeneratedCardsToCombat(statusCardsForCombat, PileType.Hand, this.Owner.Player);
     }
 }

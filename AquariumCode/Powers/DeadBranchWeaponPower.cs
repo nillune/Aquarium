@@ -38,7 +38,7 @@ public class DeadBranchWeaponPower: CustomPowerModel
                     })), 1, this.Owner.Player.RunState.Rng.CombatCardGeneration))
             {
               
-                CardPileAddResult combat = await CardPileCmd.AddGeneratedCardToCombat(card2, PileType.Hand, true);
+                CardPileAddResult combat = await CardPileCmd.AddGeneratedCardToCombat(card2, PileType.Hand, this.Owner.Player);
             }
         }
     }

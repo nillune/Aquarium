@@ -56,7 +56,7 @@ public class DoubleGunPower : CustomPowerModel
             return;
             
         //CardPileAddResult combat = await CardPileCmd.AddGeneratedCardToCombat(cardPlay.Card, PileType.Hand, true);
-        CardPileAddResult combat = await CardPileCmd.AddGeneratedCardToCombat(cardPlay.Card.CreateClone(), PileType.Hand, true);
+        CardPileAddResult combat = await CardPileCmd.AddGeneratedCardToCombat(cardPlay.Card.CreateClone(), PileType.Hand, this.Owner.Player);
         DoubleGunPower power = this;
         power.Flash();
         await PowerCmd.Remove((PowerModel) power);

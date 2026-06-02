@@ -31,11 +31,13 @@ public class Forgetful() : AquariumCard(1,
     {
         //await PotionCmd.Discard(Owner.GetPotionAtSlotIndex(1));
         await PowerCmd.Apply<FrailPower>(
+            choiceContext,
             Owner.Creature,
             DynamicVars[nameof(FrailPower)].BaseValue,
             Owner.Creature,
             this);
         await PowerCmd.Apply<WeakPower>(
+            choiceContext,
             play.Target,
             DynamicVars[nameof(WeakPower)].BaseValue,
             Owner.Creature,

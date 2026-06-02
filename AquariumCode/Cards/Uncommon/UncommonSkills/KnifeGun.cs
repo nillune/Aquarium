@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
@@ -17,7 +18,11 @@ public class KnifeGun() : AquariumCard(3,
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardCmdPatches.Weapon];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(5)];
 
-
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[] {    
+           HoverTipFactory.FromCard<Shiv>() };
+    }
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
 

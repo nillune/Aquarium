@@ -15,6 +15,7 @@ using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
 
 
@@ -70,7 +71,10 @@ public sealed class ReCyclePower : CustomPowerModel
         return  (PileType.Exhaust, position);
     }
 
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+    public override async Task AfterSideTurnStart(
+        CombatSide side,
+        IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
         ReCyclePower power = this;
         await PowerCmd.Remove((PowerModel) power);

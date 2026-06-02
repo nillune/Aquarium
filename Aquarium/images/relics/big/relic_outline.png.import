@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvqvp6hjtrwrn"
-path="res://.godot/imported/relic_outline.png-565b8a92900a89e70387baadbb74c1e7.ctex"
+path="res://.godot/imported/relic_outline.png-85c63887adb6c66e3a3f6b4b02a592d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/relics/big/relic_outline.png"
-dest_files=["res://.godot/imported/relic_outline.png-565b8a92900a89e70387baadbb74c1e7.ctex"]
+source_file="res://Aquarium/images/relics/relic_outline.png"
+dest_files=["res://.godot/imported/relic_outline.png-85c63887adb6c66e3a3f6b4b02a592d9.ctex"]
 
 [params]
 

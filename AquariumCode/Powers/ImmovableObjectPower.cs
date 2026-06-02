@@ -9,6 +9,7 @@ using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 
 
 namespace Aquarium.AquariumCode.Powers;
@@ -41,7 +42,10 @@ public class ImmovableObjectPower : CustomPowerModel
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+    public override async Task BeforeSideTurnEnd(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        IEnumerable<Creature> participants)
     {
         if (side != CombatSide.Player || !this.Owner.HasPower<FrailPower>())
             return;

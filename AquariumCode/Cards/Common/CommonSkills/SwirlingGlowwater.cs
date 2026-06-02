@@ -21,7 +21,7 @@ public class SwirlingGlowwater() : AquariumCard(0,
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get => new[] {    
-             HoverTipFactory.FromPower<FrailPower>()
+             HoverTipFactory.FromPower<FrailPower>(), HoverTipFactory.FromKeyword(CardKeyword.Exhaust),
         };
     } public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
     protected override async Task OnPlay(
@@ -36,7 +36,7 @@ public class SwirlingGlowwater() : AquariumCard(0,
             return;
         await CardCmd.Exhaust(choiceContext, card);
         await PowerCmd.Apply<FrailPower>(
-            Owner.Creature,
+            choiceContext,  Owner.Creature,
             DynamicVars[nameof(FrailPower)].BaseValue,
             Owner.Creature,
             this);

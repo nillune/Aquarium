@@ -1,39 +1,39 @@
 {
   "AQUARIUM-CAN_OF_WURMS.description": "Whenever you gain [gold]Vigor[/gold], increase the amount gained by 1",
-  "AQUARIUM-CAN_OF_WURMS.flavor": "Wurmy...",
+  "AQUARIUM-CAN_OF_WURMS.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-CAN_OF_WURMS.title": "Can Of Wurms",
 
   "AQUARIUM-DECRORATED_BOWL.description": "At the end of your turn, a random card gets retained.",
-  "AQUARIUM-DECRORATED_BOWL.flavor": "https://www.youtube.com/watch?v=5lerCtxHVu8",
-  "AQUARIUM-DECRORATED_BOWL.title": "Decrorated Bowl",
+  "AQUARIUM-DECRORATED_BOWL.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
+  "AQUARIUM-DECRORATED_BOWL.title": "Decorated Bowl",
 
-  "AQUARIUM-LUXURY_BOWL.description": "At the end of your turn, choose up to [blue]2[/blue]cards to get retained.",
-  "AQUARIUM-LUXURY_BOWL.flavor": "https://tenor.com/view/steve-smith-american-dad-bowl-bowl-steve-bow-bowl-bowl-gif-6240834832148063262",
+  "AQUARIUM-LUXURY_BOWL.description": "At the end of your turn, choose up to [blue]2[/blue] cards to get retained.",
+  "AQUARIUM-LUXURY_BOWL.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-LUXURY_BOWL.title": "Luxury Bowl",
   "AQUARIUM-LUXURY_BOWL.selectionScreenPrompt": "choose up to 2 cards to get retained.",
 
   "AQUARIUM-BEJEWELED_HOOK.description": "You can now [gold]Enchant[/gold] a card in your deck with [gold]Vigourous[/gold] [blue]5[/blue] at rest sites.",
-  "AQUARIUM-BEJEWELED_HOOK.flavor": "fshhhhhhhh",
+  "AQUARIUM-BEJEWELED_HOOK.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-BEJEWELED_HOOK.title": "Bejeweled Hook",
 
-  "AQUARIUM-SEA_MAGMA.description": "\"At the start of your turn, if you have [gold]Frail[/gold], gain {Energy:energyIcons()}.",
+  "AQUARIUM-SEA_MAGMA.description": "At the start of your turn, if you have [gold]Frail[/gold], gain {Energy:energyIcons()}.",
   "AQUARIUM-SEA_MAGMA.flavor": "Sea Magma these balls",
   "AQUARIUM-SEA_MAGMA.title": "Sea Magma",
 
   "AQUARIUM-BOILED_TURNIPS.description": "[gold]Frail[/gold] reduces [gold]Block[/gold] gain by [blue]10%[/blue] instead of [blue]25%[/blue] ",
-  "AQUARIUM-BOILED_TURNIPS.flavor": "turnip",
+  "AQUARIUM-BOILED_TURNIPS.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-BOILED_TURNIPS.title": "Boiled Turnips",
 
   "AQUARIUM-MOSS_BALLS.description": "If you end your turn without [gold]Vigor[/gold], gain [blue]{VigorPower}[/blue] [gold]Vigor[/gold]",
-  "AQUARIUM-MOSS_BALLS.flavor": "balls",
+  "AQUARIUM-MOSS_BALLS.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-MOSS_BALLS.title": "Moss Balls",
 
   "AQUARIUM-SCOPE_ATTACHMENT.description": "Attacks with [gold]Weapon[/gold] deal [blue]{ExtraDamage}[/blue] additional damage.",
-  "AQUARIUM-SCOPE_ATTACHMENT.flavor": "headshot",
+  "AQUARIUM-SCOPE_ATTACHMENT.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-SCOPE_ATTACHMENT.title": "Scope Attachment",
 
 
   "AQUARIUM-LASER_POINTER.description": "The first time you play a power each combat, [gold]Exhaust[/gold] [blue]1[/blue] card from your [gold]Draw Pile[/gold].",
-  "AQUARIUM-LASER_POINTER.flavor": "cat",
+  "AQUARIUM-LASER_POINTER.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-LASER_POINTER.title": "Laser Pointer"
 }

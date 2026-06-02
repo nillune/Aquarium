@@ -60,11 +60,11 @@ public class BootstrapPower : CustomPowerModel
     {
         BootstrapPower power = this;
         
-        if (cardPlay.Card.Owner.Creature != this.Owner)
+        if (cardPlay.Card.Owner.Creature != this.Owner || cardPlay.Card.Type != CardType.Attack)
             return;
 
         await PowerCmd.Apply<VigorPower>(
-                power.Owner,
+            new ThrowingPlayerChoiceContext(), power.Owner,
                 RealVigor,
                 power.Owner,
                 (CardModel)null);

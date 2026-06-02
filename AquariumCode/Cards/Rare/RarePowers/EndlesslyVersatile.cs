@@ -11,12 +11,12 @@ namespace Aquarium.AquariumCode.Cards.Rare;
   
   
   
-public class EndlesslyVersatile() : AquariumCard(2,
+public class EndlesslyVersatile() : AquariumCard(4,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [];
-
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardCmdPatches.Weapon];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -31,5 +31,5 @@ public class EndlesslyVersatile() : AquariumCard(2,
         return;
     }
 
-    protected override void OnUpgrade() => this.AddKeyword(CardKeyword.Innate);
+    protected override void OnUpgrade() => this.AddKeyword(CardKeyword.Retain);
 }

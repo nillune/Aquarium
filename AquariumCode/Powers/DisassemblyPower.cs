@@ -16,6 +16,8 @@ using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 
@@ -35,14 +37,35 @@ public sealed class DisassemblyPower : CustomPowerModel
     public override PowerStackType StackType => PowerStackType.Counter;
 
    
+    public override string CustomPackedIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
+            
+            return ResourceLoader.Exists(path) ? path : "power.png".PowerImagePath();
+        }
+    }
 
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+    public override string CustomBigIconPath
+    {
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
+           
+            return ResourceLoader.Exists(path) ? path : "power.png".BigPowerImagePath();
+        }
+    }
+    public override async Task AfterSideTurnStart(
+        CombatSide side,
+        IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
         DisassemblyPower power = this;
          if (side != CombatSide.Player)
               return;
         VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
-            power.Owner,
+            new ThrowingPlayerChoiceContext(),   power.Owner,
             power.Owner.Block,
             power.Owner,
             (CardModel) null);

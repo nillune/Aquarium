@@ -27,7 +27,7 @@ public class PillarOfJunk() : AquariumCard(1,
         PillarOfJunk pillarOfJunk = this;
         PillarOfJunk cardSource = this;
         await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
-        PillarOfJunkPower pillarOfJunkPower = await PowerCmd.Apply<PillarOfJunkPower>(cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
+        PillarOfJunkPower pillarOfJunkPower = await PowerCmd.Apply<PillarOfJunkPower>(choiceContext, cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
                 cardSource.Owner.Creature, (CardModel)cardSource);
           
     }

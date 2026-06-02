@@ -17,7 +17,7 @@ public class PortableBubbler() : AquariumCard(2,
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
+        get => new[] {  HoverTipFactory.Static(StaticHoverTip.Block), HoverTipFactory.FromPower<VigorPower>()};
     }
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",3)];
 
@@ -28,7 +28,7 @@ public class PortableBubbler() : AquariumCard(2,
       
         PortableBubbler cardSource = this;
         await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
-        PortableBubblerPower portableBubblerPower = await PowerCmd.Apply<PortableBubblerPower>(cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
+        PortableBubblerPower portableBubblerPower = await PowerCmd.Apply<PortableBubblerPower>(choiceContext, cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }
 

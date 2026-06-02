@@ -9,6 +9,7 @@ using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Combat;
 
 
 namespace Aquarium.AquariumCode.Powers;
@@ -43,18 +44,17 @@ public class CataclysmOrbPower : CustomPowerModel
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    public override async Task AfterSideTurnStart(
+        CombatSide side,
+        IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
-      
-        if (player != this.Owner.Player || this.AmountOnTurnStart == 0)
+        if (!participants.Contains<Creature>(Owner))
             return;
-        VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
-            this.Owner,
-            this.Amount,
-            this.Owner,
-            (CardModel) null);
+        PermVigorNextTurnPower permVigorNextTurnPower = await PowerCmd.Apply<PermVigorNextTurnPower>(new ThrowingPlayerChoiceContext(), this.Owner,  this.Amount ,
+            this.Owner, (CardModel)null);
         this.Flash();
-        int num = await PowerCmd.ModifyAmount((PowerModel) this, +1, (Creature) null, (CardModel) null);
+       // int num = await PowerCmd.ModifyAmount( new ThrowingPlayerChoiceContext(), (PowerModel) this, +1, (Creature) null, (CardModel) null);
         //await PowerCmd.Remove((PowerModel)power);
     }
 }

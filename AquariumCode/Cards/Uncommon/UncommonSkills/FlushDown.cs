@@ -21,7 +21,7 @@ public class FlushDown() : AquariumCard(0,
         CardPlay play)
     {
         FlushDown cardSource = this;
-        ReCyclePower reCyclePower = await PowerCmd.Apply<ReCyclePower>(cardSource.Owner.Creature, 1M,
+        ReCyclePower reCyclePower = await PowerCmd.Apply<ReCyclePower>(choiceContext, cardSource.Owner.Creature, 1M,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }
 

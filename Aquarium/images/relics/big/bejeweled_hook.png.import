@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwf11aqgoxb1a"
-path="res://.godot/imported/bejeweled_hook.png-a47bc2d846babfd120224ccc8f19caa9.ctex"
+path="res://.godot/imported/bejeweled_hook.png-e40bf713506156f4d87c3c3f035ee2af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/relics/big/bejeweled_hook.png"
-dest_files=["res://.godot/imported/bejeweled_hook.png-a47bc2d846babfd120224ccc8f19caa9.ctex"]
+source_file="res://Aquarium/images/relics/bejeweled_hook.png"
+dest_files=["res://.godot/imported/bejeweled_hook.png-e40bf713506156f4d87c3c3f035ee2af.ctex"]
 
 [params]
 

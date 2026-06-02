@@ -8,9 +8,8 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
-using BaseLib.Utils;
 
-using MegaCrit.Sts2.Core.Entities.Cards;
+
 using MegaCrit.Sts2.Core.HoverTips;
 
 namespace Aquarium.AquariumCode.Cards.Basic;
@@ -26,17 +25,19 @@ public class Bubble : AquariumCard
     }
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get => new[] {   HoverTipFactory.FromPower<DoomPower>()};
+        get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
     }
     protected override IEnumerable<DynamicVar> CanonicalVars => [  new BlockVar(3, ValueProp.Move), new PowerVar<VigorPower>(3)];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await PowerCmd.Apply<VigorPower>(
+        VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
+            choiceContext,
             Owner.Creature,
-            DynamicVars[nameof(VigorPower)].BaseValue,
+            DynamicVars[nameof(VigorPower)].IntValue,
             Owner.Creature,
             this);
+       // VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(choiceContext, Owner.Creature, (Decimal) DynamicVars["VigorPower"].IntValue, Owner.Creature,  this);
     }
 
     protected override void OnUpgrade() => this.EnergyCost.UpgradeBy(-1);

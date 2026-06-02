@@ -17,7 +17,7 @@ public class CanOfWurms() : AquariumRelic
     protected override IEnumerable<DynamicVar> CanonicalVars => [   new PowerVar<VigorPower>(1)];
     public override RelicRarity Rarity =>
         RelicRarity.Common;
-    public override Decimal ModifyPowerAmountGiven(
+    public override Decimal ModifyPowerAmountGivenAdditive(
         PowerModel power,
         Creature giver,
         Decimal amount,

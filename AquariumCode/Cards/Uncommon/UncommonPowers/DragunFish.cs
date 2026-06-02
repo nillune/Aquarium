@@ -1,5 +1,6 @@
 ﻿using Aquarium.AquariumCode.Cards;
 using Aquarium.AquariumCode.Powers;
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -19,19 +20,23 @@ public class DragunFish() : AquariumCard(2,
     {
         get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
     }
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",5)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",3), new PowerVar<VigorPower>(13)];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardCmdPatches.Weapon ];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        
+        await PowerCmd.Apply<VigorPower>(
+            choiceContext,   Owner.Creature,
+            DynamicVars.Power<VigorPower>().IntValue,
+            Owner.Creature,
+            (CardModel) this);
         DragunFish dragunFish = this;
         DragunFish cardSource = this;
         await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
-        DragunFishPower dragunFishPower = await PowerCmd.Apply<DragunFishPower>(cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
+        DragunFishPower dragunFishPower = await PowerCmd.Apply<DragunFishPower>(choiceContext, cardSource.Owner.Creature, cardSource.DynamicVars["Power"].BaseValue ,
             cardSource.Owner.Creature, (CardModel)cardSource);
     }
 
-    protected override void OnUpgrade() => this.DynamicVars["Power"].UpgradeValueBy(2M);
+    protected override void OnUpgrade() => DynamicVars.Power<VigorPower>().UpgradeValueBy(4M);
 }

@@ -47,7 +47,7 @@ public class FrailNextTurn : CustomPowerModel
         if (player != this.Owner.Player || this.AmountOnTurnStart == 0)
             return;
         FrailNextTurn frailNextTurn = await PowerCmd.Apply<FrailNextTurn>(
-            this.Owner,
+            new ThrowingPlayerChoiceContext(),   this.Owner,
             this.Amount,
             this.Owner,
             (CardModel) null);

@@ -11,6 +11,7 @@ using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 
 
 namespace Aquarium.AquariumCode.Powers;
@@ -43,17 +44,17 @@ public class PortableBubblerPower : CustomPowerModel
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
-    public override async Task BeforeHandDraw(
-        Player player,
-        PlayerChoiceContext choiceContext,
-        CombatState combatState)
+    public override async Task AfterSideTurnStart(
+        CombatSide side,
+        IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
         PortableBubblerPower power = this;
         PortableBubblerPower portableBubblerPower = this;
-        if (power.Owner.Player != player)
+        if (!participants.Contains<Creature>(Owner))
             return;
         VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
-            power.Owner,
+            new ThrowingPlayerChoiceContext(),   power.Owner,
             power.Amount,
             power.Owner,
             (CardModel) null);

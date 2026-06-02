@@ -55,16 +55,15 @@ public sealed class VigorNextTurnPower : CustomPowerModel
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        VigorNextTurnPower power = this;
-        VigorNextTurnPower vigorNextTurnPower = this;
-        if (player != vigorNextTurnPower.Owner.Player || vigorNextTurnPower.AmountOnTurnStart == 0)
+      
+        if (player != this.Owner.Player || this.AmountOnTurnStart == 0)
             return;
         VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
-            power.Owner,
-          power.Amount,
-            power.Owner,
+            new ThrowingPlayerChoiceContext(),  this.Owner,
+            this.Amount,
+          this.Owner,
             (CardModel) null);
-        power.Flash();
-        await PowerCmd.Remove((PowerModel)power);
+        this.Flash();
+        await PowerCmd.Remove((PowerModel)this);
     }
 }

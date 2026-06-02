@@ -26,7 +26,7 @@ public class MakeshiftAmmoPower : CustomPowerModel
         if (card.Owner.Creature != this.Owner)
             return;
         VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
-            this.Owner,
+            new ThrowingPlayerChoiceContext(),    this.Owner,
             this.Amount,
             this.Owner,
             (CardModel) null);

@@ -5,7 +5,9 @@ using MegaCrit.Sts2.Core.Commands;
 
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Aquarium.AquariumCode.Cards.Uncommon;
@@ -17,6 +19,12 @@ public class AmmoBag() : AquariumCard(3,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar (2) ];
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardCmdPatches.Weapon ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[] {    
+           this.EnergyHoverTip, };
+    }
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

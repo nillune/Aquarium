@@ -10,11 +10,12 @@ using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Entities.Players;
 
 
 namespace Aquarium.AquariumCode.Powers;
 
- 
+
 public class DontFixPower : CustomPowerModel
 {
 
@@ -23,7 +24,7 @@ public class DontFixPower : CustomPowerModel
         get
         {
             var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-            
+
             return ResourceLoader.Exists(path) ? path : "power.png".PowerImagePath();
         }
     }
@@ -33,7 +34,7 @@ public class DontFixPower : CustomPowerModel
         get
         {
             var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
-           
+
             return ResourceLoader.Exists(path) ? path : "power.png".BigPowerImagePath();
         }
     }
@@ -43,9 +44,10 @@ public class DontFixPower : CustomPowerModel
     public override PowerType Type => PowerType.Buff;
     private string PreviousCard = null;
     public override PowerStackType StackType => PowerStackType.Counter;
+/*
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
-       
+
         if (cardPlay.Card.Owner.Creature != this.Owner)
             return;
         if (cardPlay.Card.Title == PreviousCard)
@@ -59,4 +61,22 @@ public class DontFixPower : CustomPowerModel
 
 
     }
-}
+*/
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+       
+        if (player != this.Owner.Player || this.AmountOnTurnStart == 0)
+            return;
+        FrailPower frailPower = await PowerCmd.Apply<FrailPower>(
+            new ThrowingPlayerChoiceContext(),
+            this.Owner,
+            this.Amount,
+            this.Owner,
+            (CardModel) null);
+        this.Flash();
+        
+    }
+
+
+
+    }

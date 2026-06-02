@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -18,18 +19,21 @@ public class Thunderdome() : AquariumCard(5,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new PowerVar<BufferPower>(1M)];
-
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => new[] {    
+            HoverTipFactory.FromKeyword(CardKeyword.Exhaust) };
+    }
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        ThunderdomePower thunderdomePower = await PowerCmd.Apply<ThunderdomePower>(this.Owner.Creature, this.DynamicVars["BufferPower"].BaseValue, this.Owner.Creature, (CardModel) this);
+        ThunderdomePower thunderdomePower = await PowerCmd.Apply<ThunderdomePower>(choiceContext, this.Owner.Creature, this.DynamicVars["BufferPower"].BaseValue, this.Owner.Creature, (CardModel) this);
     
     }
-    public override async Task BeforeHandDraw(
-        Player player,
+    public override async Task AfterAutoPrePlayPhaseEnteredEarly(
         PlayerChoiceContext choiceContext,
-        CombatState combatState)
+        Player player)
     {
        CardCmd.RemoveKeyword(this, CardKeyword.Exhaust);
         CardPile pile = this.Pile;

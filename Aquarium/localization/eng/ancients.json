@@ -19,9 +19,63 @@
 
   "NEOW.talk.AQUARIUM-AQUARIUM.0-0.ancient": "[sine]..He.... will entertain.... your bloodlust......[/sine]",
   "NEOW.talk.AQUARIUM-AQUARIUM.0-1.char": "Who? Be more specific, idiot!",
-  "NEOW.talk.AQUARIUM-AQUARIUM.0-0.ancient": "[sine]....[red]The Architect[/red]... at the top…[/sine]",
-  "NEOW.talk.AQUARIUM-AQUARIUM.1-0.ancient": "[sine]Quench… your thirst..... with his blood..[/sine]",
-  "NEOW.talk.AQUARIUM-AQUARIUM.2-0.char": "Can this guy even die?!?",
-  "NEOW.talk.AQUARIUM-AQUARIUM.2-1.ancient": "[sine]..[red]He[/red] will fall.... Keep going....[/sine]"
- 
+  "NEOW.talk.AQUARIUM-AQUARIUM.0-2.ancient": "[sine]....[red]The Architect[/red]... at the top…[/sine]",
+  "NEOW.talk.AQUARIUM-AQUARIUM.2-0.ancient": "[sine]Quench… your thirst..... with his blood..[/sine]",
+  "NEOW.talk.AQUARIUM-AQUARIUM.1-0.char": "Can this guy even die?!?",
+  "NEOW.talk.AQUARIUM-AQUARIUM.1-1.ancient": "[sine]..[red]He[/red] will fall.... Keep going....[/sine]",
+
+  "PAEl.talk.AQUARIUM-AQUARIUM.0-0.ancient": "Such senseless violence, there is no need.",
+  "PAEl.talk.AQUARIUM-AQUARIUM.0-1.char": "I’m boOOOaaaAArrrrrd... let me have this.",
+  "PAEl.talk.AQUARIUM-AQUARIUM.0-2.ancient": "Calm yourself, take a piece of me.",
+  "PAEl.talk.AQUARIUM-AQUARIUM.1-0.ancient": "There are many sources of joy, why must you kill?",
+  "PAEl.talk.AQUARIUM-AQUARIUM.1-1.char": "It was the first thing I thought of, why?",
+  "PAEl.talk.AQUARIUM-AQUARIUM.1-2.ancient": "You lack empathy, child. I am concerned.",
+  "PAEl.talk.AQUARIUM-AQUARIUM.2-0.ancient": "You are back in your endless quest. Let my body serve your entertainment.",
+
+
+  "NONUPEIPE.talk.AQUARIUM-AQUARIUM.0-0.char": "Nice place you got here. I’m gonna steal some stuff.",
+  "NONUPEIPE.talk.AQUARIUM-AQUARIUM.0-1.ancient": "You may have it. Anything to aid the Architect’s fall.",
+  "NONUPEIPE.talk.AQUARIUM-AQUARIUM.0-2.char": "… I wanted to steal it though... :(",
+  "NONUPEIPE.talk.AQUARIUM-AQUARIUM.1-0.ancient": "Every little fishie in your arsenal deserves the finest equipments.",
+  "NONUPEIPE.talk.AQUARIUM-AQUARIUM.1-1.char": "Just give it to the orange one. It’s my favorite.",
+  "NONUPEIPE.talk.AQUARIUM-AQUARIUM.2-0.ancient": "Let me bedazzle your bowl, mercenary!",
+
+  "DARV.talk.AQUARIUM-AQUARIUM.0-0.ancient": "What’re you looking for? I have anything you could want.",
+  "DARV.talk.AQUARIUM-AQUARIUM.0-1.char": "How about a time machine? I wish I could go back to before I saw your ugly face.",
+  "DARV.talk.AQUARIUM-AQUARIUM.0-2.ancient": "HAHA! Funny [jitter][b]you[/b][/jitter] mention that…",
+  "DARV.talk.AQUARIUM-AQUARIUM.1-0.ancient": "These items are from a time looong before ya’.",
+  "DARV.talk.AQUARIUM-AQUARIUM.1-1.char": "I don’t care how old they are. Are they powerful?",
+  "DARV.talk.AQUARIUM-AQUARIUM.1-2.ancient": "Figures you’d’nt care about it. They’re plenty strong.",
+  "DARV.talk.AQUARIUM-AQUARIUM.2-0.ancient": "Just as I’d expect. You want a looksie at my wares.",
+
+  "OROBAS.talk.AQUARIUM-AQUARIUM.0-0.ancient": "You are glass?! I am eye! This is fun!",
+  "OROBAS.talk.AQUARIUM-AQUARIUM.0-1.char": "Not fun enough. I’m looking for better fun.",
+  "OROBAS.talk.AQUARIUM-AQUARIUM.0-2.ancient": "!!! Like games? I love games!!",
+  "OROBAS.talk.AQUARIUM-AQUARIUM.1-0.ancient": "Maybe.. glass can have calm fun today..!",
+  "OROBAS.talk.AQUARIUM-AQUARIUM.1-1.char": "HA! No. I’m gonna kill things.",
+  "OROBAS.talk.AQUARIUM-AQUARIUM.1-2.ancient": "No kill!! .. Please...",
+  "OROBAS.talk.AQUARIUM-AQUARIUM.2-0.ancient": "Puppet! With joints!! Take gift!!!",
+
+  "VAKUU.talk.AQUARIUM-AQUARIUM.0-0.ancient": "[font_size=22](This one looks like a sucker...)[/font_size] Care to make a deal?",
+  "VAKUU.talk.AQUARIUM-AQUARIUM.0-1.char": "I know you’re evil and gonna ruin my life with your deal. Sure.",
+  "VAKUU.talk.AQUARIUM-AQUARIUM.1-0.ancient": "Your face is fragile. So is mine. We are alike in that way.",
+  "VAKUU.talk.AQUARIUM-AQUARIUM.1-1.char": "Your business pitch sucks, I just think it’s silly to accept whatever you offer me.",
+  "VAKUU.talk.AQUARIUM-AQUARIUM.1-2.ancient": "Whatever gets your signature on the paper...",
+  "VAKUU.talk.AQUARIUM-AQUARIUM.2-0.ancient": "You cannot achieve true power without me.",
+
+  "TEZCATARA.talk.AQUARIUM-AQUARIUM.0-0.ancient": "Come, dear. You need not worry you extinguish me.",
+  "TEZCATARA.talk.AQUARIUM-AQUARIUM.0-1.char": "Give me something good and I won’t.",
+  "TEZCATARA.talk.AQUARIUM-AQUARIUM.0-2.ancient": "Anything for you, sweetie.",
+  "TEZCATARA.talk.AQUARIUM-AQUARIUM.1-0.ancient": "A robot not of The Architect’s design? Who created you, little one?",
+  "TEZCATARA.talk.AQUARIUM-AQUARIUM.1-1.char": "I made myself. Easy as that.",
+  "TEZCATARA.talk.AQUARIUM-AQUARIUM.1-2.ancient": "That makes no sense... unless...?",
+  "TEZCATARA.talk.AQUARIUM-AQUARIUM.2-0.ancient": "Love, let’s get you set up for mayhem.",
+
+  "TANX.talk.AQUARIUM-AQUARIUM.0-0.ancient": "BULLETS ARE BORING! FEEL THE THRILL OF A SWORD FOR ONCE!",
+  "TANX.talk.AQUARIUM-AQUARIUM.0-1.char": "Can I prove to you they’re not?",
+  "TANX.talk.AQUARIUM-AQUARIUM.0-2.ancient": "YES! SHOW ME THE POWER OF YOUR GUNS!",
+  "TANX.talk.AQUARIUM-AQUARIUM.1-0.ancient": "AQUARIUM! TAKE A WEAPON!",
+  "TANX.talk.AQUARIUM-AQUARIUM.1-1.char": "You... don’t want to fight first? I kinda wanted to.",
+  "TANX.talk.AQUARIUM-AQUARIUM.1-2.ancient": "I’D NEVER FORGET!!! FIGHT! FIGHT! FIGHT!",
+  "TANX.talk.AQUARIUM-AQUARIUM.2-0.ancient": "GUNSLINGER! FIGHT ME! CLAIM A PRIZE!"
 }

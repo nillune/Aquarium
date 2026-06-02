@@ -28,22 +28,23 @@ public class Anchovy() : AquariumCard(0,
     protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
+        get => new[] {   HoverTipFactory.FromPower<VigorPower>(), HoverTipFactory.FromPower<FrailPower>()};
     }
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        int KeepVigor;
+       
         Anchovy anchovy = this;
         Anchovy cardSource = this;
         if (Owner.HasPower<VigorPower>())
         {
             
             
-            VigorNextTurnPower vigorNextTurnPower = await PowerCmd.Apply<VigorNextTurnPower>(cardSource.Owner.Creature,Owner.Creature.GetPowerAmount<VigorPower>() ,
+            VigorNextTurnPower vigorNextTurnPower = await PowerCmd.Apply<VigorNextTurnPower>(  choiceContext, cardSource.Owner.Creature,Owner.Creature.GetPowerAmount<VigorPower>() ,
                 cardSource.Owner.Creature, (CardModel)cardSource);
             VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
+                choiceContext,
                Owner.Creature,
                 -Owner.Creature.GetPowerAmount<VigorPower>(),
                 Owner.Creature,
@@ -53,9 +54,10 @@ public class Anchovy() : AquariumCard(0,
         {
             
             
-            FrailNextTurn frailNextTurn = await PowerCmd.Apply<FrailNextTurn>(cardSource.Owner.Creature,Owner.Creature.GetPowerAmount<FrailPower>() ,
+            FrailNextTurn frailNextTurn = await PowerCmd.Apply<FrailNextTurn>(  choiceContext, cardSource.Owner.Creature,Owner.Creature.GetPowerAmount<FrailPower>() ,
                 cardSource.Owner.Creature, (CardModel)cardSource);
             FrailPower FrailPower = await PowerCmd.Apply<FrailPower>(
+                choiceContext,
                 Owner.Creature,
                 -Owner.Creature.GetPowerAmount<FrailPower>(),
                 Owner.Creature,

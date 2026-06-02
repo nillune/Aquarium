@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Aquarium.AquariumCode.Cards.Uncommon;
 
- 
+ /*
 public class Schooling() : AquariumCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
@@ -28,4 +28,4 @@ public class Schooling() : AquariumCard(1,
     {
         DynamicVars.Repeat.UpgradeValueBy(1m);
     }
-}
+} */

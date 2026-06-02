@@ -23,7 +23,7 @@ public class StarterPistol() : AquariumCard(1,
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
+        get => new[] {   HoverTipFactory.FromPower<VigorPower>(),  this.EnergyHoverTip};
     }
     protected override IEnumerable<DynamicVar> CanonicalVars =>
         [ new DynamicVar(nameof(VigorNextTurnPower), 3M), new EnergyVar(2), ];
@@ -34,9 +34,9 @@ public class StarterPistol() : AquariumCard(1,
     {
         StarterPistol cardSource = this;
         await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "Cast", cardSource.Owner.Character.CastAnimDelay);
-        VigorNextTurnPower vigorNextTurnPower = await PowerCmd.Apply<VigorNextTurnPower>(cardSource.Owner.Creature, DynamicVars["VigorNextTurnPower"].BaseValue,
+        VigorNextTurnPower vigorNextTurnPower = await PowerCmd.Apply<VigorNextTurnPower>(choiceContext, cardSource.Owner.Creature, DynamicVars["VigorNextTurnPower"].BaseValue,
             cardSource.Owner.Creature, (CardModel)cardSource);
-        EnergyNextTurnPower energyNextTurnPower = await PowerCmd.Apply<EnergyNextTurnPower>(cardSource.Owner.Creature,
+        EnergyNextTurnPower energyNextTurnPower = await PowerCmd.Apply<EnergyNextTurnPower>( choiceContext, cardSource.Owner.Creature,
             (Decimal)cardSource.DynamicVars.Energy.IntValue, cardSource.Owner.Creature, (CardModel)cardSource);
     }
     protected override void OnUpgrade()
