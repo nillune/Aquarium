@@ -29,25 +29,24 @@ public class BoxerJellies() : AquariumCard(2,
     {
         
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, play)
             .Targeting(play.Target)
             .WithHitCount(DynamicVars.Repeat.IntValue)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        if (!play.Target.HasPower<VulnerablePower>() ){
-                await PowerCmd.Apply<VulnerablePower>(
+             await PowerCmd.Apply<VulnerablePower>(
                     choiceContext, play.Target,
             DynamicVars[nameof(VulnerablePower)].BaseValue,
             Owner.Creature,
             this);
-        } 
-        if (!play.Target.HasPower<WeakPower>() ){
+        
+       
             await PowerCmd.Apply<WeakPower>(
                 choiceContext, play.Target,
                 DynamicVars[nameof(WeakPower)].BaseValue,
                 Owner.Creature,
                 this);
-        } 
+        
     }
 
     protected override void OnUpgrade()

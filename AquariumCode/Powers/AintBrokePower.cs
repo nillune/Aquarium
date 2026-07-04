@@ -61,7 +61,7 @@ public sealed class AintBrokePower : CustomPowerModel
     CardModel? cardSource)
   {
         AintBrokePower aintBrokePower = this;
-        if (amount <= 0M || applier != aintBrokePower.Owner || !(power is FrailPower))
+        if (amount <= 0M || power.Owner != this.Owner || !(power is FrailPower))
             return;
         aintBrokePower.Flash();
         IEnumerable<CardModel> cardModels = await CardPileCmd.Draw((PlayerChoiceContext) new BlockingPlayerChoiceContext(), (Decimal) aintBrokePower.Amount, aintBrokePower.Owner.Player);

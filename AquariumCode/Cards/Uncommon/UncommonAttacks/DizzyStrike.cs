@@ -34,7 +34,7 @@ public class DizzyStrike() : AquariumCard(1,
     {
         int hitCount = this.Owner.Creature.HasPower<FrailPower>() ? this.DynamicVars.Repeat.IntValue : 1;
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, play)
             //.Targeting(play.Target)
             .TargetingAllOpponents(CombatState)
             .WithHitCount(hitCount)

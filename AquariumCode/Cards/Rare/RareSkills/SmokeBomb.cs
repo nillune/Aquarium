@@ -15,7 +15,7 @@ public class SmokeBomb() : AquariumCard(2,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Turns",3), new DynamicVar("BombDexterity",5)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Turns",2), new DynamicVar("BombDexterity",5)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get => new[] {   HoverTipFactory.FromPower<DexterityPower>()};

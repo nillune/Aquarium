@@ -46,7 +46,7 @@ public override PowerStackType StackType => PowerStackType.Counter;
 public override async Task BeforeCardPlayed(CardPlay cardPlay)
                              {
     
-    if (cardPlay.Card.Owner != this.Owner.Player || cardPlay.Card.Type != CardType.Skill)
+    if (cardPlay.Card.Owner != this.Owner.Player )
         return;
     VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
         new ThrowingPlayerChoiceContext(), this.Owner,

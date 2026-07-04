@@ -11,32 +11,29 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Aquarium.AquariumCode.Cards.Rare;
 
  
-public class Fatemaker() : AquariumCard(0,
+public class Fatemaker() : AquariumCard(2,
     CardType.Skill, CardRarity.Rare,
     TargetType.AllEnemies)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(8M, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move),
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(18M, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move),
      ];
-    protected override bool HasEnergyCostX => true;
+   // protected override bool HasEnergyCostX => true;
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        int hitCount = this.ResolveEnergyXValue();
-        if (this.IsUpgraded)
-            ++hitCount;
+       
         ArgumentNullException.ThrowIfNull((object)this.CombatState, "this.CombatState");
-        for (int i = 0; i < hitCount; i++)
-        {
+       
             foreach (Creature enemy in CombatState.HittableEnemies)
             {
                 IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, enemy,
-                    this.DynamicVars.Damage, (CardModel)this);
+                    this.DynamicVars.Damage, (CardModel)this, cardPlay);
             }
-        }
+        
     }
 
     protected override void OnUpgrade()
     {
-
+        DynamicVars.Damage.UpgradeValueBy(6m);
     }
 }

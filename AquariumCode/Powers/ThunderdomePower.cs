@@ -55,16 +55,15 @@ public class ThunderdomePower : CustomPowerModel
             return ResourceLoader.Exists(path) ? path : "power.png".BigPowerImagePath();
         }
     }
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+//lol? 
+     public override async Task AfterSideTurnEnd(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        IEnumerable<Creature> participants)
     {
-        if (TurnsStarted == 0)
-        {
-            TurnsStarted++;
+      
+        if (participants.Contains<Creature>(this.Owner))
             return;
-        }
-
-        if (player != this.Owner.Player)
-            return;
-        await PowerCmd.TickDownDuration((PowerModel) this);
+        await PowerCmd.Remove((PowerModel) this);
     }
 }

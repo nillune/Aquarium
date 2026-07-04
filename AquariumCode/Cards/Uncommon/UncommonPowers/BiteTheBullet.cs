@@ -12,7 +12,7 @@ public class BiteTheBullet() : AquariumCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Power",2)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsnxrtiuq0w5s"
-path="res://.godot/imported/glow_in_the_dark_power.png-1ce6fd784f41b8ffc58becd4c6fee220.ctex"
+path="res://.godot/imported/glow_in_the_dark_power.png-5a9c705a1e43195ca1c2d186e7bb86f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/glow_in_the_dark_power.png"
-dest_files=["res://.godot/imported/glow_in_the_dark_power.png-1ce6fd784f41b8ffc58becd4c6fee220.ctex"]
+source_file="res://Aquarium/images/powers/glow_in_the_dark_power.png"
+dest_files=["res://.godot/imported/glow_in_the_dark_power.png-5a9c705a1e43195ca1c2d186e7bb86f0.ctex"]
 
 [params]
 

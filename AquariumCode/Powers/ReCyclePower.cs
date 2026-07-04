@@ -56,19 +56,26 @@ public sealed class ReCyclePower : CustomPowerModel
 
  
 
-    public override (PileType, CardPilePosition) ModifyCardPlayResultPileTypeAndPosition(
+    public override CardLocation ModifyCardPlayResultLocation(
         CardModel card,
         bool isAutoPlay,
         ResourceInfo resources,
-        PileType pileType,
-        CardPilePosition position)
+        CardLocation location)
     {
     
         if (card.Owner.Creature != this.Owner)
-            return (pileType, position);
+            return location;
         ReCyclePower reCyclePower = this;
-        reCyclePower.Flash();
-        return  (PileType.Exhaust, position);
+       
+        location.pileType = PileType.Exhaust;
+        return location;
+    }
+    public override Task AfterModifyingCardPlayResultLocation(
+        CardModel card,
+        CardLocation cardLocation)
+    {
+        this.Flash();
+        return Task.CompletedTask;
     }
 
     public override async Task AfterSideTurnStart(

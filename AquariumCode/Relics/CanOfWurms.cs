@@ -24,7 +24,7 @@ public class CanOfWurms() : AquariumRelic
         Creature? target,
         CardModel? cardSource)
     {
-        return !(power is VigorPower) || giver != this.Owner.Creature ? amount : amount + (Decimal) DynamicVars[nameof(VigorPower)].BaseValue;
+        return !(power is VigorPower) || giver != this.Owner.Creature ? 0m : DynamicVars[nameof(VigorPower)].BaseValue;
     }
 
     public override Task AfterModifyingPowerAmountGiven(PowerModel power)

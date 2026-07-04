@@ -21,7 +21,7 @@ public class GlowInTheDark() : AquariumCard(1,
     {
         get => new[] {   HoverTipFactory.FromPower<StrengthPower>()};
     }
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DynamicVar("EnemyStrength", 2M), new EnergyVar (1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DynamicVar("EnemyVigor", 7M), new EnergyVar (1)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -33,8 +33,8 @@ public class GlowInTheDark() : AquariumCard(1,
         foreach (Creature hittableEnemy in (IEnumerable<Creature>)this.CombatState.HittableEnemies)
         {
 
-            StrengthPower strengthPower2 = await PowerCmd.Apply<StrengthPower>(choiceContext, hittableEnemy,
-                this.DynamicVars["EnemyStrength"].BaseValue, this.Owner.Creature, (CardModel)this);
+            VigorPower VigorPower = await PowerCmd.Apply<VigorPower>(choiceContext, hittableEnemy,
+                this.DynamicVars["EnemyVigor"].BaseValue, this.Owner.Creature, (CardModel)this);
             /*
             DemonFormPower demonFormPower = await PowerCmd.Apply<DemonFormPower>(hittableEnemy,
                 this.DynamicVars["EnemyStrength"].BaseValue, this.Owner.Creature, (CardModel)this);

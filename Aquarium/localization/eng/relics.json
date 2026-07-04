@@ -3,16 +3,16 @@
   "AQUARIUM-CAN_OF_WURMS.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-CAN_OF_WURMS.title": "Can Of Wurms",
 
-  "AQUARIUM-DECRORATED_BOWL.description": "At the end of your turn, a random card gets retained.",
+  "AQUARIUM-DECRORATED_BOWL.description": "At the end of your turn, a random card in your [gold]Hand[/gold] gets retained.",
   "AQUARIUM-DECRORATED_BOWL.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-DECRORATED_BOWL.title": "Decorated Bowl",
 
-  "AQUARIUM-LUXURY_BOWL.description": "At the end of your turn, choose up to [blue]2[/blue] cards to get retained.",
+  "AQUARIUM-LUXURY_BOWL.description": "At the end of your turn, a random card in your [gold]Hand[/gold] gains [gold]Retain[/gold] ",
   "AQUARIUM-LUXURY_BOWL.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-LUXURY_BOWL.title": "Luxury Bowl",
   "AQUARIUM-LUXURY_BOWL.selectionScreenPrompt": "choose up to 2 cards to get retained.",
 
-  "AQUARIUM-BEJEWELED_HOOK.description": "You can now [gold]Enchant[/gold] a card in your deck with [gold]Vigourous[/gold] [blue]5[/blue] at rest sites.",
+  "AQUARIUM-BEJEWELED_HOOK.description": "You can now [gold]Lure[/gold] at rest sites.",
   "AQUARIUM-BEJEWELED_HOOK.flavor": "[red]Details for this relic will be revealed in the future...[/red]",
   "AQUARIUM-BEJEWELED_HOOK.title": "Bejeweled Hook",
 

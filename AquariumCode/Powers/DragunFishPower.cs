@@ -44,7 +44,14 @@ public class DragunFishPower : CustomPowerModel
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        
+        if (this.Owner.GetPowerAmount<VigorPower>() < 3 && this.Owner.GetPowerAmount<VigorPower>() >= 0)
+        {
+            VigorPower vigorPower2 = await PowerCmd.Apply<VigorPower>(
+                new ThrowingPlayerChoiceContext(),   this.Owner,
+                -this.Owner.GetPowerAmount<VigorPower>(),
+                Owner,
+                (CardModel) null);
+        }
         VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
             new ThrowingPlayerChoiceContext(),   this.Owner,
             -Amount,

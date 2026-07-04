@@ -30,7 +30,7 @@ public class BigHammerhead() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        AttackCommand attackCommand = await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).FromCard((CardModel) this).Targeting(
+        AttackCommand attackCommand = await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).FromCard((CardModel) this, play).Targeting(
             play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         Decimal baseValue = this.DynamicVars["Increase"].BaseValue;
         DamageVar damage = this.DynamicVars.Damage;

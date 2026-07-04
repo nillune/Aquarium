@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pmd3tgfnbg83"
-path="res://.godot/imported/ride_or_die_power.png-92a1846ed71e366a54e63f314334f073.ctex"
+path="res://.godot/imported/ride_or_die_power.png-ce4804d26d3e69a52778d8225ecd3c45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/ride_or_die_power.png"
-dest_files=["res://.godot/imported/ride_or_die_power.png-92a1846ed71e366a54e63f314334f073.ctex"]
+source_file="res://Aquarium/images/powers/ride_or_die_power.png"
+dest_files=["res://.godot/imported/ride_or_die_power.png-ce4804d26d3e69a52778d8225ecd3c45.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
 ﻿using Aquarium.AquariumCode.Character;
 using Aquarium.AquariumCode.Relics;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -22,13 +23,14 @@ public class ScopeAttachment() : AquariumRelic
 
    
 protected override IEnumerable<DynamicVar> CanonicalVars => [   new DynamicVar("ExtraDamage", 3M) ];
-    public override Decimal ModifyDamageAdditive(
-        Creature? target,
-        Decimal amount,
-        ValueProp props,
-        Creature? dealer,
-        CardModel? cardSource)
-    {
+public override Decimal ModifyDamageMultiplicative(
+    Creature? target,
+    Decimal amount,
+    ValueProp props,
+    Creature? dealer,
+    CardModel? cardSource,
+    CardPlay? cardPlay)
+{
         return !props.IsPoweredAttack() || cardSource == null || !cardSource.Keywords.Contains(CardCmdPatches.Weapon)|| dealer != this.Owner.Creature && cardSource.Owner != this.Owner ? 0M : this.DynamicVars["ExtraDamage"].BaseValue;
     }
 }

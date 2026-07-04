@@ -35,7 +35,7 @@ public class SheerGirth() : AquariumCard(0,
         
         
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this)
+                .FromCard(this, play)
                 .Targeting(play.Target)
                 .WithHitCount(hitCount)
                 .WithHitFx("vfx/vfx_attack_slash")

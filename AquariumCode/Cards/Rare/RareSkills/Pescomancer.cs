@@ -22,7 +22,7 @@ public class Pescomancer() : AquariumCard(1,
         get => new[] {    
             HoverTipFactory.FromCard<Dazed>() };
     }
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(1M, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move),
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(2M, ValueProp.Unblockable | ValueProp.Unpowered | ValueProp.Move),
         new RepeatVar(7),  new DynamicVar("Increase", 1M)];
     private Decimal _extraDamage;
     private Decimal ExtraDamage
@@ -43,14 +43,14 @@ public class Pescomancer() : AquariumCard(1,
         for (int i = 0; i < DynamicVars.Repeat.IntValue; i++)
         {
             IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, play.Target,
-                cardSource.DynamicVars.Damage, (CardModel)cardSource);
+                cardSource.DynamicVars.Damage, (CardModel)cardSource, play);
         }
 
         Decimal baseValue = this.DynamicVars["Increase"].BaseValue;
         DamageVar damage = this.DynamicVars.Damage;
         damage.BaseValue = damage.BaseValue + baseValue;
         this.ExtraDamage += baseValue;
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat((CardModel) pescomancer.CombatState.CreateCard<Dazed>(pescomancer.Owner), PileType.Draw, this.Owner));
+       // CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat((CardModel) pescomancer.CombatState.CreateCard<Dazed>(pescomancer.Owner), PileType.Draw, this.Owner));
     }
     
     protected override void OnUpgrade()

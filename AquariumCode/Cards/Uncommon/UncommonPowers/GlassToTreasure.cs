@@ -25,8 +25,5 @@ public class GlassToTreasure() : AquariumCard(1,
             this.Owner.Creature, (CardModel)this);
     }
 
-    protected override void OnUpgrade()
-    {
-        this.AddKeyword(CardKeyword.Innate);
-    }
+    protected override void OnUpgrade() => this.EnergyCost.UpgradeBy(-1);
 }

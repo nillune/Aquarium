@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2pv83olagetw"
-path="res://.godot/imported/portable_bubbler_power.png-7709064d9e0615c84230f655989ae5e6.ctex"
+path="res://.godot/imported/portable_bubbler_power.png-00d5ca4919b25801238a65ea1c70c55a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/portable_bubbler_power.png"
-dest_files=["res://.godot/imported/portable_bubbler_power.png-7709064d9e0615c84230f655989ae5e6.ctex"]
+source_file="res://Aquarium/images/powers/portable_bubbler_power.png"
+dest_files=["res://.godot/imported/portable_bubbler_power.png-00d5ca4919b25801238a65ea1c70c55a.ctex"]
 
 [params]
 

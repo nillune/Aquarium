@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dm4njy8o3n58v"
-path="res://.godot/imported/smoke_bomb_power.png-4e34c3ce40c6c24618350ad76106e9ca.ctex"
+path="res://.godot/imported/smoke_bomb_power.png-1fab965f967e88cfe1de978d9e34a6eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/smoke_bomb_power.png"
-dest_files=["res://.godot/imported/smoke_bomb_power.png-4e34c3ce40c6c24618350ad76106e9ca.ctex"]
+source_file="res://Aquarium/images/powers/smoke_bomb_power.png"
+dest_files=["res://.godot/imported/smoke_bomb_power.png-1fab965f967e88cfe1de978d9e34a6eb.ctex"]
 
 [params]
 

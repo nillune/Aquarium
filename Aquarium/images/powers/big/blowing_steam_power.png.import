@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fvxaelg4sfpk"
-path="res://.godot/imported/blowing_steam_power.png-e0fd1d4e3e59cc648eb0626638fa9127.ctex"
+path="res://.godot/imported/blowing_steam_power.png-7522ee58ea4b20df9d21d452792db81f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/blowing_steam_power.png"
-dest_files=["res://.godot/imported/blowing_steam_power.png-e0fd1d4e3e59cc648eb0626638fa9127.ctex"]
+source_file="res://Aquarium/images/powers/blowing_steam_power.png"
+dest_files=["res://.godot/imported/blowing_steam_power.png-7522ee58ea4b20df9d21d452792db81f.ctex"]
 
 [params]
 

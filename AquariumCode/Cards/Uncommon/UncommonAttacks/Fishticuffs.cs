@@ -20,7 +20,7 @@ public class Fishticuffs() : AquariumCard(1,
     {
         Fishticuffs fishticuffs = this;
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, play)
             .Targeting(play.Target)
             .WithHitCount( this.Owner.Creature.Powers.Count)
             .WithHitFx("vfx/vfx_attack_slash")

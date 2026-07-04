@@ -42,10 +42,10 @@ public class BiteTheBulletPower: CustomPowerModel
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Card.Type != CardType.Attack) 
+        if (cardPlay.Card.Owner.Creature != this.Owner || cardPlay.Card.Type != CardType.Attack) 
             return;
         
-        VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
+        VigorNextTurnPower vigorNextTurnPower = await PowerCmd.Apply<VigorNextTurnPower>(
             new ThrowingPlayerChoiceContext(),   this.Owner,
             Amount,
             Owner,

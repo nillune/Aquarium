@@ -35,7 +35,7 @@ public class Octorifle() : AquariumCard(1,
     {
         Octorifle source = this;
         await DamageCmd.Attack(source.DynamicVars.Damage.BaseValue)
-            .FromCard(source)
+            .FromCard(source, play)
             .Targeting(play.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

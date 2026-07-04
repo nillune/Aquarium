@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba6oyi6xl53i2"
-path="res://.godot/imported/fin_polish_power.png-09d758bc1edac938a47a0e3f3fbef363.ctex"
+path="res://.godot/imported/fin_polish_power.png-beb764c39b4d3577f6892223c346f401.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/fin_polish_power.png"
-dest_files=["res://.godot/imported/fin_polish_power.png-09d758bc1edac938a47a0e3f3fbef363.ctex"]
+source_file="res://Aquarium/images/powers/fin_polish_power.png"
+dest_files=["res://.godot/imported/fin_polish_power.png-beb764c39b4d3577f6892223c346f401.ctex"]
 
 [params]
 

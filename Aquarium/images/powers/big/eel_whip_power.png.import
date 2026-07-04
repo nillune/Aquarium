@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw6g42bvjiw60"
-path="res://.godot/imported/eel_whip_power.png-394e0faf08f95b9c022c0c902703e41a.ctex"
+path="res://.godot/imported/eel_whip_power.png-75782b9cbff39c16396c6ec4005a1072.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/eel_whip_power.png"
-dest_files=["res://.godot/imported/eel_whip_power.png-394e0faf08f95b9c022c0c902703e41a.ctex"]
+source_file="res://Aquarium/images/powers/eel_whip_power.png"
+dest_files=["res://.godot/imported/eel_whip_power.png-75782b9cbff39c16396c6ec4005a1072.ctex"]
 
 [params]
 

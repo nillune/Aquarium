@@ -39,7 +39,7 @@ public class SunkenTreasure() : AquariumCard(3,
         {
             ArgumentNullException.ThrowIfNull((object) cardPlay.Target, "cardPlay.Target");
             bool shouldTriggerFatal = cardPlay.Target.Powers.All<PowerModel>((Func<PowerModel, bool>) (p => p.ShouldOwnerDeathTriggerFatal()));
-            AttackCommand attackCommand = await DamageCmd.Attack(sunkenTreasure.DynamicVars.Damage.BaseValue).FromCard((CardModel) sunkenTreasure).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+            AttackCommand attackCommand = await DamageCmd.Attack(sunkenTreasure.DynamicVars.Damage.BaseValue).FromCard((CardModel) sunkenTreasure, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
             if (!shouldTriggerFatal)
                 combatRoom = (CombatRoom) null;
             else if (!attackCommand.Results.SelectMany<List<DamageResult>, DamageResult>((Func<List<DamageResult>, IEnumerable<DamageResult>>) (r => (IEnumerable<DamageResult>) r)).Any<DamageResult>((Func<DamageResult, bool>) (r => r.WasTargetKilled)))

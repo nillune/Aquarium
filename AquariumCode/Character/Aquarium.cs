@@ -74,7 +74,7 @@ public  class Aquarium : PlaceholderCharacterModel
     }
 
     public override string CustomCharacterSelectBg => "res://Aquarium/scenes/charselectbg/charselectbg.tscn";
-    public override string CustomIconTexturePath => "res://Aquarium/images/ui/map_marker.png";
+    public override string CustomIconTexturePath => "res://Aquarium/images/ui/character_icon.png";
     public override string CustomCharacterSelectIconPath => "res://Aquarium/images/ui/CharacterSelectIcon.png";
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
 

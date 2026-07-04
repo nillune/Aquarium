@@ -50,7 +50,7 @@ public class Railgun : AquariumCard
         await Cmd.Wait(.2f);
         
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, play)
             .TargetingAllOpponents(CombatState)
             .WithHitCount(DynamicVars.Repeat.IntValue)
             .WithHitFx("vfx/vfx_starry_impact")

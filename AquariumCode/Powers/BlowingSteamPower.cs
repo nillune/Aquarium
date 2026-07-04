@@ -61,9 +61,9 @@ public class BlowingSteamPower : CustomPowerModel
         Creature target = this.Owner.Player.RunState.Rng.CombatTargets.NextItem<Creature>((IEnumerable<Creature>) hittableEnemies);
         if (this.Owner.GetPowerAmount<VigorPower>() > 0)
         {
-             int calcDamage = (this.Owner.GetPowerAmount<VigorPower>() * 2);
+             int calcDamage = (this.Owner.GetPowerAmount<VigorPower>() * this.Amount);
              this.Flash();
-             IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage((PlayerChoiceContext) new ThrowingPlayerChoiceContext(), target, (Decimal) calcDamage, ValueProp.Unpowered, this.Owner, (CardModel) null);
+             IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage((PlayerChoiceContext) new ThrowingPlayerChoiceContext(), target, (Decimal) calcDamage, ValueProp.Unpowered, this.Owner, (CardModel) null, null);
              VigorPower vigorPower = await PowerCmd.Apply<VigorPower>(
                  new ThrowingPlayerChoiceContext(),  this.Owner,
                  -this.Owner.GetPowerAmount<VigorPower>(),

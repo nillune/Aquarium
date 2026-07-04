@@ -18,12 +18,12 @@ public class Blaster : AquariumCard
 
     }
         
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(2, ValueProp.Move), new RepeatVar(4)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(3, ValueProp.Move), new RepeatVar(3)];
     
     protected override async Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, CardPlay play)
     {  
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, play)
             .Targeting(play.Target)
             .WithHitCount(DynamicVars.Repeat.IntValue)
             .WithHitFx("vfx/vfx_attack_slash")
@@ -32,7 +32,7 @@ public class Blaster : AquariumCard
    
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(1m);
+        DynamicVars.Repeat.UpgradeValueBy(1m);
          this.AddKeyword(CardCmdPatches.Weapon);
     }
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c71g4bwhsox27"
-path="res://.godot/imported/cauldron_of_everything_power.png-a7eee972f5776dcb73b64fd631180c31.ctex"
+path="res://.godot/imported/cauldron_of_everything_power.png-61678f852f5ff06dc330d8499d549b2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/cauldron_of_everything_power.png"
-dest_files=["res://.godot/imported/cauldron_of_everything_power.png-a7eee972f5776dcb73b64fd631180c31.ctex"]
+source_file="res://Aquarium/images/powers/cauldron_of_everything_power.png"
+dest_files=["res://.godot/imported/cauldron_of_everything_power.png-61678f852f5ff06dc330d8499d549b2c.ctex"]
 
 [params]
 

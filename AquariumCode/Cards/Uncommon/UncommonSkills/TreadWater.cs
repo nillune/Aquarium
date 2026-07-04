@@ -10,25 +10,23 @@ using MegaCrit.Sts2.Core.Models.Powers;
 namespace Aquarium.AquariumCode.Cards.Uncommon;
 
   
-public class TreadWater() : AquariumCard(2,
+public class TreadWater() : AquariumCard(0,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(3)];
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardKeyword.Ethereal ];
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
-    {
-        get => new[] {   HoverTipFactory.FromKeyword(CardKeyword.Retain)};
-    }
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(4)];
+    //public override IEnumerable<CardKeyword> CanonicalKeywords => [ CardKeyword.Ethereal ];
+    //protected override IEnumerable<IHoverTip> ExtraHoverTips
+  //  {
+        
+   // }
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        IEnumerable<CardModel> cardModels = await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, this.Owner);
-        foreach (var card in cardModels)
-        {
-            card.GiveSingleTurnRetain();
-        }
+        Decimal baseValue = this.DynamicVars.Cards.IntValue;
+        int count = this.Owner.PlayerCombatState.Hand.Cards.Count;
+        IEnumerable<CardModel> cardModels = await CardPileCmd.Draw(choiceContext, Math.Max(0M, baseValue - (Decimal) count), this.Owner);
     }
 
     protected override void OnUpgrade() => this.DynamicVars.Cards.UpgradeValueBy(1M);

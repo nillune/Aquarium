@@ -7,6 +7,7 @@ using Aquarium.AquariumCode.Extensions;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Entities.Cards;
 
 
 namespace Aquarium.AquariumCode.Powers;
@@ -45,7 +46,8 @@ public class TipTheFerrymanPower : CustomPowerModel
         Decimal amount,
         ValueProp props,
         Creature? dealer,
-        CardModel? cardSource)
+        CardModel? cardSource,
+        CardPlay? cardPlay)
     {
         return target != this.Owner || !props.IsPoweredAttack() ||  (this.Owner.GetPowerAmount<FrailPower>() < 10) ? 1M : 0.5M;
     }

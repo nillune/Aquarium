@@ -21,7 +21,7 @@ public class LightUp() : AquariumCard(1,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<FrailPower>(2),
-        new BlockVar(10, ValueProp.Move)];
+        new BlockVar(12, ValueProp.Move)];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {

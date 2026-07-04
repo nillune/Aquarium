@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ny1gppfsj1y4"
-path="res://.godot/imported/aint_broke_power.png-3c01485abd4e79c338f42fef0a1704af.ctex"
+path="res://.godot/imported/aint_broke_power.png-92253151035fb8dbea57c527b00364ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/aint_broke_power.png"
-dest_files=["res://.godot/imported/aint_broke_power.png-3c01485abd4e79c338f42fef0a1704af.ctex"]
+source_file="res://Aquarium/images/powers/aint_broke_power.png"
+dest_files=["res://.godot/imported/aint_broke_power.png-92253151035fb8dbea57c527b00364ca.ctex"]
 
 [params]
 

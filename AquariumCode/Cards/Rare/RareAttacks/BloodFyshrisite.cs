@@ -28,7 +28,7 @@ public class BloodFyshrisite() : AquariumCard(5,
     {
       
         ArgumentNullException.ThrowIfNull((object) play.Target, "cardPlay.Target");
-        AttackCommand attackCommand = await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).FromCard((CardModel) this).Targeting(
+        AttackCommand attackCommand = await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).FromCard((CardModel) this, play).Targeting(
             play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
         CardModel clone = this.CreateClone();
         clone.EnergyCost.SetThisCombat(this.EnergyCost.GetResolved()-DynamicVars.Energy.IntValue);

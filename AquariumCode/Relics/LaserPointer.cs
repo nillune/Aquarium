@@ -33,6 +33,8 @@ public class LaserPointer() : AquariumRelic
     {
         if (this.Status == RelicStatus.Disabled)
             return;
+        if (cardPlay.Card.Owner != this.Owner)
+            return;
         if (cardPlay.Card.Type == CardType.Power)
         {
             CardModel card = (await CardSelectCmd.FromSimpleGrid(context,

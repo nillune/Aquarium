@@ -12,10 +12,10 @@ namespace Aquarium.AquariumCode.Cards.Rare;
  
 public class Carried() : AquariumCard(1,
     CardType.Skill, CardRarity.Rare,
-    TargetType.AllAllies)
+    TargetType.AnyPlayer)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [ new PowerVar<FrailPower>(2),
-        new PowerVar<DexterityPower>(1)];
+        new PowerVar<DexterityPower>(2)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get => new[] {   HoverTipFactory.FromPower<DexterityPower>(), HoverTipFactory.FromPower<FrailPower>()};
@@ -27,25 +27,22 @@ public class Carried() : AquariumCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        
+        ArgumentNullException.ThrowIfNull((object) play.Target, "play.Target");
         await PowerCmd.Apply<FrailPower>(
             choiceContext, 
             Owner.Creature,
             DynamicVars[nameof(FrailPower)].BaseValue,
             Owner.Creature,
             this);
-        foreach (Creature creature in this.CombatState.GetTeammatesOf(this.Owner.Creature)
-                     .Where<Creature>((Func<Creature, bool>)(c => c != null && c.IsAlive && c.IsPlayer)))
-        {
-            if (this.Owner.Creature != creature)
-            {
+        
+           
                 await PowerCmd.Apply<DexterityPower>(
-                    choiceContext, creature,
+                    choiceContext, play.Target.Player.Creature,
                     DynamicVars[nameof(DexterityPower)].BaseValue,
                     Owner.Creature,
                     this);
-            }
-        }
+            
+        
 
         //await PlayerCmd.GainEnergy((Decimal) carried.DynamicVars.Energy.IntValue, creature.Player);
       

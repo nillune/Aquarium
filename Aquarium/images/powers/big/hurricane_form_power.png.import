@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceu7xdindsqea"
-path="res://.godot/imported/hurricane_form_power.png-9c387d7263ea84435759190f54615505.ctex"
+path="res://.godot/imported/hurricane_form_power.png-42ac0b7bc867e6b4285143c99f726fe8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/hurricane_form_power.png"
-dest_files=["res://.godot/imported/hurricane_form_power.png-9c387d7263ea84435759190f54615505.ctex"]
+source_file="res://Aquarium/images/powers/hurricane_form_power.png"
+dest_files=["res://.godot/imported/hurricane_form_power.png-42ac0b7bc867e6b4285143c99f726fe8.ctex"]
 
 [params]
 

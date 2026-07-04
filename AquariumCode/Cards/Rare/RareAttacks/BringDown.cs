@@ -38,7 +38,7 @@ public class BringDown() : AquariumCard(0,
         int hitCount = this.ResolveEnergyXValue();
         if (this.Owner.Creature.HasPower<FrailPower>())
             hitCount *= 2;
-        AttackCommand attackCommand = await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).WithHitCount(hitCount).FromCard((CardModel) this).Targeting(play.Target).WithHitFx("vfx/vfx_giant_horizontal_slash", tmpSfx: "slash_attack.mp3").Execute(choiceContext);
+        AttackCommand attackCommand = await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).WithHitCount(hitCount).FromCard((CardModel) this, play).Targeting(play.Target).WithHitFx("vfx/vfx_giant_horizontal_slash", tmpSfx: "slash_attack.mp3").Execute(choiceContext);
     
     }
 

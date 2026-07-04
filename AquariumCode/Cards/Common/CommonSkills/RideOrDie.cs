@@ -20,7 +20,7 @@ public class RideOrDie() : AquariumCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new BlockVar(16, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new BlockVar(12, ValueProp.Move)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -34,7 +34,7 @@ public class RideOrDie() : AquariumCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Block"].UpgradeValueBy(4m);
+        DynamicVars["Block"].UpgradeValueBy(2m);
     }
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
     

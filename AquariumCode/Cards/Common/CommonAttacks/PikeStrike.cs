@@ -2,10 +2,13 @@
 using Aquarium.AquariumCode.Extensions;
 using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 
@@ -26,30 +29,19 @@ public class PikeStrike() : AquariumCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        PikeStrike source = this;
-        if (source.IsUpgraded)
-        { 
-            await PowerCmd.Apply<VigorPower>(
-                choiceContext,   Owner.Creature,
-                DynamicVars[nameof(VigorPower)].BaseValue,
-                Owner.Creature,
-                this);
-        }
+    
+       
 
-        DynamicVars.Block.BaseValue = Owner.Creature.GetPowerAmount<VigorPower>();
-        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
-            .Targeting(play.Target)
-            .WithHitFx("vfx/vfx_attack_slash")
-            .Execute(choiceContext);
-
+        
+        AttackCommand attackCommand = await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).FromCard((CardModel) this, play).Targeting(play.Target).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        Decimal num = await CreatureCmd.GainBlock(this.Owner.Creature, (Decimal) attackCommand.Results.SelectMany<List<DamageResult>, DamageResult>((Func<List<DamageResult>, IEnumerable<DamageResult>>) (r => (IEnumerable<DamageResult>) r)).Sum<DamageResult>((Func<DamageResult, int>) (r => r.TotalDamage + r.OverkillDamage)), ValueProp.Move, play);
+    
 
     }
 
     protected override void OnUpgrade()
     {
-
+        DynamicVars.Damage.UpgradeValueBy(3m);
     }
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
     

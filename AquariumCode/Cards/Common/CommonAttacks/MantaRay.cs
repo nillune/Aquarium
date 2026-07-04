@@ -30,13 +30,13 @@ public class MantaRay() : AquariumCard(2,
         }
 
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
         DamageVar dynamicVar = (DamageVar) this.DynamicVars["AllDamage"];
         await DamageCmd.Attack(DynamicVars["AllDamage"].BaseValue + StoredVigor)
-            .FromCard(this)
+            .FromCard(this, cardPlay)
             .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

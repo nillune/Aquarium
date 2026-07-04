@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f0yjhv6n3g8s"
-path="res://.godot/imported/pillar_of_junk_power.png-b3e6d68bf7c0ae65617858650156ef7b.ctex"
+path="res://.godot/imported/pillar_of_junk_power.png-2415ef7f37a69739339d808d44a6ad8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/pillar_of_junk_power.png"
-dest_files=["res://.godot/imported/pillar_of_junk_power.png-b3e6d68bf7c0ae65617858650156ef7b.ctex"]
+source_file="res://Aquarium/images/powers/pillar_of_junk_power.png"
+dest_files=["res://.godot/imported/pillar_of_junk_power.png-2415ef7f37a69739339d808d44a6ad8f.ctex"]
 
 [params]
 

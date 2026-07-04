@@ -25,8 +25,13 @@ public class BlowingSteam() : AquariumCard(1,
         CardPlay play)
     {
         await CreatureCmd.TriggerAnim(this.Owner.Creature, "Cast", this.Owner.Character.CastAnimDelay);
-        BlowingSteamPower blowingSteamPower = await PowerCmd.Apply<BlowingSteamPower>(choiceContext, this.Owner.Creature, this.DynamicVars["Power"].BaseValue ,
-            this.Owner.Creature, (CardModel)this);
+        if (!this.Owner.Creature.HasPower<BlowingSteamPower>())
+        {
+            BlowingSteamPower blowingSteamPower = await PowerCmd.Apply<BlowingSteamPower>(choiceContext,
+                this.Owner.Creature, this.DynamicVars["Power"].BaseValue,
+                this.Owner.Creature, (CardModel)this);
+        }
+
         PermVigorNextTurnPower permVigorNextTurnPower = await PowerCmd.Apply<PermVigorNextTurnPower>(choiceContext, this.Owner.Creature,  DynamicVars[nameof(VigorPower)].BaseValue ,
             this.Owner.Creature, (CardModel)this);
     }

@@ -17,23 +17,23 @@ public class Prefire() : AquariumCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(6, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(9, ValueProp.Move), new CardsVar(1)];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         Prefire card1 = this;
         ArgumentNullException.ThrowIfNull((object) cardPlay.Target, "cardPlay.Target");
-        AttackCommand attackCommand = await DamageCmd.Attack(card1.DynamicVars.Damage.BaseValue).FromCard((CardModel) card1).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
-        CardSelectorPrefs prefs = new CardSelectorPrefs(card1.SelectionScreenPrompt, 1);
-        CardModel card2 = (await CardSelectCmd.FromSimpleGrid(choiceContext, PileType.Draw.GetPile(card1.Owner).Cards, card1.Owner, prefs)).FirstOrDefault<CardModel>();
-        if (card2 == null)
+        AttackCommand attackCommand = await DamageCmd.Attack(card1.DynamicVars.Damage.BaseValue).FromCard((CardModel) card1, cardPlay).Targeting(cardPlay.Target).WithHitFx("vfx/vfx_attack_blunt", tmpSfx: "blunt_attack.mp3").Execute(choiceContext);
+        int selectCount = Math.Min(this.DynamicVars.Cards.IntValue, CardPile.MaxCardsInHand - PileType.Hand.GetPile(this.Owner).Cards.Count);
+        if (selectCount <= 0)
             return;
-        CardPileAddResult cardPileAddResult = await CardPileCmd.Add(card2, PileType.Discard, CardPilePosition.Top);
+        IReadOnlyList<CardPileAddResult> cardPileAddResultList = await CardPileCmd.Add(await CardSelectCmd.FromCombatPile(choiceContext, PileType.Draw.GetPile(this.Owner), this.Owner, new CardSelectorPrefs(this.SelectionScreenPrompt, selectCount)), PileType.Discard);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Damage.UpgradeValueBy(1m);
+        this.DynamicVars.Cards.UpgradeValueBy(1M);
     }
     
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();

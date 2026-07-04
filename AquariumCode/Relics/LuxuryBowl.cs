@@ -25,19 +25,30 @@ public class LuxuryBowl() : AquariumRelic
     
     public override RelicRarity Rarity =>
         RelicRarity.Starter;
+    public override RelicModel GetUpgradeReplacement()
+    {
+        return ModelDb.Relic<LuxuryBowl>();
+    }
     public override async Task BeforeFlushLate(PlayerChoiceContext choiceContext, Player player)
     {
-        LuxuryBowl source = this;
-        LuxuryBowl luxuryBowl = this;
-        if (player != source.Owner || !Hook.ShouldFlush(player.Creature.CombatState, player))
+        
+        if (player != this.Owner || !Hook.ShouldFlush(player.Creature.CombatState, player))
             return;
-        CardSelectorPrefs prefs = new CardSelectorPrefs(source.SelectionScreenPrompt, 0, 2);
-        List<CardModel> list = (await CardSelectCmd.FromHand(choiceContext, source.Owner, prefs, new Func<CardModel, bool>(RetainFilter), (AbstractModel) source)).ToList<CardModel>();
-        if (list.Count == 0)
-            return;
-        foreach (CardModel cardModel in list)
-            cardModel.GiveSingleTurnRetain();
-        luxuryBowl.Flash();
+        CardPile pile = PileType.Hand.GetPile(this.Owner);
+        for (int i = 0; i < pile.Cards.Count; i++)
+        {
+            CardModel card =
+                Owner.RunState.Rng.CombatCardSelection.NextItem<CardModel>((IEnumerable<CardModel>)pile.Cards);
+            if (!card.Keywords.Contains(CardKeyword.Retain))
+            {
+                card.AddKeyword(CardKeyword.Retain);
+                return;
+            }
+        }
+
+      
+       
+        this.Flash();
     }
 
     

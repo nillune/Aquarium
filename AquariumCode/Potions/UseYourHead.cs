@@ -33,7 +33,7 @@ public class UseYourHead : CustomPotionModel
         NCombatRoom instance = NCombatRoom.Instance;
         if (instance != null)
             instance.CombatVfxContainer.AddChildSafely((Node) NGroundFireVfx.Create(target));
-        IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, target, damage.BaseValue, damage.Props, this.Owner.Creature, (CardModel) null);
+        IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, target, damage.BaseValue, damage.Props, this.Owner.Creature, (CardModel) null, null);
         await PowerCmd.Apply<FrailPower>(
             choiceContext,  this.Owner.Creature,
             DynamicVars[nameof(FrailPower)].BaseValue,

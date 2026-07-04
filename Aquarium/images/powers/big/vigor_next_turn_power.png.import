@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5e3d3yakmuhs"
-path="res://.godot/imported/vigor_next_turn_power.png-72dc71cb0956338aeda05591897b3b2b.ctex"
+path="res://.godot/imported/vigor_next_turn_power.png-dfdf89409d0bf01e4038c3667d112bca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/vigor_next_turn_power.png"
-dest_files=["res://.godot/imported/vigor_next_turn_power.png-72dc71cb0956338aeda05591897b3b2b.ctex"]
+source_file="res://Aquarium/images/powers/vigor_next_turn_power.png"
+dest_files=["res://.godot/imported/vigor_next_turn_power.png-dfdf89409d0bf01e4038c3667d112bca.ctex"]
 
 [params]
 

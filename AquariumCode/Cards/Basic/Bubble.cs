@@ -27,7 +27,7 @@ public class Bubble : AquariumCard
     {
         get => new[] {   HoverTipFactory.FromPower<VigorPower>()};
     }
-    protected override IEnumerable<DynamicVar> CanonicalVars => [  new BlockVar(3, ValueProp.Move), new PowerVar<VigorPower>(3)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [  new BlockVar(4, ValueProp.Move), new PowerVar<VigorPower>(4)];
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);

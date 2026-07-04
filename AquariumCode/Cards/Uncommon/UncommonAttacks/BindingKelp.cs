@@ -12,7 +12,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace Aquarium.AquariumCode.Cards.Uncommon;
 
   
-public class BindingKelp() : AquariumCard(2,
+public class BindingKelp() : AquariumCard(1,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
@@ -20,7 +20,7 @@ public class BindingKelp() : AquariumCard(2,
     {
         get => new[] {   HoverTipFactory.FromPower<VulnerablePower>(), HoverTipFactory.FromPower<WeakPower>()};
     }
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(10, ValueProp.Move), new PowerVar<VulnerablePower>(1M), new PowerVar<WeakPower>(1M)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [ new DamageVar(4, ValueProp.Move), new PowerVar<VulnerablePower>(1M), new PowerVar<WeakPower>(1M)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -28,7 +28,7 @@ public class BindingKelp() : AquariumCard(2,
     {
         BindingKelp bindingKelp = this;
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, play)
             .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

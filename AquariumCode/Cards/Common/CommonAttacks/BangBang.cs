@@ -22,7 +22,7 @@ public class BangBang() : AquariumCard(3,
     {
         
             await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-                .FromCard(this)
+                .FromCard(this, play)
                 .Targeting(play.Target)
                 .WithHitCount(DynamicVars.Repeat.IntValue)
                 .WithHitFx("vfx/vfx_attack_slash")
@@ -33,6 +33,7 @@ public class BangBang() : AquariumCard(3,
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);
+        this.AddKeyword(CardCmdPatches.Weapon);
     }
     public override string CustomPortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
     

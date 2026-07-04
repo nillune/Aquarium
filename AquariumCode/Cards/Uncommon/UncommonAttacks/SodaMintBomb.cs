@@ -22,7 +22,7 @@ public class SodaMintBomb() : AquariumCard(2,
     {
         get => new[] {   HoverTipFactory.FromPower<FrailPower>(), HoverTipFactory.FromPower<StrengthPower>()};
     }
-    protected override IEnumerable<DynamicVar> CanonicalVars => [(DynamicVar) new DamageVar(13M, ValueProp.Move),
+    protected override IEnumerable<DynamicVar> CanonicalVars => [(DynamicVar) new DamageVar(14M, ValueProp.Move),
         new DynamicVar("StrengthLoss", 10M), new EnergyVar(1)];
     protected override bool ShouldGlowGoldInternal
     {
@@ -36,7 +36,7 @@ public class SodaMintBomb() : AquariumCard(2,
         CardPlay play)
     {
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, play)
             .Targeting(play.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
@@ -62,6 +62,6 @@ public class SodaMintBomb() : AquariumCard(2,
     }
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(6m);
+        DynamicVars.Damage.UpgradeValueBy(4m);
     }
 }

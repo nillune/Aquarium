@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4sojqac5npm7"
-path="res://.godot/imported/wall_of_bullets_power.png-061d4a44f01c58beeb744f0c1775a07a.ctex"
+path="res://.godot/imported/wall_of_bullets_power.png-0c5d90a38f3344a2f5d55029e0e2b828.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/wall_of_bullets_power.png"
-dest_files=["res://.godot/imported/wall_of_bullets_power.png-061d4a44f01c58beeb744f0c1775a07a.ctex"]
+source_file="res://Aquarium/images/powers/wall_of_bullets_power.png"
+dest_files=["res://.godot/imported/wall_of_bullets_power.png-0c5d90a38f3344a2f5d55029e0e2b828.ctex"]
 
 [params]
 

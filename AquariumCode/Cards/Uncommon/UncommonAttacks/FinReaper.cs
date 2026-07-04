@@ -29,7 +29,7 @@ public class FinReaper() : AquariumCard(1,
     {
         FinReaper finReaper = this;
         DoomPower doomPower = await PowerCmd.Apply<DoomPower>(choiceContext, play.Target,
-            (Decimal)(await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).FromCard((CardModel)this)
+            (Decimal)(await DamageCmd.Attack(this.DynamicVars.Damage.BaseValue).FromCard((CardModel)this, play)
                 .Targeting(play.Target)
                 .WithHitCount(DynamicVars.Repeat.IntValue)
                 .WithHitFx("vfx/vfx_attack_slash")

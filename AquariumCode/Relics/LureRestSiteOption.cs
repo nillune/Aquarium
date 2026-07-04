@@ -9,6 +9,7 @@ using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.RestSite;
 using MegaCrit.Sts2.Core.Helpers;
@@ -43,11 +44,29 @@ public class LureRestSiteOption(Player owner) : RestSiteOption(owner)
   {
     CardSelectorPrefs prefs = new CardSelectorPrefs(CardSelectorPrefs.EnchantSelectionPrompt, 1);
     Vigorous canonicalVigorous = ModelDb.Enchantment<Vigorous>();
-    foreach (CardModel card in await CardSelectCmd.FromDeckForEnchantment(Owner, (EnchantmentModel)canonicalVigorous, this.Owner.GetRelic<BejeweledHook>().DynamicVars["Vigorous"].IntValue,
-               prefs))
+    foreach (CardModel card in await CardSelectCmd.FromDeckGeneric(Owner, prefs, c => c.Type == CardType.Attack || c.Enchantment == ModelDb.Enchantment<Vigorous>()))
     {
-      CardCmd.Enchant(canonicalVigorous.ToMutable(), card, (Decimal)this.Owner.GetRelic<BejeweledHook>().DynamicVars["Vigorous"].IntValue);
-      CardCmd.Preview(card);
+      
+
+        // MainFile.Logger.Info(  "vig detected");
+      
+        if (card.Enchantment != null)
+        {
+         // MainFile.Logger.Info(  "vig detected");
+          card.Enchantment.Amount = card.Enchantment.Amount + 5;
+          // int oldAmount = card.Enchantment.Amount;
+        }
+        else
+        {
+
+
+          CardCmd.Enchant(canonicalVigorous.ToMutable(), card,
+            (Decimal)this.Owner.GetRelic<BejeweledHook>().DynamicVars["Vigorous"].IntValue );
+        }
+
+
+
+        CardCmd.Preview(card);
     }
     canonicalVigorous = (Vigorous)null;
     return await Task.FromResult<bool>(true);

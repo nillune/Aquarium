@@ -1,4 +1,4 @@
 ﻿{
-  "OPTION_LURE.description": "Enchant a card in your deck with [gold]Vigorous[/gold] 5.",
+  "OPTION_LURE.description": "[gold]Enchant[/gold] a card in your deck with [purple]Vigorous[/purple] [blue]5[/blue].\nOr increase an existing [purple]Vigorous[/purple] enchantment by [blue]5[/blue]",
   "OPTION_LURE.name": "Lure"
 }

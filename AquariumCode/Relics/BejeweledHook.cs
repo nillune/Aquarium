@@ -1,4 +1,5 @@
 ﻿using Aquarium.AquariumCode.Character;
+using Aquarium.AquariumCode.Patches;
 using Aquarium.AquariumCode.Relics;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -17,7 +18,14 @@ public class BejeweledHook() : AquariumRelic
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Vigorous", 5M)];
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get => HoverTipFactory.FromEnchantment<Vigorous>(this.DynamicVars["Vigorous"].IntValue);
+        get
+        {
+            return new IHoverTip[]
+            {
+              
+                HoverTipFactory.Static(MyHoverTips.Lure)
+            };
+        }
     }
   
     public override RelicRarity Rarity =>

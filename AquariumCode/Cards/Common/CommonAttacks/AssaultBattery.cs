@@ -28,7 +28,7 @@ public class AssaultBattery() : AquariumCard(2,
     {
         AssaultBattery assaultBattery = this;
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
-            .FromCard(this)
+            .FromCard(this, cardPlay)
             .TargetingAllOpponents(CombatState)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);

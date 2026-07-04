@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.Models;
 namespace Aquarium.AquariumCode.Cards.Uncommon;
 
   
-public class DontFix() : AquariumCard(1,
+public class DontFix() : AquariumCard(0,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
@@ -28,7 +28,7 @@ public class DontFix() : AquariumCard(1,
 
     protected override void OnUpgrade()
     {
-        this.EnergyCost.UpgradeBy(-1);
-        //this.DynamicVars["Power"].UpgradeValueBy(2M);
+        //this.EnergyCost.UpgradeBy(-1);
+        this.DynamicVars["Power"].UpgradeValueBy(1M);
     }
 }

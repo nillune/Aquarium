@@ -3,9 +3,9 @@
   "name": "The Aquarium",
   "author": "Mint, Sub",
   "description": "Adds the Aquarium to Slay the Spire 2",
-  "version": "v0.0.13",
+  "version": "v1.0.14",
   "has_pck": true,
   "has_dll": true,
-  "dependencies": [{"id": "BaseLib", "min_version": "0.105.0"}],
+  "dependencies": [{"id": "BaseLib", "min_version": "0.107.1"}],
   "affects_gameplay": true
 }

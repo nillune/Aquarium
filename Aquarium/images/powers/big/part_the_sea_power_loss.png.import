@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvsv6qclwoy8w"
-path="res://.godot/imported/part_the_sea_power_loss.png-6817caa695f33c12a68b0436f0b8986e.ctex"
+path="res://.godot/imported/part_the_sea_power_loss.png-5d6f6b1957190215cde6973ee5f4f3dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Aquarium/images/powers/big/part_the_sea_power_loss.png"
-dest_files=["res://.godot/imported/part_the_sea_power_loss.png-6817caa695f33c12a68b0436f0b8986e.ctex"]
+source_file="res://Aquarium/images/powers/part_the_sea_power_loss.png"
+dest_files=["res://.godot/imported/part_the_sea_power_loss.png-5d6f6b1957190215cde6973ee5f4f3dc.ctex"]
 
 [params]
 

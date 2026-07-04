@@ -1,3 +1,6 @@
 {
-  
+  "AQUARIUM-LURE.description": "[gold]Enchant[/gold] a card in your deck with [purple]Vigorous[/purple] [blue]5[/blue].\nOr increase an existing [purple]Vigorous[/purple] enchantment by [blue]5[/blue]",
+  "AQUARIUM-LURE.title": "Lure",
+ 
+  "AQUARIUM-LURE_OPTION": "Choose {Amount:plural:a card|[blue]{}[/blue] cards} to [purple]Enchant[/purple]."
 }

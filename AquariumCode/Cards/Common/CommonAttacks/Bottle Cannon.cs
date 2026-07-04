@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Aquarium.AquariumCode.Cards.Common;
 
- 
+ /*
 public class BottleCannon() : AquariumCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
@@ -52,3 +52,4 @@ public class BottleCannon() : AquariumCard(1,
     public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
     public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
 }
+*/
